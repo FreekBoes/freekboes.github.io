@@ -1,0 +1,33 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: #1a1a29;
+}
+
+.achtergrond {
+    background-color: #181824;
+}
+
+.paars {
+    color: #7562E0;
+    transition: 0.5s;
+}
+
+.paars:hover{
+    color: white;
+    transition: 0.5s;
+}
+
+.active {
+    color: #7562E0 !important;
+}
+
+button {
+    background-color: #7562E0;
+    color: white;
+}
+
+p,h1,h2 {
+    color: white;
+}
