@@ -23,9 +23,30 @@ body {
     color: #7562E0 !important;
 }
 
-button {
+.freek {
+    padding-left: 25px;
+}
+
+.knop {
     background-color: #7562E0;
     color: white;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: 0.5s !important;
+}
+
+.knop:hover {
+    transition: 0.5s !important;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+.knop2 {}
+
+.balk {
+    color: #181824;
+
 }
 
 p,h1,h2 {
