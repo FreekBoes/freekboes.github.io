@@ -65,6 +65,30 @@ body {
 
 }
 
+.grijzeachtergrond {
+background-color: #BDBDBD;
+transition: 0.5s;
+}
+
+.grijzeachtergrond:hover{
+    background-color: #7562E0;
+    transition: 0.5s;
+}
+
+.realize {
+    background-color: #181824;
+    border-color: #7562E0;
+    border-style: solid;
+    border-radius: 30px;
+}
+
+.realize2 {
+    background-color: #181824;
+    border-color: white;
+    border-style: solid;
+    border-radius: 30px;
+}
+
 p,h1,h2 {
     color: white;
 }
