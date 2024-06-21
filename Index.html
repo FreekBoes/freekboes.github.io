@@ -25,16 +25,16 @@
                 <div class="collapse navbar-collapse justify-content-end navbar-custom p-2" id="navbarNavDropdown">
                     <ul class="navbar-nav">
                         <li class="nav-item px-2">
-                            <a class="nav-link active text-white" aria-current="page" href="">Home</a>
+                            <a class="nav-link text-white" aria-current="page" href="#home">Home</a>
                         </li>
                         <li class="nav-item px-2">
-                            <a class="nav-link text-white" href="">About me</a>
+                            <a class="nav-link text-white" href="#about">About me</a>
                         </li>
                         <li class="nav-item px-2">
-                            <a class="nav-link text-white" href="">Projects</a>
+                            <a class="nav-link text-white" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item px-2">
-                            <a class="nav-link text-white" href="">Contact</a>
+                            <a class="nav-link text-white" href="#contact">Contact</a>
                         </li>
 
                     </ul>
@@ -46,7 +46,7 @@
     <div class="container-fluid fade-in">
         <main class="">
             <div class="container">
-                <div class="row col-12">
+                <div class="row col-12" id="home">
                     <div
                         class="col-12 col-lg-6 pt-4 text-sm-center text-md-start d-flex justify-content-sm-center align-items-sm-center align-items-md-start flex-column">
                         <h2>Hello, I'm</h2>
@@ -77,7 +77,7 @@
     <div class="container-fluid">
         <div class="container ">
             <div class="row col-12 pt-4 fade-in">
-                <h3 class="paars">About me:</h3>
+                <h3 class="paars" id="about">About me:</h3>
                 <p class="">Hi, my name is Freek Boes, i am a full-time IT student, eager to learn a lot more about web
                     design and app development! <br> I have made a good foundation in my previous years, I’ve been
                     learning about 4 years of <br> programming languages principles, OO development, etc. <br>
@@ -137,21 +137,21 @@
                         app <br>for the market!</p>
                 </div>
 
-                <div class="realize col-4 text-center">
+                <div class="realize2 col-4 text-center">
                     <p><img src="Resources/vuesax/git-repo.svg" alt=""></p>
                     <p>VERSION CONTROL</p>
                     <p>I'm want to learn more about Git <br> & GitHub because there's still so <br> much to learn about
                         it.</p>
                 </div>
 
-                <div class="realize2 col-4 text-center">
+                <div class="realize col-4 text-center">
                     <p><img src="Resources/vuesax/app.svg" alt=""></p>
                     <p>APP DEVELOPMENT</p>
                     <p>I'm totally new to app <br> development, I've been learning <br> all those languages but I'm
                         ready <br> to apply those to make apps.</p>
                 </div>
 
-                <div class="realize col-4 text-center">
+                <div class="realize2 col-4 text-center">
                     <p><img src="Resources/vuesax/slider.svg" alt=""></p>
                     <p>STOCK IMAGES</p>
                     <p>We learned about making stock <br>photo's for our website, this <br>makes me think in out of the
@@ -159,7 +159,7 @@
                 </div>
             </div>
 
-            <div class="row col-12 pt-4 fade-in">
+            <div class="row col-12 pt-4 fade-in" id="projects">
                 <div class="col-12">
                     <h2 class="paars">My projects: </h2>
                     <p>I have been working on many projects over the course of being a Web Developer, here are a few of
@@ -205,20 +205,23 @@
                 </div>
             </div>
 
-            <div class="row col-12 fade-in">
+            <div class="row col-12 fade-in" id="contact">
                 <div class="col-md-6 col-sm-12 pb-5">
                     <h2 class="paars">Connect with me:</h2>
-                    <p>Want to work with me? Please contact me</p>
+                    <p>Want to work with me? Please contact me!</p>
                     <a href=""><img src="Resources/vuesax/bold/vuesax/bold/facebook.svg" alt=""></a>
                     <a href=""><img src="Resources/vuesax/bold/vuesax/bold/instagram.svg" alt=""></a>
                     <a href=""><img src="Resources/LinkedIn_Icon.png" alt="" width="32" height="32"></a>
                     <a href=""><img src="Resources/vuesax/bold/vuesax/bold/sms.svg" alt=""></a>
                 </div>
 
-                <div class="col-6 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                     <p>Contact me, let's make magic together</p>
                     <form action="">
-
+                        <p><input type="text" placeholder="Name:"></p>
+                        <p><input type="text" name="" id="" placeholder="Email:"></p>
+                        <p><input type="text" name="" id="" placeholder="Message:" width="100" height="500"></p>
+                        <p><input type="submit" value="Send" class="knop px-5"></p>
                     </form>
                 </div>
             </div>
@@ -226,8 +229,38 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="container pt-5">
+        <div class="row col-12 justify-content-center align-items-center">
+            <div class="col-md-2 text-center">
+                <p>@2024 Freek Boes</p>
+            </div>
 
+            <div class="col-md-2 text-center">
+                <p>Full-time student</p>
+            </div>
+
+            <div class="col-md-2 text-center">
+                <p>Web designer</p>
+            </div>
+
+            <div class="col-md-2 text-center">
+                <p>App development</p>
+            </div>
+
+            <div class="col-md-2 text-center">
+                <p>Designed by @me</p>
+            </div>
+
+        </div>
+
+        <div class="row col-12">
+            <div class="col-12 pb-3 text-center">
+                <a href=""><img src="Resources/vuesax/bold/vuesax/bold/facebook.svg" alt=""></a>
+                <a href=""><img src="Resources/vuesax/bold/vuesax/bold/instagram.svg" alt=""></a>
+                <a href=""><img src="Resources/LinkedIn_Icon.png" alt="" width="32" height="32"></a>
+                <a href=""><img src="Resources/vuesax/bold/vuesax/bold/sms.svg" alt=""></a>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
