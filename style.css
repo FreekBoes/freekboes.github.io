@@ -19,6 +19,10 @@ body {
     transition: 0.5s;
 }
 
+.titels {
+    color: #7562E0;
+}
+
 .active {
     color: #7562E0 !important;
 }
@@ -39,7 +43,7 @@ body {
 .knop:hover {
     transition: 0.5s !important;
     text-decoration: underline;
-    transform: scale(1.1);
+    
 }
 
 .knop2 {
@@ -67,6 +71,9 @@ body {
 
 .grijzeachtergrond {
     background-color: #BDBDBD;
+    height: 270px;
+    width: 250px;
+    border-radius: 10px;
     transition: 0.5s;
 }
 
@@ -80,6 +87,8 @@ body {
     border-color: #7562E0;
     border-style: solid;
     border-radius: 30px;
+    width: 341px;
+    height: 338px;
 }
 
 .realize2 {
@@ -87,6 +96,8 @@ body {
     border-color: white;
     border-style: solid;
     border-radius: 30px;
+    width: 341px;
+    height: 338px;
 }
 
 p,
@@ -97,12 +108,8 @@ h2 {
 
 .rem18 {
     width: 18rem;
-    background-color: black;
-    border-radius: 25px;
-}
-
-.rem18 img {
-    border-radius: 10px;
+    background-color: #31313F;
+    border-radius: 20px;
 }
 
 .nav-link{
@@ -125,4 +132,24 @@ h2 {
     opacity: 1;
     transform: translateY(0);
     /* Move the element to its original position */
+}
+
+.footerkleur {
+    color: #848191;
+}
+
+.vier {
+    font-size: 96px;
+}
+
+.navbar-custom .navbar-toggler-icon {
+    color: white; /* Set background color of the toggler icon to white */
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* Invert the colors of the SVG icon to make it white */
+}
+
+.navbar-toggler {
+    border-color: white; /* Set border color of the toggler button to white */
 }
