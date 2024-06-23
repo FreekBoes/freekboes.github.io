@@ -1,4 +1,4 @@
-# FreekBoes.github.io
+# FreekBoes.github.io | Readme
 Portfolio website
 
 -------------------------
