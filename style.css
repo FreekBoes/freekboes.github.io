@@ -136,6 +136,12 @@ h2 {
 
 .footerkleur {
     color: #848191;
+    transition: 0.5s;
+}
+
+.footerkleur:hover {
+    color: #c6c6c6;
+    transition: 0.5s;
 }
 
 .vier {
@@ -152,4 +158,14 @@ h2 {
 
 .navbar-toggler {
     border-color: white; /* Set border color of the toggler button to white */
+}
+
+.disabled-link {
+    pointer-events: none;
+
+}
+
+.disabled-link:hover {
+    pointer-events: none;
+    text-decoration: none;    
 }
