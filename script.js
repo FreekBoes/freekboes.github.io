@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         containerRect = container.getBoundingClientRect();
         setPosition(e.clientX);
       });
+
     }
   
     // --------- Faster Favicon Rotation -----------
@@ -159,7 +160,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
       });
     }
+
   });
+
+// toggle mobiele navbar
+document.addEventListener('DOMContentLoaded', () => {
+  const btn  = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+});
   
   // --------- Section Slide‑in Animations -----------
 const animatedSections = document.querySelectorAll('.js-animate');
@@ -180,4 +193,15 @@ const sectionObserver = new IntersectionObserver((entries) => {
 
 animatedSections.forEach(sec => {
   sectionObserver.observe(sec);
+});
+
+// toggle mobiele navbar
+document.addEventListener('DOMContentLoaded', () => {
+  const btn  = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
 });
