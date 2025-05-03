@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+ /* Slider-handle styling */
+ #slider-handle {
+    position: absolute;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: white;
+    cursor: ew-resize;
+    z-index: 10;
+    transition: background 0.2s;
+  }
+  #slider-handle:hover {
+    background: #1766A4;
+  }
+  /* Pijltjes op de handle */
+  #slider-handle::before,
+  #slider-handle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 8px solid transparent;
+    transform: translateY(-50%);
+  }
+  #slider-handle::before { border-right-color: white; left: -8px; }
+  #slider-handle::after  { border-left-color: white;  right: -8px; }
+
+  .perspective {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  @keyframes slideInFromLeft {
+    0%   { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0);     opacity: 1; }
+  }
+  @keyframes slideInFromRight {
+    0%   { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0);    opacity: 1; }
+  }
+  
+  /* Utilities om in HTML te gebruiken */
+  .animate-slide-in-left {
+    animation: slideInFromLeft 0.8s ease-out forwards;
+  }
+  .animate-slide-in-right {
+    animation: slideInFromRight 0.8s ease-out forwards;
+  }

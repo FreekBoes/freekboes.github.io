@@ -1,0 +1,189 @@
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: #1a1a29;
+}
+
+.achtergrond {
+    background-color: #181824;
+}
+
+.paars {
+    color: #7562E0;
+    transition: 0.5s;
+}
+
+.paars:hover {
+    color: white;
+    transition: 0.5s;
+}
+
+.titels {
+    color: #7562E0;
+}
+
+.active {
+    color: #7562E0 !important;
+}
+
+.freek {
+    padding-left: 25px;
+}
+
+.knop {
+    background-color: #7562E0;
+    color: white;
+    padding: 12px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: 0.5s !important;
+}
+
+.knop:hover {
+    transition: 0.5s !important;
+    text-decoration: underline;
+    
+}
+
+.knop2 {
+    background-color: transparent;
+    color: white;
+    border-color: #7562E0;
+    border-style: solid;
+    padding: 12px;
+    border-radius: 15px;
+    text-decoration: none;
+    transition: 0.5s !important;
+}
+
+.knop2:hover {
+    transition: 0.5s !important;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+.balk {
+    background-color: #181824;
+    padding: 40px;
+
+}
+
+.grijzeachtergrond {
+    background-color: #BDBDBD;
+    height: 270px;
+    width: 250px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.grijzeachtergrond:hover {
+    background-color: #7562E0;
+    transition: 0.5s;
+}
+
+.realize {
+    background-color: #181824;
+    border-color: #7562E0;
+    border-style: solid;
+    border-radius: 30px;
+    width: 341px;
+    height: 338px;
+}
+
+.realize2 {
+    background-color: #181824;
+    border-color: white;
+    border-style: solid;
+    border-radius: 30px;
+    width: 341px;
+    height: 338px;
+}
+
+p,
+h1,
+h2 {
+    color: white;
+}
+
+.rem18 {
+    width: 18rem;
+    background-color: #31313F;
+    border-radius: 20px;
+}
+
+.nav-link{
+    color: white !important; 
+}
+
+.nav-link:hover {
+    color: #7562E0 !important;
+}
+
+/* styles.css */
+.fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+    /* Move the element upwards initially */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+    /* Move the element to its original position */
+}
+
+.footerkleur {
+    color: #848191;
+    transition: 0.5s;
+}
+
+.footerkleur:hover {
+    color: #c6c6c6;
+    transition: 0.5s;
+}
+
+.vier {
+    font-size: 96px;
+}
+
+.navbar-custom .navbar-toggler-icon {
+    color: white; /* Set background color of the toggler icon to white */
+}
+
+.navbar-toggler-icon {
+    filter: invert(1); /* Invert the colors of the SVG icon to make it white */
+}
+
+.navbar-toggler {
+    border-color: white; /* Set border color of the toggler button to white */
+}
+
+.disabled-link {
+    pointer-events: none;
+
+}
+
+.disabled-link:hover {
+    pointer-events: none;
+    text-decoration: none;    
+}
+
+.hallo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 32px;
+}
+
+
+.handbal {
+    font-size: 25px;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
