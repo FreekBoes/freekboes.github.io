@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fithandbal | Handbal Overpelt</title>
+  <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style1.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="mx-auto">
+  <!-- Navigatie -->
+  <nav class="text-black p-4 shadow-md bg-white sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-xl font-bold">
+        <a href="index.html">HANDBAL <span class="text-blue-500">OVERPELT</span></a>
+      </div>
+
+      <!-- Hamburger knop -->
+      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop navigatie -->
+<ul class="hidden md:flex font-semibold items-center space-x-2">
+  <li><a href="index.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">HOME</a></li>
+  <li><a href="Foto's.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FOTO'S</a></li>
+  <li class="relative group">
+  <button class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200 gap-1">
+    PLOEGEN
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+  <ul class="absolute left-0 dropdown-delay group-hover:flex flex-col bg-white text-black rounded shadow-md mt-2 w-40 z-50">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 2</a></li>
+    <li><a href="J18.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J18</a></li>
+    <li><a href="J16.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J16</a></li>
+    <li><a href="J14.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J14</a></li>
+    <li><a href="J12.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J12</a></li>
+    <li><a href="J10.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J10</a></li>
+    <li><a href="J08.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J08</a></li>
+  </ul>
+</li>
+  <li><a href="Activiteiten.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">ACTIVITEITEN</a></li>
+  <li><a href="clubinfo.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CLUBINFO</a></li>
+  <li><a href="FAQ.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FAQ</a></li>
+  <li><a href="Contact.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CONTACT</a></li>
+</ul>
+    </div>
+
+    <!-- Mobiele navigatie -->
+    <ul id="mobile-menu" class="md:hidden mt-4 space-y-2 text-center font-semibold">
+      <li><a href="index.html" class="block px-4 py-2 hover:text-blue-500">HOME</a></li>
+      <li><a href="Foto's.html" class="block px-4 py-2 hover:text-blue-500">FOTO'S</a></li>
+     <li>
+  <button type="button"
+          onclick="toggleSubmenu()"
+          class="w-full px-4 py-2 hover:text-blue-500 flex justify-center items-center gap-2">
+    PLOEGEN
+    <svg id="submenuIcon" class="w-4 h-4 transform transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.58l3.71-4.35a.75.75 0 111.14.98l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+
+  <!-- Mobiel submenu -->
+  <ul id="mobile-submenu" class="hidden space-y-1 text-center">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:text-blue-500">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:text-blue-500">HEREN 2</a></li>
+    <li><a href="J18.html"    class="block px-4 py-2 hover:text-blue-500">J18</a></li>
+    <li><a href="J16.html"    class="block px-4 py-2 hover:text-blue-500">J16</a></li>
+    <li><a href="J14.html"    class="block px-4 py-2 hover:text-blue-500">J14</a></li>
+    <li><a href="J12.html"    class="block px-4 py-2 hover:text-blue-500">J12</a></li>
+    <li><a href="J10.html"    class="block px-4 py-2 hover:text-blue-500">J10</a></li>
+    <li><a href="J08.html"    class="block px-4 py-2 hover:text-blue-500">J08</a></li>
+    <li><a href="Fithandbal.html"    class="block px-4 py-2 hover:text-blue-500">Fithandbal</a></li>
+  </ul>
+</li>
+      <li><a href="Activiteiten.html" class="block px-4 py-2 hover:text-blue-500">ACTIVITEITEN</a></li>
+      <li><a href="clubinfo.html" class="block px-4 py-2 hover:text-blue-500">CLUBINFO</a></li>
+      <li><a href="FAQ.html" class="block px-4 py-2 hover:text-blue-500">FAQ</a></li>
+      <li><a href="Contact.html" class="block px-4 py-2 hover:text-blue-500">CONTACT</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Hero: Heren 1 -->
+<section class="max-w-6xl mx-auto px-6 md:px-8 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- Tekst links -->
+    <div class="text-center md:text-left">
+      <h1 class="text-5xl font-extrabold leading-tight">Fithandbal</h1>
+<p class="text-2xl font-semibold text-blue-400 mt-2">Regio</p>
+
+
+      <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+        <a href="Foto's.html"
+           class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition">
+          BEKIJK FOTO'S
+        </a>
+    
+      </div>
+    </div>
+
+    <!-- Foto rechts -->
+    <div class="w-full">
+      <img src="resources/your-team-photo.jpg"
+           alt="Heren 1 team"
+           class="w-full h-64 md:h-96 object-cover rounded-2xl shadow" />
+    </div>
+  </div>
+</section>
+
+
+<!-- Kaarten: bestuur/crew -->
+<section class="max-w-6xl mx-auto px-6 md:px-8 pb-16">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+    <!-- Kaart 1 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <!-- placeholder avatar -->
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Jens Van Werde</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">voorzitter</p>
+      </div>
+    </div>
+
+    <!-- Kaart 2 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Peter Vandersanden</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">secretaris</p>
+      </div>
+    </div>
+
+    <!-- Kaart 3 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Margo Van Baelen</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">penningmeester</p>
+      </div>
+    </div>
+
+       <!-- Kaart 4 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <!-- placeholder avatar -->
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Jens Van Werde</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">voorzitter</p>
+      </div>
+    </div>
+
+    <!-- Kaart 5 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Peter Vandersanden</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">secretaris</p>
+      </div>
+    </div>
+
+    <!-- Kaart 6 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Margo Van Baelen</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">penningmeester</p>
+      </div>
+    </div>
+
+       <!-- Kaart 7 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <!-- placeholder avatar -->
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Jens Van Werde</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">voorzitter</p>
+      </div>
+    </div>
+
+    <!-- Kaart 8 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Peter Vandersanden</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">secretaris</p>
+      </div>
+    </div>
+
+    <!-- Kaart 9 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Margo Van Baelen</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">penningmeester</p>
+      </div>
+    </div>
+
+       <!-- Kaart 10 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <!-- placeholder avatar -->
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Jens Van Werde</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">voorzitter</p>
+      </div>
+    </div>
+
+    <!-- Kaart 11 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Peter Vandersanden</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">secretaris</p>
+      </div>
+    </div>
+
+    <!-- Kaart 12 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Margo Van Baelen</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">penningmeester</p>
+      </div>
+    </div>
+
+       <!-- Kaart 13 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <!-- placeholder avatar -->
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Jens Van Werde</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">voorzitter</p>
+      </div>
+    </div>
+
+    <!-- Kaart 14 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Peter Vandersanden</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">secretaris</p>
+      </div>
+    </div>
+
+    <!-- Kaart 15 -->
+    <div class="rounded-2xl ring-2 ring-blue-500 p-5 shadow bg-white">
+      <div class="bg-gray-100 rounded-xl flex items-center justify-center h-40">
+        <svg class="w-20 h-20 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 12a5 5 0 100-10 5 5 0 000 10Zm0 2c-4.418 0-8 2.015-8 4.5V21h16v-2.5c0-2.485-3.582-4.5-8-4.5z"/>
+        </svg>
+      </div>
+      <div class="text-center mt-4">
+        <p class="font-semibold">Margo Van Baelen</p>
+        <p class="text-xs text-blue-600 font-bold tracking-wide uppercase">penningmeester</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="bg-blue-500 text-white mt-20 py-10 text-center md:text-left">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6 text-center md:text-left">
+      <div class="space-y-4 text-center md:text-left">
+        <h1 class="font-bold text-lg">HANDBAL OVERPELT</h1>
+        <p>Handbalclub Overpelt is een club voor iedereen. We willen sportiviteit, plezier en vriendschap combineren op én naast het veld.</p>
+        <p class="mt-4">© <span id="currentYear"></span> HANDBAL OVERPELT</p>
+        <p>Made by <a href="https://freekboes.github.io/" class="text-black border-b-2 border-transparent hover:border-white transition">Freek</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PLOEGEN</h1>
+        <p><a href="Heren1.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 1</a></p>
+        <p><a href="Heren2.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 2</a></p>
+        <p><a href="J18.html" class="border-b-2 border-transparent hover:border-white transition">J18</a></p>
+        <p><a href="J16.html" class="border-b-2 border-transparent hover:border-white transition">J16</a></p>
+        <p><a href="J14.html" class="border-b-2 border-transparent hover:border-white transition">J14</a></p>
+        <p><a href="J12.html" class="border-b-2 border-transparent hover:border-white transition">J12</a></p>
+        <p><a href="J10.html" class="border-b-2 border-transparent hover:border-white transition">J10</a></p>
+        <p><a href="J08.html" class="border-b-2 border-transparent hover:border-white transition">J08</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PAGINA'S</h1>
+        <p><a href="index.html" class="border-b-2 border-transparent hover:border-white transition">HOME</a></p>
+        <p><a href="Foto's.html" class="border-b-2 border-transparent hover:border-white transition">FOTO'S</a></p>
+        <p><a href="Activiteiten.html" class="border-b-2 border-transparent hover:border-white transition">ACTIVITEITEN</a></p>
+        <p><a href="clubinfo.html" class="border-b-2 border-transparent hover:border-white transition">CLUBINFO</a></p>
+        <p><a href="FAQ.html" class="border-b-2 border-transparent hover:border-white transition">FAQ</a></p>
+        <p><a href="Contact.html" class="border-b-2 border-transparent hover:border-white transition">CONTACT</a></p>
+        <p><a href="Formulieren.html" class="border-b-2 border-transparent hover:border-white transition">FORMULIEREN</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">CONTACT</h1>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/Misffw5QqNctv7zG6" class="border-b-2 border-transparent hover:border-white transition">
+          JEUGDLAAN 8 PELT, 3900</a>
+        </p>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@handbalcluboverpelt.be" class="border-b-2 border-transparent hover:border-white transition">info@handbalcluboverpelt.be</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+.group:hover .group-hover\:flex {
+  display: flex;
+}
+
+/* Vertraging voor dropdown menu */
+.dropdown-delay {
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.group:hover .dropdown-delay {
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-delay {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* Infinite sponsor marquee */
+.marquee-track {
+  width: max-content;              /* past zich aan aan de dubbele inhoud */
+  animation: sponsors-scroll 25s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;    /* pauze bij hover */
+}
+
+/* Scroll van rechts naar links over 100% van de eerste rij breedte */
+@keyframes sponsors-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Optioneel: iets meer “lucht” rond logo’s op mobiel */
+@media (max-width: 768px) {
+  .marquee-track > div { gap: 2rem; }
+}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Handbal Overpelt</title>
+  <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style1.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+<!-- Navigatie -->
+  <nav class="text-black p-4 shadow-md bg-white sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-xl font-bold">
+        <a href="index.html">HANDBAL <span class="text-blue-500">OVERPELT</span></a>
+      </div>
+
+      <!-- Hamburger knop -->
+      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop navigatie -->
+<ul class="hidden md:flex font-semibold items-center space-x-2">
+  <li><a href="index.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">HOME</a></li>
+  <li><a href="Foto's.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FOTO'S</a></li>
+  <li class="relative group">
+  <button class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200 gap-1">
+    PLOEGEN
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+  <ul class="absolute left-0 dropdown-delay group-hover:flex flex-col bg-white text-black rounded shadow-md mt-2 w-40 z-50">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 2</a></li>
+    <li><a href="J18.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J18</a></li>
+    <li><a href="J16.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J16</a></li>
+    <li><a href="J14.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J14</a></li>
+    <li><a href="J12.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J12</a></li>
+    <li><a href="J10.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J10</a></li>
+    <li><a href="J08.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J08</a></li>
+    <li><a href="Fithandbal.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Fithandbal</a></li>
+  </ul>
+</li>
+  <li><a href="Activiteiten.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">ACTIVITEITEN</a></li>
+  <li><a href="clubinfo.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CLUBINFO</a></li>
+  <li><a href="FAQ.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FAQ</a></li>
+  <li><a href="Contact.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CONTACT</a></li>
+</ul>
+    </div>
+
+    <!-- Mobiele navigatie -->
+    <ul id="mobile-menu" class="md:hidden mt-4 space-y-2 text-center font-semibold">
+      <li><a href="index.html" class="block px-4 py-2 hover:text-blue-500">HOME</a></li>
+      <li><a href="Foto's.html" class="block px-4 py-2 hover:text-blue-500">FOTO'S</a></li>
+     <li>
+  <button type="button"
+          onclick="toggleSubmenu()"
+          class="w-full px-4 py-2 hover:text-blue-500 flex justify-center items-center gap-2">
+    PLOEGEN
+    <svg id="submenuIcon" class="w-4 h-4 transform transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.58l3.71-4.35a.75.75 0 111.14.98l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+
+  <!-- Mobiel submenu -->
+  <ul id="mobile-submenu" class="hidden space-y-1 text-center">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:text-blue-500">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:text-blue-500">HEREN 2</a></li>
+    <li><a href="J18.html"    class="block px-4 py-2 hover:text-blue-500">J18</a></li>
+    <li><a href="J16.html"    class="block px-4 py-2 hover:text-blue-500">J16</a></li>
+    <li><a href="J14.html"    class="block px-4 py-2 hover:text-blue-500">J14</a></li>
+    <li><a href="J12.html"    class="block px-4 py-2 hover:text-blue-500">J12</a></li>
+    <li><a href="J10.html"    class="block px-4 py-2 hover:text-blue-500">J10</a></li>
+    <li><a href="J08.html"    class="block px-4 py-2 hover:text-blue-500">J08</a></li>
+    <li><a href="Fithandbal.html"    class="block px-4 py-2 hover:text-blue-500">Fithandbal</a></li>
+  </ul>
+</li>
+      <li><a href="Activiteiten.html" class="block px-4 py-2 hover:text-blue-500">ACTIVITEITEN</a></li>
+      <li><a href="clubinfo.html" class="block px-4 py-2 hover:text-blue-500">CLUBINFO</a></li>
+      <li><a href="FAQ.html" class="block px-4 py-2 hover:text-blue-500">FAQ</a></li>
+      <li><a href="Contact.html" class="block px-4 py-2 hover:text-blue-500">CONTACT</a></li>
+    </ul>
+  </nav>
+
+ <!-- Contactgegevens-sectie -->
+<section class="py-16 bg-gray-50 text-gray-800">
+  <div class="max-w-5xl mx-auto px-4 bg-gray-50 text-gray-800">
+    
+    <!-- Titel en introductie -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-blue-500">Welkom op onze contactpagina</h2>
+      <p class="mt-4 text-gray-800">
+        Heb je vragen, opmerkingen of wil je meer informatie? 
+        Neem gerust contact met ons op via onderstaande gegevens.
+      </p>
+    </div>
+
+    <!-- Contactblokken -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Adres -->
+      <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+        <div class="flex items-center justify-center gap-2">
+          <i class="fa-solid fa-location-dot text-blue-500 text-2xl"></i>
+          <h3 class="text-xl font-bold text-gray-800">Adres</h3>
+        </div>
+        <p class="mt-2 text-gray-600 text-center">JEUGDLAAN 8, PELT 3900</p>
+      </div>
+
+      <!-- Email -->
+      <div class="flex flex-col items-center bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+        <div class="flex items-center justify-center gap-2">
+          <i class="fa-solid fa-envelope text-blue-500 text-2xl"></i>
+          <h3 class="text-xl font-bold text-gray-800">Email</h3>
+        </div>
+        <p class="mt-2 text-gray-600 text-center">
+          <a href="mailto:info@handbalcluboverpelt.be" class="text-blue-500 hover:underline">
+            info@handbalcluboverpelt.be
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- Map-sectie met verlengde hoogte -->
+  <section class="pb-16 px-4 bg-gray-50 text-gray-800">
+    <div class="max-w-5xl mx-auto">
+      <div class="w-full h-80 rounded-lg overflow-hidden shadow-lg">
+        <iframe class="w-full h-full"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.278185936438!2d5.372561115926367!3d51.21422757965478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c2b7d1d7f3e1%3A0x28e3c8fcbba11a8e!2sJeugdlaan%208%2C%203900%20Pelt!5e0!3m2!1snl!2sbe!4v1582123456789!5m2!1snl!2sbe"
+          frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer -->
+  <footer class="bg-blue-500 text-white mt-20 py-10 text-center md:text-left">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6 text-center md:text-left">
+      <div class="space-y-4 text-center md:text-left">
+        <h1 class="font-bold text-lg">HANDBAL OVERPELT</h1>
+        <p>Handbalclub Overpelt is een club voor iedereen. We willen sportiviteit, plezier en vriendschap combineren op én naast het veld.</p>
+        <p class="mt-4">© <span id="currentYear"></span> HANDBAL OVERPELT</p>
+        <p>Made by <a href="https://freekboes.github.io/" class="text-black border-b-2 border-transparent hover:border-white transition">Freek</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PLOEGEN</h1>
+        <p><a href="Heren1.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 1</a></p>
+        <p><a href="Heren2.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 2</a></p>
+        <p><a href="J18.html" class="border-b-2 border-transparent hover:border-white transition">J18</a></p>
+        <p><a href="J16.html" class="border-b-2 border-transparent hover:border-white transition">J16</a></p>
+        <p><a href="J14.html" class="border-b-2 border-transparent hover:border-white transition">J14</a></p>
+        <p><a href="J12.html" class="border-b-2 border-transparent hover:border-white transition">J12</a></p>
+        <p><a href="J10.html" class="border-b-2 border-transparent hover:border-white transition">J10</a></p>
+        <p><a href="J08.html" class="border-b-2 border-transparent hover:border-white transition">J08</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PAGINA'S</h1>
+        <p><a href="index.html" class="border-b-2 border-transparent hover:border-white transition">HOME</a></p>
+        <p><a href="Foto's.html" class="border-b-2 border-transparent hover:border-white transition">FOTO'S</a></p>
+        <p><a href="Activiteiten.html" class="border-b-2 border-transparent hover:border-white transition">ACTIVITEITEN</a></p>
+        <p><a href="clubinfo.html" class="border-b-2 border-transparent hover:border-white transition">CLUBINFO</a></p>
+        <p><a href="FAQ.html" class="border-b-2 border-transparent hover:border-white transition">FAQ</a></p>
+        <p><a href="Contact.html" class="border-b-2 border-transparent hover:border-white transition">CONTACT</a></p>
+        <p><a href="Formulieren.html" class="border-b-2 border-transparent hover:border-white transition">FORMULIEREN</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">CONTACT</h1>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/Misffw5QqNctv7zG6" class="border-b-2 border-transparent hover:border-white transition">
+          JEUGDLAAN 8 PELT, 3900</a>
+        </p>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@handbalcluboverpelt.be" class="border-b-2 border-transparent hover:border-white transition">info@handbalcluboverpelt.be</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

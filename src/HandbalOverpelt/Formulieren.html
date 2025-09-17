@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style1.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+   <!-- Navigatie -->
+  <nav class="text-black p-4 shadow-md bg-white sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-xl font-bold">
+        <a href="index.html">HANDBAL <span class="text-blue-500">OVERPELT</span></a>
+      </div>
+
+      <!-- Hamburger knop -->
+      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop navigatie -->
+<ul class="hidden md:flex font-semibold items-center space-x-2">
+  <li><a href="index.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">HOME</a></li>
+  <li><a href="Foto's.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FOTO'S</a></li>
+  <li class="relative group">
+  <button class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200 gap-1">
+    PLOEGEN
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+  <ul class="absolute left-0 dropdown-delay group-hover:flex flex-col bg-white text-black rounded shadow-md mt-2 w-40 z-50">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 2</a></li>
+    <li><a href="J18.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J18</a></li>
+    <li><a href="J16.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J16</a></li>
+    <li><a href="J14.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J14</a></li>
+    <li><a href="J12.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J12</a></li>
+    <li><a href="J10.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J10</a></li>
+    <li><a href="J08.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J08</a></li>
+    <li><a href="Fithandbal.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Fithandbal</a></li>
+  </ul>
+</li>
+  <li><a href="Activiteiten.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">ACTIVITEITEN</a></li>
+  <li><a href="clubinfo.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CLUBINFO</a></li>
+  <li><a href="FAQ.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FAQ</a></li>
+  <li><a href="Contact.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CONTACT</a></li>
+</ul>
+    </div>
+
+    <!-- Mobiele navigatie -->
+    <ul id="mobile-menu" class="md:hidden mt-4 space-y-2 text-center font-semibold">
+      <li><a href="index.html" class="block px-4 py-2 hover:text-blue-500">HOME</a></li>
+      <li><a href="Foto's.html" class="block px-4 py-2 hover:text-blue-500">FOTO'S</a></li>
+     <li>
+  <button type="button"
+          onclick="toggleSubmenu()"
+          class="w-full px-4 py-2 hover:text-blue-500 flex justify-center items-center gap-2">
+    PLOEGEN
+    <svg id="submenuIcon" class="w-4 h-4 transform transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.58l3.71-4.35a.75.75 0 111.14.98l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+
+  <!-- Mobiel submenu -->
+  <ul id="mobile-submenu" class="hidden space-y-1 text-center">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:text-blue-500">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:text-blue-500">HEREN 2</a></li>
+    <li><a href="J18.html"    class="block px-4 py-2 hover:text-blue-500">J18</a></li>
+    <li><a href="J16.html"    class="block px-4 py-2 hover:text-blue-500">J16</a></li>
+    <li><a href="J14.html"    class="block px-4 py-2 hover:text-blue-500">J14</a></li>
+    <li><a href="J12.html"    class="block px-4 py-2 hover:text-blue-500">J12</a></li>
+    <li><a href="J10.html"    class="block px-4 py-2 hover:text-blue-500">J10</a></li>
+    <li><a href="J08.html"    class="block px-4 py-2 hover:text-blue-500">J08</a></li>
+    <li><a href="Fithandbal.html"    class="block px-4 py-2 hover:text-blue-500">Fithandbal</a></li>
+  </ul>
+</li>
+      <li><a href="Activiteiten.html" class="block px-4 py-2 hover:text-blue-500">ACTIVITEITEN</a></li>
+      <li><a href="clubinfo.html" class="block px-4 py-2 hover:text-blue-500">CLUBINFO</a></li>
+      <li><a href="FAQ.html" class="block px-4 py-2 hover:text-blue-500">FAQ</a></li>
+      <li><a href="Contact.html" class="block px-4 py-2 hover:text-blue-500">CONTACT</a></li>
+    </ul>
+  </nav>
+
+<div class="flex flex-col md:flex-row items-center justify-center h-auto md:h-screen">
+    <!-- Tekst -->
+    <header class="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start h-full space-y-6 p-6 text-center md:text-left">
+        <div class="w-full md:w-3/4">
+            <h1 class="text-3xl font-bold leading-tight">
+                BELANGRIJKE <span class="text-blue-500">FORMULIEREN</span>
+            </h1>
+            <p class="font-bold">HIER VIND JE DE BELANGRIJKSTE FORMULIEREN</p>
+            <div class="flex justify-center md:justify-start space-x-4 pt-2">
+                <a href="#ongeval"
+                    class="bg-blue-500 text-white font-semibold border-2 px-4 py-2 rounded-md transition-500 ease-in-out hover:bg-blue-700">
+                    BEKIJK HIER
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Afbeelding -->
+    <aside class="w-full md:w-1/2 flex justify-center items-center">
+        <img class="w-full h-auto object-cover" src="resources/4.jpg" alt="Ploegfoto">
+    </aside>
+</div>
+
+    <div class="" id="ongeval">
+        <div>
+            <h1 class="text-3xl font-bold text-blue-500 pl-10 pt-10">SPORTONGEVALLEN</h1>
+        </div>
+
+        <div class="pl-10 pt-5">
+            <!-- Sportongeval formulier kaart -->
+            <div class="max-w-sm p-6 border-2 border-blue-500 rounded-xl shadow-lg bg-white ">
+                <h2 class="text-xl font-semibold">Sportongeval formulier</h2>
+                <p class="mt-2 text-gray-700">Je kunt dit formulier downloaden op het moment dat er een sportongeval
+                    heeft plaatsgevonden. Dit formulier helpt bij het vastleggen van de nodige informatie over het
+                    incident.</p>
+                <div class="flex justify-between items-center mt-4">
+                    <a href="resources/Gegevens sportongeval.docx" class="text-blue-500 font-medium">Download</a>
+                    <span
+                        class="text-blue-500 border border-blue-500 rounded-full w-6 h-6 flex items-center justify-center text-sm">i</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h1 class="text-3xl font-bold text-blue-500 pl-10 pt-10">TUSSENKOMST ZIEKENFONDS</h1>
+        </div>
+
+        <div class="pl-4">
+            <!-- Ziekenfonds kaarten -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+                <div
+                    class="max-w-sm p-6 border-2 border-blue-500 rounded-xl shadow-lg bg-white flex flex-col justify-between">
+                    <h2 class="text-xl font-semibold">Christelijke mutualiteit</h2>
+                    <p class="mt-2 text-gray-700">Je kunt dit formulier downloaden om een tussenkomst van het
+                        ziekenfonds aan te vragen. Hiermee kun je een vergoeding ontvangen voor de gemaakte medische
+                        kosten.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <a href="https://www.cm.be/nl/diensten-en-voordelen/sportvereniging" class="text-blue-500 font-medium">Download</a>
+                        <img src="resources/cm-logo.png" alt="CM Logo" class="w-12">
+                    </div>
+                </div>
+
+                <div
+                    class="max-w-sm p-6 border-2 border-blue-500 rounded-xl shadow-lg bg-white flex flex-col justify-between">
+                    <h2 class="text-xl font-semibold">Liberale mutualiteit</h2>
+                    <p class="mt-2 text-gray-700">Je kunt dit formulier downloaden om een tussenkomst van het
+                        ziekenfonds aan te vragen. Hiermee kun je een vergoeding ontvangen voor de gemaakte medische
+                        kosten.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <a href="https://www.lm-ml.be/nl/voordelen-en-diensten/terugbetaling-sportprikkel" class="text-blue-500 font-medium">Download</a>
+                        <img src="resources/lm-logo.png" alt="LM Logo" class="w-10">
+                    </div>
+                </div>
+
+                <div
+                    class="max-w-sm p-6 border-2 border-blue-500 rounded-xl shadow-lg bg-white flex flex-col justify-between">
+                    <h2 class="text-xl font-semibold">De voorzorg (Solaris)</h2>
+                    <p class="mt-2 text-gray-700">Je kunt dit formulier downloaden om een tussenkomst van het
+                        ziekenfonds aan te vragen. Hiermee kun je een vergoeding ontvangen voor de gemaakte medische
+                        kosten.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <a href="https://www.solidaris-vlaanderen.be/regiokeuze?nid=0&src=/terugbetaling-sport" class="text-blue-500 font-medium">Download</a>
+                        <img src="resources/voorzorg-logo.png" alt="De Voorzorg Logo" class="w-10">
+                    </div>
+                </div>
+
+                <div
+                    class="max-w-sm p-6 border-2 border-blue-500 rounded-xl shadow-lg bg-white flex flex-col justify-between">
+                    <h2 class="text-xl font-semibold">Vlaams Neutraal Ziekenfonds</h2>
+                    <p class="mt-2 text-gray-700">Je kunt dit formulier downloaden om een tussenkomst van het
+                        ziekenfonds aan te vragen. Hiermee kun je een vergoeding ontvangen voor de gemaakte medische
+                        kosten.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <a href="https://www.vnz.be/voordelen-terugbetalingen/sport-fitnessclub/" class="text-blue-500 font-medium">Download</a>
+                        <img src="resources/vnz-logo.png" alt="VNZ Logo" class="w-14">
+                    </div>
+                </div>
+
+                <div
+                    class="max-w-sm p-6 border-2 border-blue-500 rounded-xl shadow-lg bg-white flex flex-col justify-between">
+                    <h2 class="text-xl font-semibold">Onafhankelijk Ziekenfonds (Helan)</h2>
+                    <p class="mt-2 text-gray-700">Je kunt dit formulier downloaden om een tussenkomst van het
+                        ziekenfonds aan te vragen. Hiermee kun je een vergoeding ontvangen voor de gemaakte medische
+                        kosten.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <a href="https://www.helan.be/nl/ons-aanbod/ziekenfonds/voordelen-en-terugbetalingen/lidgeld-sportclub-jeugdbeweging/#voordeel" class="text-blue-500 font-medium">Download</a>
+                        <img src="resources/oz-logo.png" alt="OZ Logo" class="w-14">
+                    </div>
+                </div>
+
+                <div
+                    class="max-w-sm p-6 border-2 border-blue-500 rounded-xl shadow-lg bg-white flex flex-col justify-between">
+                    <h2 class="text-xl font-semibold">Partena (Helan)</h2>
+                    <p class="mt-2 text-gray-700">Je kunt dit formulier downloaden om een tussenkomst van het
+                        ziekenfonds aan te vragen. Hiermee kun je een vergoeding ontvangen voor de gemaakte medische
+                        kosten.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <a href="https://www.helan.be/nl/ons-aanbod/ziekenfonds/voordelen-en-terugbetalingen/lidgeld-sportclub-jeugdbeweging/#voordeel" class="text-blue-500 font-medium">Download</a>
+                        <img src="resources/partena-logo.png" alt="Partena Logo" class="w-16">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- Footer -->
+  <footer class="bg-blue-500 text-white mt-20 py-10 text-center md:text-left">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6 text-center md:text-left">
+      <div class="space-y-4 text-center md:text-left">
+        <h1 class="font-bold text-lg">HANDBAL OVERPELT</h1>
+        <p>Handbalclub Overpelt is een club voor iedereen. We willen sportiviteit, plezier en vriendschap combineren op én naast het veld.</p>
+        <p class="mt-4">© <span id="currentYear"></span> HANDBAL OVERPELT</p>
+        <p>Made by <a href="https://freekboes.github.io/" class="text-black border-b-2 border-transparent hover:border-white transition">Freek</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PLOEGEN</h1>
+        <p><a href="Heren1.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 1</a></p>
+        <p><a href="Heren2.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 2</a></p>
+        <p><a href="J18.html" class="border-b-2 border-transparent hover:border-white transition">J18</a></p>
+        <p><a href="J16.html" class="border-b-2 border-transparent hover:border-white transition">J16</a></p>
+        <p><a href="J14.html" class="border-b-2 border-transparent hover:border-white transition">J14</a></p>
+        <p><a href="J12.html" class="border-b-2 border-transparent hover:border-white transition">J12</a></p>
+        <p><a href="J10.html" class="border-b-2 border-transparent hover:border-white transition">J10</a></p>
+        <p><a href="J08.html" class="border-b-2 border-transparent hover:border-white transition">J08</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PAGINA'S</h1>
+        <p><a href="index.html" class="border-b-2 border-transparent hover:border-white transition">HOME</a></p>
+        <p><a href="Foto's.html" class="border-b-2 border-transparent hover:border-white transition">FOTO'S</a></p>
+        <p><a href="Activiteiten.html" class="border-b-2 border-transparent hover:border-white transition">ACTIVITEITEN</a></p>
+        <p><a href="clubinfo.html" class="border-b-2 border-transparent hover:border-white transition">CLUBINFO</a></p>
+        <p><a href="FAQ.html" class="border-b-2 border-transparent hover:border-white transition">FAQ</a></p>
+        <p><a href="Contact.html" class="border-b-2 border-transparent hover:border-white transition">CONTACT</a></p>
+        <p><a href="Formulieren.html" class="border-b-2 border-transparent hover:border-white transition">FORMULIEREN</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">CONTACT</h1>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/Misffw5QqNctv7zG6" class="border-b-2 border-transparent hover:border-white transition">
+          JEUGDLAAN 8 PELT, 3900</a>
+        </p>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@handbalcluboverpelt.be" class="border-b-2 border-transparent hover:border-white transition">info@handbalcluboverpelt.be</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

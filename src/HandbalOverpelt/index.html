@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Handbal Overpelt</title>
+  <link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style1.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navigatie -->
+  <!-- Navigatie -->
+  <nav class="text-black p-4 shadow-md bg-white sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-xl font-bold">
+        <a href="index.html">HANDBAL <span class="text-blue-500">OVERPELT</span></a>
+      </div>
+
+      <!-- Hamburger knop -->
+      <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+
+      <!-- Desktop navigatie -->
+<ul class="hidden md:flex font-semibold items-center space-x-2">
+  <li><a href="index.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">HOME</a></li>
+  <li><a href="Foto's.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FOTO'S</a></li>
+  <li class="relative group">
+  <button class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200 gap-1">
+    PLOEGEN
+    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+  <ul class="absolute left-0 dropdown-delay group-hover:flex flex-col bg-white text-black rounded shadow-md mt-2 w-40 z-50">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">HEREN 2</a></li>
+    <li><a href="J18.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J18</a></li>
+    <li><a href="J16.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J16</a></li>
+    <li><a href="J14.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J14</a></li>
+    <li><a href="J12.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J12</a></li>
+    <li><a href="J10.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J10</a></li>
+    <li><a href="J08.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">J08</a></li>
+    <li><a href="Fithandbal.html" class="block px-4 py-2 hover:bg-blue-100 hover:text-blue-600 transition">Fithandbal</a></li>
+  </ul>
+</li>
+  <li><a href="Activiteiten.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">ACTIVITEITEN</a></li>
+  <li><a href="clubinfo.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CLUBINFO</a></li>
+  <li><a href="FAQ.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">FAQ</a></li>
+  <li><a href="Contact.html" class="flex items-center px-2 py-2 border-b-2 border-transparent hover:border-blue-500 transition duration-200">CONTACT</a></li>
+</ul>
+    </div>
+
+    <!-- Mobiele navigatie -->
+    <ul id="mobile-menu" class="md:hidden mt-4 space-y-2 text-center font-semibold">
+      <li><a href="index.html" class="block px-4 py-2 hover:text-blue-500">HOME</a></li>
+      <li><a href="Foto's.html" class="block px-4 py-2 hover:text-blue-500">FOTO'S</a></li>
+     <li>
+  <button type="button"
+          onclick="toggleSubmenu()"
+          class="w-full px-4 py-2 hover:text-blue-500 flex justify-center items-center gap-2">
+    PLOEGEN
+    <svg id="submenuIcon" class="w-4 h-4 transform transition-transform duration-200" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.58l3.71-4.35a.75.75 0 111.14.98l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+    </svg>
+  </button>
+
+  <!-- Mobiel submenu -->
+  <ul id="mobile-submenu" class="hidden space-y-1 text-center">
+    <li><a href="Heren1.html" class="block px-4 py-2 hover:text-blue-500">HEREN 1</a></li>
+    <li><a href="Heren2.html" class="block px-4 py-2 hover:text-blue-500">HEREN 2</a></li>
+    <li><a href="J18.html"    class="block px-4 py-2 hover:text-blue-500">J18</a></li>
+    <li><a href="J16.html"    class="block px-4 py-2 hover:text-blue-500">J16</a></li>
+    <li><a href="J14.html"    class="block px-4 py-2 hover:text-blue-500">J14</a></li>
+    <li><a href="J12.html"    class="block px-4 py-2 hover:text-blue-500">J12</a></li>
+    <li><a href="J10.html"    class="block px-4 py-2 hover:text-blue-500">J10</a></li>
+    <li><a href="J08.html"    class="block px-4 py-2 hover:text-blue-500">J08</a></li>
+    <li><a href="Fithandbal.html"    class="block px-4 py-2 hover:text-blue-500">Fithandbal</a></li>
+  </ul>
+</li>
+      <li><a href="Activiteiten.html" class="block px-4 py-2 hover:text-blue-500">ACTIVITEITEN</a></li>
+      <li><a href="clubinfo.html" class="block px-4 py-2 hover:text-blue-500">CLUBINFO</a></li>
+      <li><a href="FAQ.html" class="block px-4 py-2 hover:text-blue-500">FAQ</a></li>
+      <li><a href="Contact.html" class="block px-4 py-2 hover:text-blue-500">CONTACT</a></li>
+    </ul>
+  </nav>
+
+
+<!-- Header (centraal uitgelijnd op mobiel) -->
+  <header class="flex flex-col md:flex-row items-center justify-between min-h-screen bg-gray-50 px-0 text-center md:text-left pt-12 sm:pt-0">
+    <div class="md:w-1/2 flex flex-col justify-center items-center md:items-start space-y-6 px-6 md:px-20">
+      <div class="w-full md:w-full">
+        <p class="text-lg font-bold">WELKOM OP ONZE WEBSITE!</p>
+        <h1 class="text-3xl font-bold leading-tight">
+          HEB JE ONZE NIEUWE <br />
+          <span class="text-blue-500">PLOEGFOTO'S</span> AL GEZIEN?
+        </h1>
+        <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 pt-4 justify-center md:justify-start">
+          <a href="Heren1.html" class="bg-blue-500 text-white font-semibold border-2 px-4 py-2 rounded-md transition duration-300 hover:bg-blue-700">PLOEGFOTO</a>
+          <a href="Activiteiten.html" class="bg-white text-blue-500 font-semibold border-blue-500 border-2 px-4 py-2 rounded-md hover:bg-gray-100">ACTIVITEITEN</a>
+        </div>
+        <div class="flex space-x-4 pt-4 justify-center md:justify-start">
+          <a href="https://www.facebook.com/profile.php?id=100063618789208"><img src="resources/Facebook.png" alt="Facebook" class="w-9 h-9 bg-blue-500 p-1 rounded-xl hover:bg-blue-600" /></a>
+          <a href="https://www.instagram.com/hc_overpelt/"><img src="resources/Instagram.png" alt="Instagram" class="w-9 h-9 p-1 rounded-xl bg-blue-500 hover:bg-blue-600" /></a>
+        </div>
+        <p class="text-lg font-semibold mt-4 inline-block">
+  <a href="clubinfo.html" class="border-b-2 border-transparent hover:border-blue-500 transition">MEER INFO</a>
+</p>
+
+      </div>
+    </div>
+
+    <aside class="md:w-1/2 mt-10 md:mt-0 h-80 md:h-screen">
+      <img class="w-full h-full object-cover" src="resources/Home-foto.jpg" alt="Ploegfoto" />
+    </aside>
+  </header>
+
+  <!-- Interessante Info -->
+  <section class="pt-20  bg-gray-50">
+    <div class="text-center mb-12">
+      <h2 class="text-blue-500 text-xl md:text-2xl tracking-widest uppercase">Interessante info</h2>
+      <h1 class="text-3xl md:text-4xl font-extrabold">Wat maakt Handbal Overpelt uniek?</h1>
+      <p class="text-gray-600 mt-4 max-w-xl mx-auto font-medium">Onze club draait niet alleen om sport, maar ook om inzet, geschiedenis en verbondenheid met de gemeenschap. Ontdek hieronder wat ons bijzonder maakt!</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 max-w-6xl mx-auto">
+      <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 p-6 text-center flex flex-col items-center">
+        <img src="resources/Interessant_1.png" alt="Competitie" class="h-40 object-contain mb-4" />
+        <h3 class="text-blue-500 text-xl font-semibold mb-2">Competitie</h3>
+        <p class="text-gray-700 font-medium">Onze Heren 1 spelen in <strong>Liga 2</strong> en strijden elke week met volle inzet voor de overwinning.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 p-6 text-center flex flex-col items-center">
+        <img src="resources/Interessant_2.png" alt="Geschiedenis" class="h-40 object-contain mb-4" />
+        <h3 class="text-blue-500 text-xl font-semibold mb-2">Geschiedenis</h3>
+        <p class="text-gray-700 font-medium">Handbal Overpelt bestaat al meer dan <strong>20 jaar</strong> en groeide uit tot een vaste waarde in de regio.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 p-6 text-center flex flex-col items-center">
+        <img src="resources/Interessant_3.png" alt="Sociale Media" class="h-40 object-contain mb-4" />
+        <h3 class="text-blue-500 text-xl font-semibold mb-2">Sociale Media</h3>
+        <p class="text-gray-700 font-medium">Volg ons op sociale media en blijf op de hoogte van wedstrijden, activiteiten en sfeerbeelden!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Belangrijke info -->
+<section class="pt-20 bg-gray-50">
+  <!-- Hoofdtitel -->
+  <div class="text-center mb-12">
+    <h1 class="text-blue-500 font-bold text-3xl uppercase">Belangrijke info</h1>
+  </div>
+
+  <!-- De drie elementen -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 px-6 text-center items-stretch">
+    
+    <!-- Kalender -->
+    <div class="flex flex-col bg-white rounded-md shadow-md p-4">
+      <h2 class="font-bold text-2xl mb-2">Kalender</h2>
+      <p class="mb-4">Bekijk hier onze kalender met wedstrijden en evenementen.</p>
+      <div class="flex-grow">
+        <iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FBrussels&amp;mode=AGENDA&amp;title=Handbal%20Overpelt&amp;showNav=1&amp;showDate=1&amp;showPrint=1&amp;showCalendars=1&amp;showTabs=1&amp;showTz=1&amp;src=ODdrcGgzb3B2ZHVzNGJsZWs1YXI3YTRwMzFnaDA5NWtAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=Zmd0dGUxcHJyajE3dnJtMXUxYTlucjI3YWs4cW0wbGJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=ZnFhZjdtbG82ZnBudXJnZ2dlb20wMGF2MDhla3V0aWxAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=MXNmcGZia2RxZzRzNW4yajM2MmdlYWtlaDJmOG41ZjhAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=dWsyMzNzdTRjMmx2MmkxdTY0ODM3MnYyZjlpbDM1YnBAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=OGlpNjY1aXQwOTBwazQxamZrYXBwOXNpZnA4MzEydXJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=dmpxa25rZmMzOWNzN204OGY2MWR2dm9oOG01NjhwOG5AaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;src=M2ptNmZvZHF2ZzM5NmwzMDV0MDlrbWdtMm4yYzRhMW9AaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&amp;color=%23EF6C00&amp;color=%23F6BF26&amp;color=%23A79B8E&amp;color=%23A79B8E&amp;color=%23A79B8E&amp;color=%23A79B8E&amp;color=%23A79B8E&amp;color=%23A79B8E"
+          style="border:solid 1px #777" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+
+<!-- Rangschikking (vervang je huidige middelste kolom hiermee) -->
+<div class="flex flex-col rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-blue-600 to-blue-500 text-white min-h-[520px]">
+  <!-- Kop -->
+  <div class="px-5 py-4 border-b border-white/20">
+    <h3 class="text-2xl font-semibold uppercase tracking-widest">Rangschikking</h3>
+  </div>
+
+  <!-- Lijst met ploegen -->
+  <div class="flex-1 px-2 py-3">
+    <ul class="space-y-1">
+      <li>
+        <a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&serie_id=651&serie_tab=ranking"
+           class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition">
+          <span class="border-b-2 border-transparent group-hover:border-white transition">HEREN 1</span>
+          <span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition">
+            <!-- pijltje -->
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&serie_id=656&serie_tab=ranking"
+           class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition">
+          <span class="border-b-2 border-transparent group-hover:border-white transition">HEREN 2</span>
+          <span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition">
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+            </svg>
+          </span>
+        </a>
+      </li>
+
+      <!-- Vul je overige jeugdreeksen aan (links zijn placeholders) -->
+      <li><a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&serie_id=711&serie_tab=ranking" class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition">
+        <span class="border-b-2 border-transparent group-hover:border-white transition">J18</span>
+        <span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+        </span>
+      </a></li>
+      <li><a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&serie_id=724&serie_tab=ranking" class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition"><span class="border-b-2 border-transparent group-hover:border-white transition">J16</span><span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></a></li>
+      <li><a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&serie_id=743&serie_tab=ranking" class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition"><span class="border-b-2 border-transparent group-hover:border-white transition">J14</span><span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></a></li>
+      <li><a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&serie_id=757&serie_tab=ranking" class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition"><span class="border-b-2 border-transparent group-hover:border-white transition">J12</span><span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></a></li>
+      <li><a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&competition_id=110&serie_id=757" class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition"><span class="border-b-2 border-transparent group-hover:border-white transition">J10</span><span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></a></li>
+      <li><a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17&competition_id=110&serie_id=757" class="group flex items-center justify-between rounded-lg px-3 py-2 hover:bg-white/10 transition"><span class="border-b-2 border-transparent group-hover:border-white transition">J08</span><span class="ml-3 inline-flex items-center opacity-75 group-hover:opacity-100 transform group-hover:translate-x-0.5 transition"><svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg></span></a></li>
+    </ul>
+  </div>
+
+  <!-- CTA onderaan (optioneel, houdt de hoogte mooi in balans) -->
+  <div class="px-5 py-3 border-t border-white/20">
+    <a href="https://www.handballbelgium.be/index.php/competition/vhv-competitions/?season_id=5&organization_id=2&start_date=2025-08-11&end_date=2025-08-17" class="inline-flex items-center gap-2 border-b-2 border-transparent hover:border-white transition">
+      Volledige rangschikking
+      <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l5 5a1 1 0 010 1.414l-5 5a1 1 0 11-1.414-1.414L13.586 10H4a1 1 0 110-2h9.586l-3.293-3.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+
+    <!-- Open trainingsdagen -->
+<div class="flex flex-col bg-white rounded-md shadow-md p-4">
+  <h2 class="font-bold text-2xl mb-2">Open Trainingsdagen</h2>
+  <p class="text-gray-600 mb-4">
+    Nieuwe leden welkom! Kom vrijblijvend proeven van handbal tijdens onze open trainingen.
+  </p>
+  <div class="flex-grow flex items-center justify-center">
+    <img 
+      src="resources/handbal_mei.png" 
+      alt="opentraingsdagen poster"
+      class="mt-4 mx-auto w-64 h-auto rounded-md shadow-lg cursor-pointer transition-transform duration-200 hover:scale-105"
+      onclick="openLightbox(this.src)"
+    />
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox" 
+     class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+     onclick="closeLightbox()">
+  <img id="lightbox-img" class="max-w-full max-h-full rounded-lg shadow-lg" />
+</div>
+
+  </div>
+</section>
+
+  <!-- Sponsors -->
+<section class="mt-20 bg-gray-50">
+  <div class="text-center font-bold">
+    <h1 class="text-blue-500 text-2xl">PARTNERS &amp; SPONSORS</h1>
+    <p class="text-3xl">ONZE BESTE SUPPORTERS</p>
+  </div>
+
+  <!-- Marquee container -->
+  <div class="relative overflow-hidden mt-6 py-4">
+    <!-- Spoor (dubbel) -->
+    <div class="marquee-track flex items-center gap-10">
+      <!-- Rij 1 -->
+      <div class="flex items-center gap-10 shrink-0">
+        <img src="resources/image (12).png" class="h-24 w-auto object-contain" alt="Sponsor 1" />
+        <img src="resources/Sport_Vlaanderen_logo.png" class="h-24 w-auto object-contain" alt="Sport Vlaanderen" />
+        <img src="resources/images (1).png" class="h-24 w-auto object-contain" alt="Sponsor 3" />
+        <img src="resources/VSI vertic zwart.jpg" class="h-24 w-auto object-contain" alt="VSI" />
+        <img src="resources/NV Chrisal.png" class="h-24 w-auto object-contain" alt="Chrisal" />
+        <img src="resources/Geboers Sport.png" class="h-24 w-auto object-contain" alt="Geboers Sport" />
+        <img src="resources/Bouwonderneming Bongaerts.jpg" class="h-24 w-auto object-contain" alt="Bongaerts" />
+        <img src="resources/Fransen Keukens.png" class="h-24 w-auto object-contain" alt="Fransen Keukens" />
+        <img src="resources/ATC Reclame.jpeg.jpg" class="h-24 w-auto object-contain" alt="ATC Reclame" />
+      </div>
+
+      <!-- Rij 2 (exacte kopie voor naadloze loop) -->
+      <div class="flex items-center gap-10 shrink-0">
+        <img src="resources/image (12).png" class="h-24 w-auto object-contain" alt="Sponsor 1 (copy)" />
+        <img src="resources/Sport_Vlaanderen_logo.png" class="h-24 w-auto object-contain" alt="Sport Vlaanderen (copy)" />
+        <img src="resources/images (1).png" class="h-24 w-auto object-contain" alt="Sponsor 3 (copy)" />
+        <img src="resources/VSI vertic zwart.jpg" class="h-24 w-auto object-contain" alt="VSI (copy)" />
+        <img src="resources/NV Chrisal.png" class="h-24 w-auto object-contain" alt="Chrisal (copy)" />
+        <img src="resources/Geboers Sport.png" class="h-24 w-auto object-contain" alt="Geboers Sport (copy)" />
+        <img src="resources/Bouwonderneming Bongaerts.jpg" class="h-24 w-auto object-contain" alt="Bongaerts (copy)" />
+        <img src="resources/Fransen Keukens.png" class="h-24 w-auto object-contain" alt="Fransen Keukens (copy)" />
+        <img src="resources/ATC Reclame.jpeg.jpg" class="h-24 w-auto object-contain" alt="ATC Reclame (copy)" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer class="bg-blue-500 text-white mt-20 py-10 text-center md:text-left">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 px-6 text-center md:text-left">
+      <div class="space-y-4 text-center md:text-left">
+        <h1 class="font-bold text-lg">HANDBAL OVERPELT</h1>
+        <p>Handbalclub Overpelt is een club voor iedereen. We willen sportiviteit, plezier en vriendschap combineren op én naast het veld.</p>
+        <p class="mt-4">© <span id="currentYear"></span> HANDBAL OVERPELT</p>
+        <p>Made by <a href="https://freekboes.github.io/" class="text-black border-b-2 border-transparent hover:border-white transition">Freek</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PLOEGEN</h1>
+        <p><a href="Heren1.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 1</a></p>
+        <p><a href="Heren2.html" class="border-b-2 border-transparent hover:border-white transition">HEREN 2</a></p>
+        <p><a href="J18.html" class="border-b-2 border-transparent hover:border-white transition">J18</a></p>
+        <p><a href="J16.html" class="border-b-2 border-transparent hover:border-white transition">J16</a></p>
+        <p><a href="J14.html" class="border-b-2 border-transparent hover:border-white transition">J14</a></p>
+        <p><a href="J12.html" class="border-b-2 border-transparent hover:border-white transition">J12</a></p>
+        <p><a href="J10.html" class="border-b-2 border-transparent hover:border-white transition">J10</a></p>
+        <p><a href="J08.html" class="border-b-2 border-transparent hover:border-white transition">J08</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">PAGINA'S</h1>
+        <p><a href="index.html" class="border-b-2 border-transparent hover:border-white transition">HOME</a></p>
+        <p><a href="Foto's.html" class="border-b-2 border-transparent hover:border-white transition">FOTO'S</a></p>
+        <p><a href="Activiteiten.html" class="border-b-2 border-transparent hover:border-white transition">ACTIVITEITEN</a></p>
+        <p><a href="clubinfo.html" class="border-b-2 border-transparent hover:border-white transition">CLUBINFO</a></p>
+        <p><a href="FAQ.html" class="border-b-2 border-transparent hover:border-white transition">FAQ</a></p>
+        <p><a href="Contact.html" class="border-b-2 border-transparent hover:border-white transition">CONTACT</a></p>
+        <p><a href="Formulieren.html" class="border-b-2 border-transparent hover:border-white transition">FORMULIEREN</a></p>
+      </div>
+      <div class="space-y-2 text-center md:text-left">
+        <h1 class="font-bold text-lg">CONTACT</h1>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-location-dot"></i><a href="https://maps.app.goo.gl/Misffw5QqNctv7zG6" class="border-b-2 border-transparent hover:border-white transition">
+          JEUGDLAAN 8 PELT, 3900</a>
+        </p>
+        <p class="flex justify-center md:justify-start items-center gap-2">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:info@handbalcluboverpelt.be" class="border-b-2 border-transparent hover:border-white transition">info@handbalcluboverpelt.be</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

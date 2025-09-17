@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         containerRect = container.getBoundingClientRect();
         setPosition(e.clientX);
       });
-
     }
   
     // --------- Faster Favicon Rotation -----------
@@ -160,19 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 300);
       });
     }
-
   });
-
-// toggle mobiele navbar
-document.addEventListener('DOMContentLoaded', () => {
-  const btn  = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
-  if (btn && menu) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  }
-});
   
   // --------- Section Slide‑in Animations -----------
 const animatedSections = document.querySelectorAll('.js-animate');
@@ -195,13 +182,41 @@ animatedSections.forEach(sec => {
   sectionObserver.observe(sec);
 });
 
-// toggle mobiele navbar
-document.addEventListener('DOMContentLoaded', () => {
-  const btn  = document.getElementById('menu-btn');
-  const menu = document.getElementById('menu');
-  if (btn && menu) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-  }
-});
+// --------- Hamburger Menu Toggle -----------
+const navToggle  = document.getElementById('nav-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+
+function setMenu(open) {
+  if (!mobileMenu || !navToggle) return;
+  mobileMenu.classList.toggle('hidden', !open);
+  navToggle.setAttribute('aria-expanded', String(open));
+}
+
+if (navToggle && mobileMenu) {
+  // Toggle
+  navToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    setMenu(!isOpen);
+  });
+
+  // Sluiten bij klik op link
+  document.querySelectorAll('#mobile-menu .mobile-link').forEach(a => {
+    a.addEventListener('click', () => setMenu(false));
+  });
+
+  // Sluiten bij klik buiten
+  document.addEventListener('click', (e) => {
+    const inside = mobileMenu.contains(e.target) || navToggle.contains(e.target);
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    if (isOpen && !inside) setMenu(false);
+  });
+
+  // Sluiten met Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenu(false);
+  });
+
+  // Zorg dat we starten als dicht menu
+  setMenu(false);
+}

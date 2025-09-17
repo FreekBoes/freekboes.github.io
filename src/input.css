@@ -57,3 +57,81 @@
   .animate-slide-in-right {
     animation: slideInFromRight 0.8s ease-out forwards;
   }
+
+/* Simpele image slider */
+#slider-container {
+  position: relative;
+}
+
+#slider-foreground {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+#slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #1766A4; /* blauwe lijn */
+  cursor: ew-resize;
+  transform: translateX(-50%);
+}
+
+/* bolletje in het midden van de lijn */
+#slider-handle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  background: #1766A4;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+/* voorkom slepen/selecteren van afbeeldingen */
+#slider-container img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+  /* --- Simpele, strakke slider --- */
+  #slider-container { position: relative; }
+  #slider-foreground { position: absolute; inset: 0; overflow: hidden; }
+  #slider-handle {
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 3px;
+    background: #1766A4;
+    cursor: ew-resize;
+    transform: translateX(-50%);
+  }
+  #slider-handle::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 18px; height: 18px;
+    background: #1766A4;
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 4px rgba(0,0,0,.2);
+  }
+
+  /* voorkom rare select/drag issues op mobiel */
+  #slider-container img {
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+
+  /* zorg dat het dropdown NIET boven de content blijft liggen */
+  nav { position: sticky; top: 0; z-index: 50; }
+  #mobile-menu { z-index: 40; }
+
