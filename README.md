@@ -29,3 +29,13 @@
  - I've added a few things to the website.
  - The design is responsive.
  - Tried new things to make the website more enjoyable.
+
+ --------------------------
+ 
+ PATCH #3 - 17/09/2025
+ 
+ - Updated the website for a responsive design (Hamburger dropdown, etc)
+ - Changed the "my projects" design
+ - Added the HandbalOverpelt project
+
+--------------------------
