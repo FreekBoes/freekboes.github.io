@@ -11,7 +11,7 @@
 <body class="font-sans antialiased text-gray-900">
 
 <!-- NAV -->
-<nav class="sticky top-0 z-50 bg-[#1766A4] text-white shadow-md">
+<nav class="sticky top-0 z-50 bg-[#3c5d79] text-white shadow-md">
   <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
     <div class="text-xl font-semibold">Freek Boes</div>
 
@@ -40,7 +40,7 @@
 
   <!-- Mobile menu (alleen zichtbaar op klein scherm) -->
   <div id="mobile-menu"
-       class="hidden md:hidden absolute top-full left-0 w-full bg-[#1766A4] shadow-lg z-40">
+       class="hidden md:hidden absolute top-full left-0 w-full bg-[#3c5d79] shadow-lg z-40">
     <ul class="px-6 py-4 space-y-3 text-center">
       <li><a href="#home" class="mobile-link block py-2 font-bold hover:underline">Home</a></li>
       <li><a href="#about" class="mobile-link block py-2 font-bold hover:underline">About me</a></li>
@@ -73,7 +73,7 @@
     <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
       <h2 id="typed-line1" data-text="Hello, I'm" class="text-2xl md:text-3xl mb-2"></h2>
       <h1 class="text-5xl md:text-7xl font-bold mb-4 flex justify-center space-x-2">
-        <span id="typed-firstname" data-text="Freek" class="text-[#1766A4]"></span>
+        <span id="typed-firstname" data-text="Freek" class="text-[#3c5d79]"></span>
         <span id="typed-lastname" data-text="Boes" class="text-gray-900"></span>
       </h1>
       
@@ -84,10 +84,10 @@
       </p>
       
       <div class="flex space-x-4">
-        <a href="#about" class="px-6 py-3 bg-[#1766A4] text-white rounded-md hover:bg-[#145a87] transition">
+        <a href="#about" class="px-6 py-3 bg-[#3c5d79] text-white rounded-md hover:bg-[#2d4557] transition">
           About me <img src="src/images/people.png" alt="" class="inline-block w-5 h-5 mb-0.5">
         </a>
-        <a href="#projects" class="px-6 py-3 border-2 border-[#1766A4] text-[#1766A4] rounded-md hover:bg-white hover:text-[#1766A4] transition">
+        <a href="#projects" class="px-6 py-3 border-2 border-[#3c5d79] text-[#3c5d79] rounded-md hover:bg-white hover:text-[#3c5d79] transition">
           Projects <img src="src/images/eye.png" alt="" class="inline-block w-5 h-5 mb-0.5">
         </a>
       </div>
@@ -101,13 +101,13 @@
 
   <!-- Tekst -->
   <div class="w-full md:w-1/2 text-center md:text-left">
-    <h2 class="text-2xl font-semibold mb-4 text-[#1766A4]">About me</h2>
+    <h2 class="text-2xl font-semibold mb-4 text-[#3c5d79]">About me</h2>
     <p class="text-gray-800">
       Hi, I’m Freek Boes, an 
-      <span class="font-bold text-[#1766A4]">Applied Computer Science</span> 
+      <span class="font-bold text-[#3c5d79]">Applied Computer Science</span> 
       student with three years of software development experience. I chose this field because it seemed incredibly exciting and gave me the opportunity to 
-      <span class="font-bold text-[#1766A4]">build things from scratch</span>. I’m eager to deepen my understanding of web design and broaden my skills in 
-      <span class="font-bold text-[#1766A4]">mobile app development</span> to craft engaging, user-centric digital experiences.
+      <span class="font-bold text-[#3c5d79]">build things from scratch</span>. I’m eager to deepen my understanding of web design and broaden my skills in 
+      <span class="font-bold text-[#3c5d79]">mobile app development</span> to craft engaging, user-centric digital experiences.
     </p>
   </div>
 
@@ -136,137 +136,249 @@
 
 
 <section id="resume" class="container max-w-5xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="right">
-  <!-- Titel en introductie + knop -->
-  <div class="text-center mb-8">
-    <h2 class="text-2xl font-semibold mb-4 text-[#1766A4]">Resume</h2>
-    <p class="mb-4 text-gray-700">
-      In this section you can see the skills and languages I currently know.
-      If you want to see my curriculum vitae, you can download and view this 
-      by clicking on the button below!
-    </p>
-    <a 
-      href="src/Freek_Boes_CV.pdf" 
-      download="Freek_Boes_CV.pdf"
-      class="inline-block px-3 py-3 bg-[#1766A4] text-white rounded-md hover:bg-[#145a87] transition"
-    >
-      Download CV
-    </a>
-
-    <a 
-    href="src/Freek_Boes_CV.pdf" 
-    class="inline-block px-6 py-3 bg-[#1766A4] text-white rounded-md hover:bg-[#145a87] transition"
-  >
-    View CV
-  </a>
+  <!-- CV Sectie -->
+  <div class="max-w-3xl mx-auto mb-16">
+    <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] rounded-2xl shadow-xl p-8 text-white">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+        </div>
+        <h2 class="text-3xl font-bold mb-3">Curriculum Vitae</h2>
+        <p class="text-blue-100 text-lg">
+          Download or view my complete curriculum vitae to learn more about my background, education, and professional experience.
+        </p>
+      </div>
+      <div class="flex justify-center gap-4 flex-wrap">
+        <a
+          href="src/Freek_Boes_CV.pdf"
+          download="Freek_Boes_CV.pdf"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#3c5d79] rounded-lg hover:bg-gray-100 transition font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Download CV
+        </a>
+        <a
+          href="src/Freek_Boes_CV.pdf"
+          target="_blank"
+          class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+          </svg>
+          View CV
+        </a>
+      </div>
+    </div>
   </div>
 
-  <!-- Flippende kaarten -->
-  <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
+  <!-- Skills Sectie -->
+  <div class="text-center mb-8 mt-20">
+    <h2 class="text-3xl font-semibold mb-4 text-[#3c5d79]">Skills</h2>
+    <p class="mb-8 text-gray-700">
+      Here's an overview of the programming languages and tools I work with.
+    </p>
+  </div>
 
-    <!-- HTML5 -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/HTML5.png" alt="HTML5" class="h-28">
+  <!-- Programming Languages -->
+  <div class="mb-12">
+    <h3 class="text-2xl font-semibold mb-6 text-[#3c5d79] text-center">Programming Languages</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Java -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Java.png" alt="Java" class="h-36">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Proficient in Java with strong OOP fundamentals and enterprise application development.</p>
+          </div>
         </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>We used a lot of HTML5 during our lessons at school. Because this is the foundation of every website </p>
+      </div>
+
+      <!-- Python -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Python.png" alt="Python" class="h-36">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Experienced in Python for scripting, automation, and backend development.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- C# -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/csharp.png" alt="C#" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Skilled in C# and .NET for building RESTful APIs and backend services.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Javascript -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/JavaScript-Logo.png" alt="Javascript" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Expert in modern JavaScript (ES6+) for building interactive and dynamic web applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dart/Flutter -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Google-flutter-logo.png" alt="Flutter" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Experienced with Dart and Flutter for building cross-platform mobile applications.</p>
+          </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Java -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/Java.png" alt="Java" class="h-36">
-        </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>During the Java lessons we learned how to program with Object Oriented elements!</p>
+  <!-- Tools & Technologies -->
+  <div>
+    <h3 class="text-2xl font-semibold mb-6 text-[#3c5d79] text-center">Tools & Technologies</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- HTML5 -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/HTML5.png" alt="HTML5" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Expert in HTML5 for building semantic, accessible, and modern web structures.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Tailwind CSS -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/Tailwindcss.png" alt="Tailwind CSS" class="h-36">
-        </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>Combined with Laravel we created a responsive website that is easy to use and has a clean design!</p>
+      <!-- Tailwind CSS -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Tailwindcss.png" alt="Tailwind CSS" class="h-36">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Proficient in Tailwind CSS for creating responsive, modern, and utility-first designs.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Python -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/Python.png" alt="Python" class="h-36">
-        </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>With Python we learned about the basics of the language.</p>
+      <!-- Laravel -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Laravel.png" alt="Laravel" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Experienced with Laravel framework for building robust full-stack web applications and APIs.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- C# -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/csharp.png" alt="C#" class="h-28">
-        </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>During our .NET lessons we learned about making an API with C# and react!</p>
+      <!-- MySQL -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/mysql.png" alt="MySQL" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Skilled in MySQL for database design, query optimization, and data management.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Laravel -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/Laravel.png" alt="Laravel" class="h-28">
-        </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>During Web development we used the PHP laravel framework to make a webshop and learned a lot during these lessons about Laravel</p>
+      <!-- Virtual box -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Virtual box.png" alt="Virtualbox" class="h-40">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Experienced with VirtualBox for VM management, system deployment, and testing environments.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- MySQL -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/mysql.png" alt="Laravel" class="h-28">
-        </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>In a lot of projects we used MySQL to store data. During these projects and lessons we learned how to use MySQL and how to make queries</p>
+      <!-- Angular -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <svg viewBox="0 0 256 272" class="h-28">
+              <g>
+                <path fill="#DD0031" d="M.096 45.522l127.904-44.52 128 44.52-20.608 166.144-107.392 59.856-107.296-59.856z"/>
+                <path fill="#C3002F" d="M256 45.522l-128-44.52v226.002l107.392-59.856z"/>
+                <path fill="#FFFFFF" d="M128 45.065l-57.28 127.813h21.248l11.456-28.672h49.024l11.456 28.672h21.344L128 45.065zm-18.176 77.504L128 84.897l18.08 37.672h-36.256z"/>
+              </g>
+            </svg>
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Proficient with Angular framework for building scalable single-page applications with TypeScript.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Javascript -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/JavaScript-Logo.png" alt="Laravel" class="h-28">
-        </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>In the web project we've used a lot of Javascript to make the website interactive and enjoyable. Also in this project we've used javascript!</p>
+      <!-- Unity -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Unity-logo.png" alt="Unity" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Experienced with Unity game engine for developing interactive 3D and 2D applications.</p>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Virtual box -->
-    <div class="group perspective">
-      <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-        <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#1766A4]">
-          <img src="src/images/Virtual box.png" alt="Virtualbox" class="h-40">
+      <!-- Azure Services -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/Microsoft_Azure.svg.png" alt="Microsoft Azure" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Familiar with Microsoft Azure for cloud hosting, deployment, and application management.</p>
+          </div>
         </div>
-        <div class="absolute inset-0 backface-hidden bg-[#1766A4] text-white rounded-lg shadow p-4 border-2 border-[#1766A4] rotate-y-180 flex items-center justify-center text-center">
-          <p>During our study at school we created several virtual machines with Virtualbox. Including deploying different programs on it, in Windows or on Linux (Ubuntu)!</p>
+      </div>
+
+      <!-- NX -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/nx_monorepo.png" alt="NX Monorepo" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Experienced with NX monorepo tools for managing and scaling enterprise applications.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- GitHub Actions -->
+      <div class="group perspective">
+        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
+            <img src="src/images/github_ci_cd.png" alt="GitHub Actions" class="h-28">
+          </div>
+          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
+            <p>Skilled in GitHub Actions for implementing CI/CD pipelines and automated workflows.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -275,10 +387,10 @@
 
   <!-- THINGS I WANT TO REALIZE SECTION -->
   <section id="things" class="container max-w-5xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="left">
-    <h2 class="text-2xl font-semibold mb-6 text-[#1766A4] text-center">Things I Want to Realize</h2>
+    <h2 class="text-2xl font-semibold mb-6 text-[#3c5d79] text-center">Things I Want to Realize</h2>
     <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
       <!-- UI & UX Designing -->
-      <div class="border-2 border-[#1766A4] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
+      <div class="border-2 border-[#3c5d79] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
         <div class="flex justify-center mb-4">
           <img src="src/images/ruler&pen.png" alt="UI & UX" class="h-12 w-12">
         </div>
@@ -293,14 +405,14 @@
         <div class="flex justify-center mb-4">
           <img src="src/images/code.png" alt="Web Development" class="h-12 w-12">
         </div>
-        <h3 class="text-lg font-bold text-[#1766A4] text-center mb-2">Web Development</h3>
-        <p class="text-[#1766A4] text-center">
+        <h3 class="text-lg font-bold text-[#3c5d79] text-center mb-2">Web Development</h3>
+        <p class="text-[#3c5d79] text-center">
           I want to improve my skills as a web developer and make better designs with various frameworks!
         </p>
       </div>
   
       <!-- Mobile Development -->
-      <div class="border-2 border-[#1766A4] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
+      <div class="border-2 border-[#3c5d79] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
         <div class="flex justify-center mb-4">
           <img src="src/images/android.png" alt="Mobile Development" class="h-12 w-12">
         </div>
@@ -315,14 +427,14 @@
         <div class="flex justify-center mb-4">
           <img src="src/images/git-repo.svg" alt="Version Control" class="h-12 w-12">
         </div>
-        <h3 class="text-lg font-bold text-[#1766A4] text-center mb-2">Version Control</h3>
-        <p class="text-[#1766A4] text-center">
+        <h3 class="text-lg font-bold text-[#3c5d79] text-center mb-2">Version Control</h3>
+        <p class="text-[#3c5d79] text-center">
           I want to learn more about Git &amp; GitHub because there’s still so much to learn about it.
         </p>
       </div>
   
       <!-- App Development -->
-      <div class="border-2 border-[#1766A4] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
+      <div class="border-2 border-[#3c5d79] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
         <div class="flex justify-center mb-4">
           <img src="src/images/Screen.png" alt="App Development" class="h-16 w-16">
         </div>
@@ -337,8 +449,8 @@
         <div class="flex justify-center mb-4">
           <img src="src/images/slider.svg" alt="Stock Images" class="h-12 w-12">
         </div>
-        <h3 class="text-lg font-bold text-[#1766A4] text-center mb-2">Stock Images</h3>
-        <p class="text-[#1766A4] text-center">
+        <h3 class="text-lg font-bold text-[#3c5d79] text-center mb-2">Stock Images</h3>
+        <p class="text-[#3c5d79] text-center">
           We learned about making stock photos for our website, this makes me think outside the box and still want to improve it!
         </p>
       </div>
@@ -349,7 +461,7 @@
 
   <!-- PROJECTS SECTION -->
 <section id="projects" class="container max-w-7xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="right">
-  <h2 class="text-2xl font-semibold mb-4 text-[#1766A4] text-center">My Projects</h2>
+  <h2 class="text-2xl font-semibold mb-4 text-[#3c5d79] text-center">My Projects</h2>
   <p class="mb-8 text-center text-gray-700">
     Here you’ll find a showcase of the projects I’ve built, highlighting my skills and creativity.
   </p>
@@ -366,7 +478,7 @@
       <div class="p-6 flex flex-col gap-3 flex-1">
         <header class="flex items-start justify-between gap-4">
           <div>
-            <h3 class="text-xl font-bold text-[#1766A4]">De Beerse Bende</h3>
+            <h3 class="text-xl font-bold text-[#3c5d79]">De Beerse Bende</h3>
             <p class="text-sm text-gray-500">Website • Laravel & Tailwindcss</p>
           </div>
         </header>
@@ -378,11 +490,21 @@
           <li>Easy to use interface</li>
           <li>Tailer-made design</li>
         </ul>
-        <div class="mt-auto pt-2">
-          <a href="https://app.debeersebende.be/"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#1766A4] text-white hover:bg-[#145a87] transition">
+        <div class="mt-auto pt-2 flex gap-2">
+          <a href="https://app.debeersebende.be/" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
             View Project
           </a>
+          <button onclick="openProjectModal('beersebende')"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            More Information
+          </button>
         </div>
       </div>
     </article>
@@ -396,7 +518,7 @@
       <div class="p-6 flex flex-col gap-3 flex-1">
         <header class="flex items-start justify-between gap-4">
           <div>
-            <h3 class="text-xl font-bold text-[#1766A4]">ZenTech</h3>
+            <h3 class="text-xl font-bold text-[#3c5d79]">ZenTech</h3>
             <p class="text-sm text-gray-500">Website • Laravel & Tailwindcss</p>
           </div>
         </header>
@@ -408,6 +530,15 @@
           <li>Full working online webshop</li>
           <li>Fully responsive design</li>
         </ul>
+        <div class="mt-auto pt-2 flex gap-2">
+          <button onclick="openProjectModal('zentech')"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            More Information
+          </button>
+        </div>
       </div>
     </article>
 
@@ -420,7 +551,7 @@
       <div class="p-6 flex flex-col gap-3 flex-1">
         <header class="flex items-start justify-between gap-4">
           <div>
-            <h3 class="text-xl font-bold text-[#1766A4]">Handbal Overpelt</h3>
+            <h3 class="text-xl font-bold text-[#3c5d79]">Handbal Overpelt</h3>
             <p class="text-sm text-gray-500">Website • Tailwindcss</p>
           </div>
         </header>
@@ -432,15 +563,28 @@
           <li>Explored new features</li>
           <li>Improved layout & design</li>
         </ul>
-        <div class="mt-auto pt-2">
-          <a href="src/HandbalOverpelt/index.html"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#1766A4] text-white hover:bg-[#145a87] transition">
+        <div class="mt-auto pt-2 flex flex-wrap gap-2">
+          <a href="src/HandbalOverpelt/index.html" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
             View Project
           </a>
-          <a href="https://github.com/FreekBoes/HandbalOverpelt"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white text-[#1766A4] border-[#1766A4] border-2 hover:bg-gray-100 transition">
+          <a href="https://github.com/FreekBoes/HandbalOverpelt" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
             Github repo
           </a>
+          <button onclick="openProjectModal('handbal')"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            More Information
+          </button>
         </div>
       </div>
     </article>
@@ -454,7 +598,7 @@
       <div class="p-6 flex flex-col gap-3 flex-1">
         <header class="flex items-start justify-between gap-4">
           <div>
-            <h3 class="text-xl font-bold text-[#1766A4]">First portofolio</h3>
+            <h3 class="text-xl font-bold text-[#3c5d79]">First portofolio</h3>
             <p class="text-sm text-gray-500">Website • Bootstrap</p>
           </div>
         </header>
@@ -466,15 +610,28 @@
           <li>According to W3C</li>
           <li>Built with HTML & CSS & Javascript</li>
         </ul>
-        <div class="mt-auto pt-2">
+        <div class="mt-auto pt-2 flex flex-wrap gap-2">
           <a href="src/First_portfolio/index.html" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#1766A4] text-white hover:bg-[#145a87] transition">
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
             View Project
           </a>
-          <a href="https://github.com/FreekBoes/freekboes.github.io"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white text-[#1766A4] border-[#1766A4] border-2 hover:bg-gray-100 transition">
+          <a href="https://github.com/FreekBoes/freekboes.github.io" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
             Github repo
           </a>
+          <button onclick="openProjectModal('firstportfolio')"
+             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            More Information
+          </button>
         </div>
       </div>
     </article>
@@ -483,15 +640,54 @@
   
 
   <!-- CONTACT SECTION -->
-  <section id="contact" class="container max-w-7xl mx-auto px-4 py-12 text-center js-animate opacity-0" data-direction="right">
-    <h2 class="text-[#1766A4] text-2xl font-semibold mb-2">Connect with me</h2>
-    <p class="mb-1">Impressed with my work?</p>
-    <p>Please reach out!</p>
-    <div class="mt-4 flex justify-center space-x-4">
-      <a href="https://www.instagram.com/freek.bs/"><img src="src/images/instagram.png" alt="Instagram" class="w-8 h-8"></a>
-      <a href="mailto:Freek.boes@live.be"><img src="src/images/sms.png" alt="Mail" class="w-8 h-8"></a>
-      <a href="https://www.linkedin.com/in/freekboes/"><img src="src/images/Linkedin.png" alt="LinkedIn" class="w-8 h-8"></a>
-      <a href="https://github.com/FreekBoes"><img src="src/images/Github.png" alt="Github" class="w-8 h-8"></a>
+  <section id="contact" class="container max-w-5xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="right">
+    <div class="text-center mb-12">
+      <h2 class="text-[#3c5d79] text-4xl font-bold mb-4">Connect with me</h2>
+      <p class="text-gray-700 text-lg">Impressed with my work? Let's get in touch!</p>
+    </div>
+
+    <!-- Email Card -->
+    <div class="max-w-2xl mx-auto mb-12">
+      <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] rounded-2xl shadow-xl p-8 text-white text-center transform hover:scale-[1.02] transition-transform">
+        <div class="flex items-center justify-center mb-4">
+          <div class="bg-white/20 rounded-full p-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold mb-3">Email Me</h3>
+        <a href="mailto:Freek.boes@live.be" class="text-blue-100 hover:text-white text-xl font-medium hover:underline inline-block transition">
+          Freek.boes@live.be
+        </a>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="text-center">
+      <h3 class="text-2xl font-semibold mb-8 text-gray-800">Follow me on social media</h3>
+      <div class="flex justify-center gap-6 flex-wrap">
+        <a href="https://www.instagram.com/freek.bs/"
+           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
+           aria-label="Instagram">
+          <img src="src/images/instagram.png" alt="Instagram" class="w-12 h-12 group-hover:opacity-80 transition">
+        </a>
+        <a href="mailto:Freek.boes@live.be"
+           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
+           aria-label="Email">
+          <img src="src/images/sms.png" alt="Mail" class="w-12 h-12 group-hover:opacity-80 transition">
+        </a>
+        <a href="https://www.linkedin.com/in/freekboes/"
+           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
+           aria-label="LinkedIn">
+          <img src="src/images/Linkedin.png" alt="LinkedIn" class="w-12 h-12 group-hover:opacity-80 transition">
+        </a>
+        <a href="https://github.com/FreekBoes"
+           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
+           aria-label="Github">
+          <img src="src/images/Github.png" alt="Github" class="w-12 h-12 group-hover:opacity-80 transition">
+        </a>
+      </div>
     </div>
   </section>
 
@@ -501,14 +697,113 @@
     <ul class="flex flex-col items-center gap-y-3
                md:flex-row md:justify-center md:gap-y-0
                text-sm text-gray-500">
-      <li class="px-4 hover:text-[#1766A4] transition">@2024 Freek Boes</li>
-      <li class="px-4 hover:text-[#1766A4] transition">Full-time student</li>
-      <li class="px-4 hover:text-[#1766A4] transition">Web designer</li>
-      <li class="px-4 hover:text-[#1766A4] transition">App development</li>
-      <li class="px-4 hover:text-[#1766A4] transition">Designed by @me</li>
+      <li class="px-4 hover:text-[#3c5d79] transition">@2024 Freek Boes</li>
+      <li class="px-4 hover:text-[#3c5d79] transition">Full-time student</li>
+      <li class="px-4 hover:text-[#3c5d79] transition">Web designer</li>
+      <li class="px-4 hover:text-[#3c5d79] transition">App development</li>
+      <li class="px-4 hover:text-[#3c5d79] transition">Designed by @me</li>
     </ul>
   </div>
 </footer>
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeProjectModal()">
+  <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
+
+    <!-- Modal Header -->
+    <div class="bg-gradient-to-r from-[#3c5d79] to-[#2d4557] text-white p-8 flex justify-between items-start">
+      <div>
+        <h2 id="modal-title" class="text-3xl font-bold mb-2"></h2>
+        <p class="text-blue-100 text-sm">Project Details & Information</p>
+      </div>
+      <button onclick="closeProjectModal()" class="text-white hover:text-gray-200 transition transform hover:scale-110 p-2 rounded-full hover:bg-white/10">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Modal Content -->
+    <div class="overflow-y-auto flex-1 p-8 bg-gray-50">
+      <div class="space-y-8">
+
+        <!-- Project Description -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="flex items-center gap-2 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <h3 class="text-xl font-bold text-gray-800">Project Description</h3>
+          </div>
+          <p id="modal-description" class="text-gray-700 leading-relaxed"></p>
+        </div>
+
+        <!-- Client Needs -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="flex items-center gap-2 mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <h3 class="text-xl font-bold text-gray-800">Client Needs</h3>
+          </div>
+          <p id="modal-client-needs" class="text-gray-700 leading-relaxed"></p>
+        </div>
+
+        <!-- What I Learned -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="flex items-center gap-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+            <h3 class="text-xl font-bold text-gray-800">What I Learned</h3>
+          </div>
+          <ul id="modal-learned" class="space-y-2"></ul>
+        </div>
+
+        <!-- Project Type & Contribution -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] text-white rounded-xl p-6 shadow-md">
+            <div class="flex items-center gap-2 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+              <h3 class="text-lg font-bold">Project Type</h3>
+            </div>
+            <p id="modal-type" class="text-blue-100"></p>
+          </div>
+          <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] text-white rounded-xl p-6 shadow-md">
+            <div class="flex items-center gap-2 mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <h3 class="text-lg font-bold">My Contribution</h3>
+            </div>
+            <p id="modal-contribution" class="text-blue-100"></p>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="flex items-center gap-2 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
+            <h3 class="text-xl font-bold text-gray-800">Links & Resources</h3>
+          </div>
+          <div id="modal-links" class="flex flex-wrap gap-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Footer -->
+    <div class="bg-white border-t border-gray-200 p-6 flex justify-end">
+      <button onclick="closeProjectModal()" class="px-6 py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-lg transition">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+/* Text selection color */
+::selection {
+  background-color: #3c5d79;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #3c5d79;
+  color: white;
+}
+
  /* Slider-handle styling */
  #slider-handle {
     position: absolute;
@@ -12,7 +23,7 @@
     transition: background 0.2s;
   }
   #slider-handle:hover {
-    background: #1766A4;
+    background: #3c5d79;
   }
   /* Pijltjes op de handle */
   #slider-handle::before,
@@ -74,7 +85,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background: #1766A4; /* blauwe lijn */
+  background: #3c5d79; /* blauwe lijn */
   cursor: ew-resize;
   transform: translateX(-50%);
 }
@@ -87,7 +98,7 @@
   left: 50%;
   width: 18px;
   height: 18px;
-  background: #1766A4;
+  background: #3c5d79;
   border: 2px solid #fff;
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -108,7 +119,7 @@
     position: absolute;
     top: 0; bottom: 0;
     width: 3px;
-    background: #1766A4;
+    background: #3c5d79;
     cursor: ew-resize;
     transform: translateX(-50%);
   }
@@ -117,7 +128,7 @@
     position: absolute;
     top: 50%; left: 50%;
     width: 18px; height: 18px;
-    background: #1766A4;
+    background: #3c5d79;
     border: 2px solid #fff;
     border-radius: 9999px;
     transform: translate(-50%, -50%);
