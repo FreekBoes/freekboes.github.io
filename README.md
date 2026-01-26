@@ -39,3 +39,9 @@
  - Added the HandbalOverpelt project
 
 --------------------------
+
+PATCH #4 - 26/01/2025
+
+- updated the website with more skills
+- changed some styling regarding the colors
+- Added model for projects
