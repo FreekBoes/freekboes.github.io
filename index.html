@@ -1,815 +1,759 @@
 <!doctype html>
-<html class="scroll-smooth" lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Freek Boes</title>
-  <link rel="shortcut icon" id="favicon" href="/src/images/favicon.ico" type="image/x-icon">
-  <link href="./src/output.css" rel="stylesheet">
-
+  <title>Freek Boes · Portfolio</title>
+  <meta name="description" content="Software developer focused on building mobile and web applications that solve real business problems.">
+  <link rel="shortcut icon" id="favicon" href="src/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/output.css">
 </head>
-<body class="font-sans antialiased text-gray-900">
+<body>
 
-<!-- NAV -->
-<nav class="sticky top-0 z-50 bg-[#3c5d79] text-white shadow-md">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    <div class="text-xl font-semibold">Freek Boes</div>
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">F</div>
+      <div class="nav-path">
+        <span>freek.boes</span>
+        <span class="sep">/</span>
+        <span>portfolio</span>
+        <span class="sep">/</span>
+        <span class="main">main</span>
+      </div>
+    </div>
 
-    <!-- Desktop menu (zichtbaar vanaf md) -->
-    <ul class="hidden md:flex space-x-8">
-      <li><a href="#home" class="hover:underline font-bold">Home</a></li>
-      <li><a href="#about" class="hover:underline font-bold">About me</a></li>
-      <li><a href="#resume" class="hover:underline font-bold">Resume</a></li>
-      <li><a href="#things" class="hover:underline font-bold">Realizations</a></li>
-      <li><a href="#projects" class="hover:underline font-bold">Projects</a></li>
-      <li><a href="#contact" class="hover:underline font-bold">Contact</a></li>
+    <ul class="nav-links">
+      <li><a href="#about"      data-i18n="nav.about">About</a></li>
+      <li><a href="#education"  data-i18n="nav.education">Education</a></li>
+      <li><a href="#skills"     data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#work"       data-i18n="nav.work">Work</a></li>
+      <li><a href="#projects"   data-i18n="nav.projects">Projects</a></li>
+      <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n="nav.resume">Resume</a></li>
+      <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
     </ul>
 
-    <!-- Hamburger button (zichtbaar t.e.m. sm/md) -->
-    <button id="nav-toggle"
-            class="md:hidden p-2 rounded hover:bg-white/10"
-            aria-label="Open menu"
-            aria-controls="mobile-menu"
-            aria-expanded="false">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
+    <div class="nav-right">
+      <div class="nav-controls">
+        <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
+        <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
+          </svg>
+          <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-status">
+        <span class="nav-status-dot"></span>
+        <span data-i18n="status">Final-year student · Thomas More</span>
+      </div>
+    </div>
+
+    <button id="nav-toggle-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 6h14M3 10h14M3 14h14"/>
       </svg>
     </button>
-  </div>
+  </nav>
 
-  <!-- Mobile menu (alleen zichtbaar op klein scherm) -->
-  <div id="mobile-menu"
-       class="hidden md:hidden absolute top-full left-0 w-full bg-[#3c5d79] shadow-lg z-40">
-    <ul class="px-6 py-4 space-y-3 text-center">
-      <li><a href="#home" class="mobile-link block py-2 font-bold hover:underline">Home</a></li>
-      <li><a href="#about" class="mobile-link block py-2 font-bold hover:underline">About me</a></li>
-      <li><a href="#resume" class="mobile-link block py-2 font-bold hover:underline">Resume</a></li>
-      <li><a href="#things" class="mobile-link block py-2 font-bold hover:underline">Realizations</a></li>
-      <li><a href="#projects" class="mobile-link block py-2 font-bold hover:underline">Projects</a></li>
-      <li><a href="#contact" class="mobile-link block py-2 font-bold hover:underline">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-  <!-- HERO SECTION -->
-  <section id="home" class="relative h-screen overflow-hidden bg-white">
-    <!-- Achtergrondvideo -->
-    <video 
-      class="absolute inset-0 w-full h-full object-cover" 
-      src="src/video/background.mp4" 
-      autoplay 
-      muted 
-      loop
-    ></video>
-
-    <!-- Donkere overlay voor contrast -->
-    <div class="absolute inset-0"></div>
-
-    <!-- Fade-out overlay onderaan -->
-    <div class="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-white to-transparent"></div>
-
-    <!-- Content voor de video -->
-    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-      <h2 id="typed-line1" data-text="Hello, I'm" class="text-2xl md:text-3xl mb-2"></h2>
-      <h1 class="text-5xl md:text-7xl font-bold mb-4 flex justify-center space-x-2">
-        <span id="typed-firstname" data-text="Freek" class="text-[#3c5d79]"></span>
-        <span id="typed-lastname" data-text="Boes" class="text-gray-900"></span>
-      </h1>
-      
-      <p class="text-lg md:text-xl max-w-2xl mb-6">
-        App-development student @ Thomas More,<br>
-        IT enthusiast with a sprinkle of fitness.<br>
-        Exploring all the possibilities with IT!
-      </p>
-      
-      <div class="flex space-x-4">
-        <a href="#about" class="px-6 py-3 bg-[#3c5d79] text-white rounded-md hover:bg-[#2d4557] transition">
-          About me <img src="src/images/people.png" alt="" class="inline-block w-5 h-5 mb-0.5">
-        </a>
-        <a href="#projects" class="px-6 py-3 border-2 border-[#3c5d79] text-[#3c5d79] rounded-md hover:bg-white hover:text-[#3c5d79] transition">
-          Projects <img src="src/images/eye.png" alt="" class="inline-block w-5 h-5 mb-0.5">
-        </a>
-      </div>
-    </div>
-  </section>
-
-<!-- ABOUT SECTION -->
-<section id="about" 
-         class="container max-w-5xl mx-auto px-4 py-12 flex flex-col md:flex-row items-center gap-8 js-animate opacity-100 md:opacity-0" 
-         data-direction="left">
-
-  <!-- Tekst -->
-  <div class="w-full md:w-1/2 text-center md:text-left">
-    <h2 class="text-2xl font-semibold mb-4 text-[#3c5d79]">About me</h2>
-    <p class="text-gray-800">
-      Hi, I’m Freek Boes, an 
-      <span class="font-bold text-[#3c5d79]">Applied Computer Science</span> 
-      student with three years of software development experience. I chose this field because it seemed incredibly exciting and gave me the opportunity to 
-      <span class="font-bold text-[#3c5d79]">build things from scratch</span>. I’m eager to deepen my understanding of web design and broaden my skills in 
-      <span class="font-bold text-[#3c5d79]">mobile app development</span> to craft engaging, user-centric digital experiences.
-    </p>
-  </div>
-
-  <!-- Slider -->
-  <div id="slider-container" 
-       class="w-full md:w-1/2 relative overflow-hidden rounded-lg shadow-lg h-64 md:h-96 mt-6 md:mt-0">
-    <!-- Achtergrond (normaal) -->
-    <img src="src/images/real.jpg"
-         alt="Real"
-         class="absolute inset-0 w-full h-full object-cover object-center" />
-
-    <!-- Voorgrond (cartoon) -->
-    <div id="slider-foreground" class="absolute inset-0 overflow-hidden" style="width:50%;">
-      <img
-        src="src/images/cartoon.png"
-        alt="Cartoon"
-        class="absolute inset-0 w-full h-full object-cover"
-        style="object-position:11% center;" 
-      />
-    </div>
-
-    <!-- Handle -->
-    <div id="slider-handle" style="left:50%;"></div>
-  </div>
-</section>
-
-
-<section id="resume" class="container max-w-5xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="right">
-  <!-- CV Sectie -->
-  <div class="max-w-3xl mx-auto mb-16">
-    <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] rounded-2xl shadow-xl p-8 text-white">
-      <div class="text-center mb-6">
-        <div class="inline-flex items-center justify-center w-16 h-16 bg-white/20 rounded-full mb-4">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-          </svg>
-        </div>
-        <h2 class="text-3xl font-bold mb-3">Curriculum Vitae</h2>
-        <p class="text-blue-100 text-lg">
-          Download or view my complete curriculum vitae to learn more about my background, education, and professional experience.
-        </p>
-      </div>
-      <div class="flex justify-center gap-4 flex-wrap">
-        <a
-          href="src/Freek_Boes_CV.pdf"
-          download="Freek_Boes_CV.pdf"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#3c5d79] rounded-lg hover:bg-gray-100 transition font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          Download CV
-        </a>
-        <a
-          href="src/Freek_Boes_CV.pdf"
-          target="_blank"
-          class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white text-white rounded-lg hover:bg-white/10 transition font-semibold shadow-lg hover:shadow-xl transform hover:scale-105"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-          </svg>
-          View CV
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Skills Sectie -->
-  <div class="text-center mb-8 mt-20">
-    <h2 class="text-3xl font-semibold mb-4 text-[#3c5d79]">Skills</h2>
-    <p class="mb-8 text-gray-700">
-      Here's an overview of the programming languages and tools I work with.
-    </p>
-  </div>
-
-  <!-- Programming Languages -->
-  <div class="mb-12">
-    <h3 class="text-2xl font-semibold mb-6 text-[#3c5d79] text-center">Programming Languages</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- Java -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Java.png" alt="Java" class="h-36">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Proficient in Java with strong OOP fundamentals and enterprise application development.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Python -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Python.png" alt="Python" class="h-36">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Experienced in Python for scripting, automation, and backend development.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- C# -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/csharp.png" alt="C#" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Skilled in C# and .NET for building RESTful APIs and backend services.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Javascript -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/JavaScript-Logo.png" alt="Javascript" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Expert in modern JavaScript (ES6+) for building interactive and dynamic web applications.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Dart/Flutter -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Google-flutter-logo.png" alt="Flutter" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Experienced with Dart and Flutter for building cross-platform mobile applications.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Tools & Technologies -->
-  <div>
-    <h3 class="text-2xl font-semibold mb-6 text-[#3c5d79] text-center">Tools & Technologies</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- HTML5 -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/HTML5.png" alt="HTML5" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Expert in HTML5 for building semantic, accessible, and modern web structures.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tailwind CSS -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Tailwindcss.png" alt="Tailwind CSS" class="h-36">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Proficient in Tailwind CSS for creating responsive, modern, and utility-first designs.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Laravel -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Laravel.png" alt="Laravel" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Experienced with Laravel framework for building robust full-stack web applications and APIs.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- MySQL -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/mysql.png" alt="MySQL" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Skilled in MySQL for database design, query optimization, and data management.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Virtual box -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Virtual box.png" alt="Virtualbox" class="h-40">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Experienced with VirtualBox for VM management, system deployment, and testing environments.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Angular -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <svg viewBox="0 0 256 272" class="h-28">
-              <g>
-                <path fill="#DD0031" d="M.096 45.522l127.904-44.52 128 44.52-20.608 166.144-107.392 59.856-107.296-59.856z"/>
-                <path fill="#C3002F" d="M256 45.522l-128-44.52v226.002l107.392-59.856z"/>
-                <path fill="#FFFFFF" d="M128 45.065l-57.28 127.813h21.248l11.456-28.672h49.024l11.456 28.672h21.344L128 45.065zm-18.176 77.504L128 84.897l18.08 37.672h-36.256z"/>
-              </g>
-            </svg>
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Proficient with Angular framework for building scalable single-page applications with TypeScript.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unity -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Unity-logo.png" alt="Unity" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Experienced with Unity game engine for developing interactive 3D and 2D applications.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Azure Services -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/Microsoft_Azure.svg.png" alt="Microsoft Azure" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Familiar with Microsoft Azure for cloud hosting, deployment, and application management.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- NX -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/nx_monorepo.png" alt="NX Monorepo" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Experienced with NX monorepo tools for managing and scaling enterprise applications.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- GitHub Actions -->
-      <div class="group perspective">
-        <div class="relative w-full h-48 transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
-          <div class="absolute inset-0 backface-hidden bg-white rounded-lg shadow flex items-center justify-center p-4 border-2 border-[#3c5d79]">
-            <img src="src/images/github_ci_cd.png" alt="GitHub Actions" class="h-28">
-          </div>
-          <div class="absolute inset-0 backface-hidden bg-[#3c5d79] text-white rounded-lg shadow p-4 border-2 border-[#3c5d79] rotate-y-180 flex items-center justify-center text-center">
-            <p>Skilled in GitHub Actions for implementing CI/CD pipelines and automated workflows.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <!-- THINGS I WANT TO REALIZE SECTION -->
-  <section id="things" class="container max-w-5xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="left">
-    <h2 class="text-2xl font-semibold mb-6 text-[#3c5d79] text-center">Things I Want to Realize</h2>
-    <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
-      <!-- UI & UX Designing -->
-      <div class="border-2 border-[#3c5d79] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
-        <div class="flex justify-center mb-4">
-          <img src="src/images/ruler&pen.png" alt="UI & UX" class="h-12 w-12">
-        </div>
-        <h3 class="text-lg font-bold text-center mb-2">UI &amp; UX Designing</h3>
-        <p class="text-gray-700 text-center">
-          I want to be better at making UI &amp; UX designs. I’m still new to all of this so and I’m willing to improve.
-        </p>
-      </div>
-  
-      <!-- Web Development -->
-      <div class="border-2 border-black rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
-        <div class="flex justify-center mb-4">
-          <img src="src/images/code.png" alt="Web Development" class="h-12 w-12">
-        </div>
-        <h3 class="text-lg font-bold text-[#3c5d79] text-center mb-2">Web Development</h3>
-        <p class="text-[#3c5d79] text-center">
-          I want to improve my skills as a web developer and make better designs with various frameworks!
-        </p>
-      </div>
-  
-      <!-- Mobile Development -->
-      <div class="border-2 border-[#3c5d79] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
-        <div class="flex justify-center mb-4">
-          <img src="src/images/android.png" alt="Mobile Development" class="h-12 w-12">
-        </div>
-        <h3 class="text-lg font-bold text-center mb-2">Mobile Development</h3>
-        <p class="text-gray-700 text-center">
-          As an IT student in application development I want to realize making a full and worthy app for the market!
-        </p>
-      </div>
-  
-      <!-- Version Control -->
-      <div class="border-2 border-black rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
-        <div class="flex justify-center mb-4">
-          <img src="src/images/git-repo.svg" alt="Version Control" class="h-12 w-12">
-        </div>
-        <h3 class="text-lg font-bold text-[#3c5d79] text-center mb-2">Version Control</h3>
-        <p class="text-[#3c5d79] text-center">
-          I want to learn more about Git &amp; GitHub because there’s still so much to learn about it.
-        </p>
-      </div>
-  
-      <!-- App Development -->
-      <div class="border-2 border-[#3c5d79] rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
-        <div class="flex justify-center mb-4">
-          <img src="src/images/Screen.png" alt="App Development" class="h-16 w-16">
-        </div>
-        <h3 class="text-lg font-bold text-center mb-2">App Development</h3>
-        <p class="text-gray-700 text-center">
-          I’m totally new to app development, I’ve been learning all those languages but I’m ready to apply those to make apps.
-        </p>
-      </div>
-  
-      <!-- Stock Images -->
-      <div class="border-2 border-black rounded-lg p-6 transform transition-transform duration-300 hover:scale-105">
-        <div class="flex justify-center mb-4">
-          <img src="src/images/slider.svg" alt="Stock Images" class="h-12 w-12">
-        </div>
-        <h3 class="text-lg font-bold text-[#3c5d79] text-center mb-2">Stock Images</h3>
-        <p class="text-[#3c5d79] text-center">
-          We learned about making stock photos for our website, this makes me think outside the box and still want to improve it!
-        </p>
-      </div>
-    </div>
-  </section>
-  
-  
-
-  <!-- PROJECTS SECTION -->
-<section id="projects" class="container max-w-7xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="right">
-  <h2 class="text-2xl font-semibold mb-4 text-[#3c5d79] text-center">My Projects</h2>
-  <p class="mb-8 text-center text-gray-700">
-    Here you’ll find a showcase of the projects I’ve built, highlighting my skills and creativity.
-  </p>
-
-  <!-- Responsive grid: 1 kolom (sm), 2 kolommen (md+). Kaarten hebben gelijke hoogte. -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    
-    <!-- Card 1 -->
-    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden border border-gray-100 flex flex-col">
-      <div class="relative aspect-[16/10] overflow-hidden">
-        <img src="src/images/DeBeerseBende.png" alt="De Beerse Bende screenshot"
-             class="w-full h-full object-fit-fill group-hover:scale-[1.02] transition">
-      </div>
-      <div class="p-6 flex flex-col gap-3 flex-1">
-        <header class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-xl font-bold text-[#3c5d79]">De Beerse Bende</h3>
-            <p class="text-sm text-gray-500">Website • Laravel & Tailwindcss</p>
-          </div>
-        </header>
-        <p class="text-gray-700">
-          A school project for a client that wanted to make a website for their business. It includes a lot of CRUDs and a lot of other features.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Authentication & Autherization</li>
-          <li>Easy to use interface</li>
-          <li>Tailer-made design</li>
-        </ul>
-        <div class="mt-auto pt-2 flex gap-2">
-          <a href="https://app.debeersebende.be/" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-            View Project
-          </a>
-          <button onclick="openProjectModal('beersebende')"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            More Information
-          </button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Card 2 -->
-    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden border border-gray-100 flex flex-col">
-      <div class="relative aspect-[16/10] overflow-hidden">
-        <img src="src/images/ZenTech.png" alt="ZenTech screenshot"
-             class="w-full h-full object-fit-fill group-hover:scale-[1.02] transition">
-      </div>
-      <div class="p-6 flex flex-col gap-3 flex-1">
-        <header class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-xl font-bold text-[#3c5d79]">ZenTech</h3>
-            <p class="text-sm text-gray-500">Website • Laravel & Tailwindcss</p>
-          </div>
-        </header>
-        <p class="text-gray-700">
-          Zentech is a online webshop that I developed with laravel and tailwindcss. It was a project for the course Web developmetn at school.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Authentication & Autherization</li>
-          <li>Full working online webshop</li>
-          <li>Fully responsive design</li>
-        </ul>
-        <div class="mt-auto pt-2 flex gap-2">
-          <button onclick="openProjectModal('zentech')"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            More Information
-          </button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Card 3 -->
-    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden border border-gray-100 flex flex-col">
-      <div class="relative aspect-[16/10] overflow-hidden">
-        <img src="src/images/HandbalOverpelt.png" alt="HandbalOverpelt screenshot"
-             class="w-full h-full object-fit-fill group-hover:scale-[1.02] transition">
-      </div>
-      <div class="p-6 flex flex-col gap-3 flex-1">
-        <header class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-xl font-bold text-[#3c5d79]">Handbal Overpelt</h3>
-            <p class="text-sm text-gray-500">Website • Tailwindcss</p>
-          </div>
-        </header>
-        <p class="text-gray-700">
-          My First ever project outside of school. I made a website for my local handball team.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Fully responsive design</li>
-          <li>Explored new features</li>
-          <li>Improved layout & design</li>
-        </ul>
-<<<<<<< HEAD
-        <div class="mt-auto pt-2 flex flex-wrap gap-2">
-          <a href="src/HandbalOverpelt/index.html" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-=======
-        <div class="mt-auto pt-2">
-          <a href="https://handbalcluboverpelt.be/"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#1766A4] text-white hover:bg-[#145a87] transition">
->>>>>>> 649d1e5fa1e7f6754f3450f714ac7225749c9e4a
-            View Project
-          </a>
-          <a href="https://github.com/FreekBoes/HandbalOverpelt" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            Github repo
-          </a>
-          <button onclick="openProjectModal('handbal')"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            More Information
-          </button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Card 4 -->
-    <article class="group bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden border border-gray-100 flex flex-col">
-      <div class="relative aspect-[16/10] overflow-hidden">
-        <img src="src/images/FirstPortfolio.png" alt="First portfolio screenshot"
-             class="w-full h-full object-fit-fill group-hover:scale-[1.02] transition">
-      </div>
-      <div class="p-6 flex flex-col gap-3 flex-1">
-        <header class="flex items-start justify-between gap-4">
-          <div>
-            <h3 class="text-xl font-bold text-[#3c5d79]">First portofolio</h3>
-            <p class="text-sm text-gray-500">Website • Bootstrap</p>
-          </div>
-        </header>
-        <p class="text-gray-700">
-          This is my first portofolio I made with bootstrap, in my own time. I wanted to show my skills and what I can do with it.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 space-y-1">
-          <li>Responsive design</li>
-          <li>According to W3C</li>
-          <li>Built with HTML & CSS & Javascript</li>
-        </ul>
-        <div class="mt-auto pt-2 flex flex-wrap gap-2">
-          <a href="src/First_portfolio/index.html" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-            View Project
-          </a>
-          <a href="https://github.com/FreekBoes/freekboes.github.io" target="_blank" rel="noopener noreferrer"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md border-2 border-[#3c5d79] text-[#3c5d79] hover:bg-gray-50 transition font-medium">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            Github repo
-          </a>
-          <button onclick="openProjectModal('firstportfolio')"
-             class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-[#3c5d79] text-white hover:bg-[#2d4557] transition font-medium shadow-md hover:shadow-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            More Information
-          </button>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-  
-
-  <!-- CONTACT SECTION -->
-  <section id="contact" class="container max-w-5xl mx-auto px-4 py-12 js-animate opacity-0" data-direction="right">
-    <div class="text-center mb-12">
-      <h2 class="text-[#3c5d79] text-4xl font-bold mb-4">Connect with me</h2>
-      <p class="text-gray-700 text-lg">Impressed with my work? Let's get in touch!</p>
-    </div>
-
-    <!-- Email Card -->
-    <div class="max-w-2xl mx-auto mb-12">
-      <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] rounded-2xl shadow-xl p-8 text-white text-center transform hover:scale-[1.02] transition-transform">
-        <div class="flex items-center justify-center mb-4">
-          <div class="bg-white/20 rounded-full p-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-        </div>
-        <h3 class="text-2xl font-bold mb-3">Email Me</h3>
-        <a href="mailto:Freek.boes@live.be" class="text-blue-100 hover:text-white text-xl font-medium hover:underline inline-block transition">
-          Freek.boes@live.be
-        </a>
-      </div>
-    </div>
-
-    <!-- Social Media -->
-    <div class="text-center">
-      <h3 class="text-2xl font-semibold mb-8 text-gray-800">Follow me on social media</h3>
-      <div class="flex justify-center gap-6 flex-wrap">
-        <a href="https://www.instagram.com/freek.bs/"
-           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
-           aria-label="Instagram">
-          <img src="src/images/instagram.png" alt="Instagram" class="w-12 h-12 group-hover:opacity-80 transition">
-        </a>
-        <a href="mailto:Freek.boes@live.be"
-           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
-           aria-label="Email">
-          <img src="src/images/sms.png" alt="Mail" class="w-12 h-12 group-hover:opacity-80 transition">
-        </a>
-        <a href="https://www.linkedin.com/in/freekboes/"
-           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
-           aria-label="LinkedIn">
-          <img src="src/images/Linkedin.png" alt="LinkedIn" class="w-12 h-12 group-hover:opacity-80 transition">
-        </a>
-        <a href="https://github.com/FreekBoes"
-           class="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transform hover:scale-110 transition-all border-2 border-gray-100 hover:border-[#3c5d79]"
-           aria-label="Github">
-          <img src="src/images/Github.png" alt="Github" class="w-12 h-12 group-hover:opacity-80 transition">
-        </a>
-      </div>
-    </div>
-  </section>
-
-<!-- FOOTER -->
-<footer class="bg-white py-6">
-  <div class="container mx-auto px-4 flex justify-center">
-    <ul class="flex flex-col items-center gap-y-3
-               md:flex-row md:justify-center md:gap-y-0
-               text-sm text-gray-500">
-      <li class="px-4 hover:text-[#3c5d79] transition">@2024 Freek Boes</li>
-      <li class="px-4 hover:text-[#3c5d79] transition">Full-time student</li>
-      <li class="px-4 hover:text-[#3c5d79] transition">Web designer</li>
-      <li class="px-4 hover:text-[#3c5d79] transition">App development</li>
-      <li class="px-4 hover:text-[#3c5d79] transition">Designed by @me</li>
-    </ul>
-  </div>
-</footer>
-
-<!-- PROJECT MODAL -->
-<div id="project-modal" class="fixed inset-0 bg-black bg-opacity-60 z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeProjectModal()">
-  <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[85vh] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
-
-    <!-- Modal Header -->
-    <div class="bg-gradient-to-r from-[#3c5d79] to-[#2d4557] text-white p-8 flex justify-between items-start">
-      <div>
-        <h2 id="modal-title" class="text-3xl font-bold mb-2"></h2>
-        <p class="text-blue-100 text-sm">Project Details & Information</p>
-      </div>
-      <button onclick="closeProjectModal()" class="text-white hover:text-gray-200 transition transform hover:scale-110 p-2 rounded-full hover:bg-white/10">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+  <!-- Mobile menu -->
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="#about"      class="mobile-link" data-i18n="nav.about">About</a>
+    <a href="#education"  class="mobile-link" data-i18n="nav.education">Education</a>
+    <a href="#skills"     class="mobile-link" data-i18n="nav.skills">Skills</a>
+    <a href="#experience" class="mobile-link" data-i18n="nav.experience">Experience</a>
+    <a href="#work"       class="mobile-link" data-i18n="nav.work">Work</a>
+    <a href="#projects"   class="mobile-link" data-i18n="nav.projects">Projects</a>
+    <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n="nav.resume">Resume</a>
+    <a href="#contact"    class="mobile-link" data-i18n="nav.contact">Contact</a>
+    <div class="nav-mobile-controls">
+      <button id="lang-toggle-m"  class="nav-btn">NL</button>
+      <button id="theme-toggle-m" class="nav-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
         </svg>
       </button>
     </div>
+  </div>
 
-    <!-- Modal Content -->
-    <div class="overflow-y-auto flex-1 p-8 bg-gray-50">
-      <div class="space-y-8">
 
-        <!-- Project Description -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-          <div class="flex items-center gap-2 mb-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <h3 class="text-xl font-bold text-gray-800">Project Description</h3>
-          </div>
-          <p id="modal-description" class="text-gray-700 leading-relaxed"></p>
-        </div>
-
-        <!-- Client Needs -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-          <div class="flex items-center gap-2 mb-3">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            <h3 class="text-xl font-bold text-gray-800">Client Needs</h3>
-          </div>
-          <p id="modal-client-needs" class="text-gray-700 leading-relaxed"></p>
-        </div>
-
-        <!-- What I Learned -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-          <div class="flex items-center gap-2 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-            <h3 class="text-xl font-bold text-gray-800">What I Learned</h3>
-          </div>
-          <ul id="modal-learned" class="space-y-2"></ul>
-        </div>
-
-        <!-- Project Type & Contribution -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] text-white rounded-xl p-6 shadow-md">
-            <div class="flex items-center gap-2 mb-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              <h3 class="text-lg font-bold">Project Type</h3>
-            </div>
-            <p id="modal-type" class="text-blue-100"></p>
-          </div>
-          <div class="bg-gradient-to-br from-[#3c5d79] to-[#2d4557] text-white rounded-xl p-6 shadow-md">
-            <div class="flex items-center gap-2 mb-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <h3 class="text-lg font-bold">My Contribution</h3>
-            </div>
-            <p id="modal-contribution" class="text-blue-100"></p>
-          </div>
-        </div>
-
-        <!-- Links -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-          <div class="flex items-center gap-2 mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#3c5d79]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-            </svg>
-            <h3 class="text-xl font-bold text-gray-800">Links & Resources</h3>
-          </div>
-          <div id="modal-links" class="flex flex-wrap gap-3"></div>
-        </div>
+  <!-- HERO -->
+  <section id="home">
+    <div class="hero-panel">
+      <div class="hero-label label label-accent">// IDENTITY.JSON</div>
+      <h1 class="hero-name">FREEK<br>BOES<span class="dot">.</span></h1>
+      <p class="hero-tagline" data-i18n="tagline">
+        Software developer focused on building mobile and web applications that solve real business problems.
+      </p>
+      <div class="hero-ctas">
+        <a href="#work"                           class="btn btn-primary" data-i18n="hero.primaryCta">View my work</a>
+        <a href="src/CV-Freek-Boes.pdf" download  class="btn btn-outline" data-i18n="hero.secondaryCta">Download CV</a>
+        <a href="mailto:Freek.boes@live.be"       class="btn btn-ghost"   data-i18n="nav.contact">Contact</a>
       </div>
     </div>
 
-    <!-- Modal Footer -->
-    <div class="bg-white border-t border-gray-200 p-6 flex justify-end">
-      <button onclick="closeProjectModal()" class="px-6 py-2.5 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-lg transition">
-        Close
-      </button>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-label"  data-i18n="about.facts.0.label">Based in</div>
+        <div class="stat-value"  data-i18n="about.facts.0.value">LOMMEL, BE</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label"  data-i18n="about.facts.1.label">Experience</div>
+        <div class="stat-value"  data-i18n="about.facts.1.value">5 YEARS</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label"  data-i18n="about.facts.2.label">Focus</div>
+        <div class="stat-value"  data-i18n="about.facts.2.value">MOBILE · WEB · APIS</div>
+      </div>
+      <div class="stat-card highlight">
+        <div class="stat-label"  data-i18n="about.facts.3.label">Open to</div>
+        <div class="stat-value"  data-i18n="about.facts.3.value" style="line-height:1.2;">INTERNSHIPS ·<br>JUNIOR ROLES</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 01 · ABOUT -->
+  <section id="about" class="fade-up">
+    <div class="about-top">
+      <div class="about-photo-wrap">
+        <img src="src/images/photo.png" alt="Freek Boes" class="about-photo" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+        <div class="about-photo-placeholder">
+          <span class="about-photo-initials">FB</span>
+        </div>
+      </div>
+      <div class="about-panel">
+        <div class="label label-accent">// 01 · ABOUT.MD</div>
+        <h2 class="about-heading" data-i18n="about.title">About.</h2>
+        <p class="about-body" data-i18n="about.body">
+          I'm a final-year Applied Computer Science student at Thomas More who builds software that actually works in the real world, not just in a classroom. Three years of hands-on projects and an internship at H.Essers have taught me how to take an idea from concept to a product people use. I care about writing code that other developers can maintain, and designing experiences that make sense to the people using them.
+        </p>
+        <p class="about-outside" data-i18n="about.body2">
+          // Outside of code: handball trains my ability to perform under pressure and work as part of a fast-moving team — skills I bring directly to agile development. Staying active keeps me sharp, and reading about emerging technology ensures I never stop learning.
+        </p>
+      </div>
+    </div>
+
+    <div class="about-bottom">
+      <div class="data-panel">
+        <div class="data-panel-header">
+          <span class="label label-accent">// PERSONAL DATA</span>
+          <span class="data-panel-coords">51.22°N · 5.42°E</span>
+        </div>
+        <div class="data-panel-body">
+          <div class="data-row"><span class="data-key" data-i18n="dataCard.name">Name</span>       <span class="data-val">Freek Boes</span></div>
+          <div class="data-row"><span class="data-key" data-i18n="dataCard.location">Location</span><span class="data-val">Lommel, BE</span></div>
+          <div class="data-row"><span class="data-key" data-i18n="dataCard.status">Status</span>   <span class="data-val" data-i18n="hero.availability">Available · Summer 2026</span></div>
+          <div class="data-row"><span class="data-key" data-i18n="dataCard.license">Driving License</span> <span class="data-val">B</span></div>
+          <div class="data-row">
+            <span class="data-key">Email</span>
+            <span class="data-val">
+              <a href="mailto:Freek.boes@live.be" class="about-icon-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Freek.boes@live.be
+              </a>
+            </span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">LinkedIn</span>
+            <span class="data-val">
+              <a href="https://linkedin.com/in/freekboes" target="_blank" rel="noopener" class="about-icon-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM6.9 20.45H3.77V9H6.9v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+                freekboes
+              </a>
+            </span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">GitHub</span>
+            <span class="data-val">
+              <a href="https://github.com/FreekBoes" target="_blank" rel="noopener" class="about-icon-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+                FreekBoes
+              </a>
+            </span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">CV</span>
+            <span class="data-val">
+              <a href="src/CV-Freek-Boes.pdf" target="_blank" rel="noopener" class="about-icon-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+                View PDF
+              </a>
+              <a href="src/CV-Freek-Boes.pdf" download class="about-icon-link">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download PDF
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-panel">
+        <div class="data-panel-header">
+          <span class="label label-accent">// LANGUAGES</span>
+        </div>
+        <div class="data-panel-body lang-panel-body">
+          <div class="lang-entry">
+            <div class="lang-meta"><span>Dutch</span><span class="skill-pct">Native</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-w="1.0"></div></div>
+          </div>
+          <div class="lang-entry">
+            <div class="lang-meta"><span>English</span><span class="skill-pct">Professional</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-w="0.82"></div></div>
+          </div>
+          <div class="lang-entry">
+            <div class="lang-meta"><span>French</span><span class="skill-pct">Basic</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-w="0.35"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="data-panel">
+        <div class="data-panel-header">
+          <span class="label label-accent">// INTERESTS</span>
+        </div>
+        <div class="data-panel-body">
+          <div class="data-row">
+            <span class="data-key">🤾 Handball</span>
+            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Teamwork · Pressure · Agile mindset</span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">🏋️ Fitness</span>
+            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Discipline · Consistency · Focus</span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">📖 Tech reading</span>
+            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Continuous learning · Curiosity</span>
+          </div>
+          <div class="data-row">
+            <span class="data-key">🏛️ History</span>
+            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Pattern recognition · Long-term thinking</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 02 · EDUCATION -->
+  <section id="education" class="fade-up">
+    <div class="stack-top">
+      <div>
+        <div class="label label-accent">// 02 · EDUCATION</div>
+        <h2 class="stack-heading">Education.</h2>
+      </div>
+    </div>
+
+    <div class="exp-full-panel">
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#3c5d79;">TM</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title">Bachelor Applied Computer Science</span>
+            <span class="exp-period">Expected June 2026</span>
+          </div>
+          <div class="exp-org">Thomas More · Geel · Sep 2023 – Jun 2026</div>
+          <p class="exp-desc">Specialisation: Application development & software engineering. Focus on mobile, web and custom made applications.</p>
+        </div>
+      </div>
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#5a4a3a;">W</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title">Accountancy &amp; Informatics</span>
+            <span class="exp-period">2021 – 2023</span>
+          </div>
+          <div class="exp-org">WICO Campus · Lommel</div>
+          <p class="exp-desc">TSO — Combination of accounting, IT fundamentals and business administration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 03 · STACK (Hard Skills) -->
+  <section id="skills" class="fade-up">
+    <div class="stack-top">
+      <div>
+        <div class="label label-accent">// 03 · STACK.YAML</div>
+        <h2 class="stack-heading">Stack.</h2>
+      </div>
+      <div class="stack-hint">// hover bars for proficiency %</div>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-panel">
+        <div class="stack-panel-header">
+          <span class="stack-panel-title"><span class="arrow">▸</span> <span data-i18n="skills.groups.0.title">Languages</span></span>
+          <span class="stack-panel-count">7 items</span>
+        </div>
+        <div class="stack-panel-body">
+          <div><div class="skill-meta"><span>C#</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.88"></div></div></div>
+          <div><div class="skill-meta"><span>Java</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.85"></div></div></div>
+          <div><div class="skill-meta"><span>Javascript / Typescript</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.93"></div></div></div>
+          <div><div class="skill-meta"><span>PHP</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.75"></div></div></div>
+          <div><div class="skill-meta"><span>Python</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.65"></div></div></div>
+          <div><div class="skill-meta"><span>Dart</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.65"></div></div></div>
+          <div><div class="skill-meta"><span>SQL</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
+        </div>
+      </div>
+      <div class="stack-panel">
+        <div class="stack-panel-header">
+          <span class="stack-panel-title"><span class="arrow">▸</span> <span data-i18n="skills.groups.1.title">Frameworks</span></span>
+          <span class="stack-panel-count">8 items</span>
+        </div>
+        <div class="stack-panel-body">
+          <div><div class="skill-meta"><span>Tailwind CSS</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.90"></div></div></div>
+          <div><div class="skill-meta"><span>Angular</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
+          <div><div class="skill-meta"><span>Laravel</span><span class="skill-pct">83%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.83"></div></div></div>
+          <div><div class="skill-meta"><span>Spring Boot</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
+          <div><div class="skill-meta"><span>.NET / ASP.NET</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
+          <div><div class="skill-meta"><span>React</span><span class="skill-pct">60%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.60"></div></div></div>
+          <div><div class="skill-meta"><span>Flutter</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.65"></div></div></div>
+          <div><div class="skill-meta"><span>Office.js</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.75"></div></div></div>
+        </div>
+      </div>
+      <div class="stack-panel">
+        <div class="stack-panel-header">
+          <span class="stack-panel-title"><span class="arrow">▸</span> <span data-i18n="skills.groups.2.title">Tools & Platforms</span></span>
+          <span class="stack-panel-count">6 items</span>
+        </div>
+        <div class="stack-panel-body">
+          <div><div class="skill-meta"><span>Git / GitHub Actions</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.85"></div></div></div>
+          <div><div class="skill-meta"><span>Azure</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
+          <div><div class="skill-meta"><span>Docker</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.65"></div></div></div>
+          <div><div class="skill-meta"><span>Apache Kafka</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.65"></div></div></div>
+          <div><div class="skill-meta"><span>MySQL / SQL Server</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
+          <div><div class="skill-meta"><span>NX Monorepo</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03B · SOFT SKILLS -->
+  <section id="softskills" class="fade-up">
+    <div class="stack-top">
+      <div>
+        <div class="label label-accent">// 03B · SOFT SKILLS</div>
+        <h2 class="stack-heading">Soft Skills.</h2>
+      </div>
+    </div>
+
+    <div class="soft-split-grid">
+      <div class="soft-split-card">
+        <div class="soft-split-label label label-accent">01</div>
+        <div class="soft-split-title">Attention<br>to detail</div>
+        <p class="soft-split-proof">Ran code reviews across a 6-person team, catching edge cases before client demos.</p>
+      </div>
+      <div class="soft-split-card">
+        <div class="soft-split-label label label-accent">02</div>
+        <div class="soft-split-title">Works<br>independently</div>
+        <p class="soft-split-proof">Built and deployed the Handbal Overpelt website solo — brief to live domain, no project manager.</p>
+      </div>
+      <div class="soft-split-card">
+        <div class="soft-split-label label label-accent">03</div>
+        <div class="soft-split-title">Adapt<br>ability</div>
+        <p class="soft-split-proof">Guided an international exchange camp in Malta, adapting to dynamic situations daily while supporting participants and staff in a multilingual team.</p>
+      </div>
+      <div class="soft-split-card">
+        <div class="soft-split-label label label-accent">04</div>
+        <div class="soft-split-title">User-centered<br>thinking</div>
+        <p class="soft-split-proof">Every project I build starts with the question: who uses this and what do they actually need? Applied from freelance client work to enterprise tooling at H.Essers.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 04 · EXPERIENCE -->
+  <section id="experience" class="fade-up">
+    <div class="stack-top">
+      <div>
+        <div class="label label-accent">// 04 · EXPERIENCE</div>
+        <h2 class="stack-heading">Experience.</h2>
+      </div>
+    </div>
+
+    <div class="exp-full-panel">
+      <div class="exp-entry-rich featured-entry">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#1a3a5c;">H</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title">Intern Software Developer</span>
+            <span class="exp-period">Feb 2026 – May 2026</span>
+          </div>
+          <div class="exp-org">H.Essers · Genk, BE</div>
+          <p class="exp-desc">Developed a <strong>full-stack</strong> email ingestion system integrating an <strong>Outlook Add-in</strong> (Office.js) with a <strong>Java 21 / Spring Boot REST API</strong> and <strong>Apache Kafka</strong> for event-driven downstream processing. Implemented a <strong>Kafka consumer service</strong> with <strong>deduplication</strong>, <strong>retry logic</strong> and <strong>Dead Letter Queue</strong> handling. Validated reliability through <strong>unit/integration tests</strong> and k6 <strong>load testing</strong>.</p>
+          <div class="exp-tags">
+            <span class="exp-tag" data-tag="java">Java 21</span>
+            <span class="exp-tag" data-tag="spring">Spring Boot</span>
+            <span class="exp-tag" data-tag="officejs">Office.js</span>
+            <span class="exp-tag" data-tag="kafka">Apache Kafka</span>
+            <span class="exp-tag" data-tag="oauth">OAuth2</span>
+            <span class="exp-tag" data-tag="azure">Azure</span>
+            <span class="exp-tag" data-tag="docker">Docker</span>
+            <span class="exp-tag" data-tag="k6">k6</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#8a6a2a;">Y</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title">Exchange Animator</span>
+            <span class="exp-period">Jul 2025</span>
+          </div>
+          <div class="exp-org">YES camp · Malta</div>
+          <p class="exp-desc"><strong>Guiding</strong> and animating young people from Malta during an <strong>international exchange</strong> camp. <strong>Working together</strong> in an <strong>international team</strong> of supervisors and volunteers. Adapted quickly to <strong>dynamic situations</strong> while supporting both participants and staff members.</p>
+          <div class="exp-tags">
+            <span class="exp-tag" data-tag="teamwork">Teamwork</span>
+            <span class="exp-tag" data-tag="communication">Communication</span>
+            <span class="exp-tag" data-tag="adaptability">Adaptability</span>
+            <span class="exp-tag" data-tag="leadership">Leadership</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#7a3c6e;">M</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title">Service Desk Agent</span>
+            <span class="exp-period">Aug 2024</span>
+          </div>
+          <div class="exp-org">Melexis · Tessenderlo-Ham</div>
+          <p class="exp-desc">Provided <strong>technical support</strong> to internal staff, <strong>troubleshooting</strong> hardware, software and network issues. <strong>Collaborated</strong> with the <strong>global Service Desk team</strong> to deliver effective IT solutions.</p>
+          <div class="exp-tags">
+            <span class="exp-tag" data-tag="support">IT Support</span>
+            <span class="exp-tag" data-tag="support">Troubleshooting</span>
+            <span class="exp-tag" data-tag="support">Networking</span>
+            <span class="exp-tag" data-tag="communication">Communication</span>
+            <span class="exp-tag" data-tag="teamwork">Teamwork</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#7a3c6e;">M</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title">Service Desk Agent</span>
+            <span class="exp-period">Aug 2023</span>
+          </div>
+          <div class="exp-org">Melexis · Tessenderlo-Ham</div>
+          <p class="exp-desc">Gained <strong>hands-on experience</strong> with IT systems and company infrastructure. Built <strong>foundational knowledge</strong> of corporate IT infrastructure and day-to-day technical operations.</p>
+          <div class="exp-tags">
+            <span class="exp-tag" data-tag="support">IT Support</span>
+            <span class="exp-tag" data-tag="support">Troubleshooting</span>
+            <span class="exp-tag" data-tag="support">Networking</span>
+            <span class="exp-tag" data-tag="communication">Communication</span>
+            <span class="exp-tag" data-tag="teamwork">Teamwork</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 05 · INTERNSHIP (featured) -->
+  <section id="work" class="fade-up">
+    <div class="work-top">
+      <div>
+        <div class="label label-accent">// 05 · FEATURED</div>
+        <h2 class="work-heading">Internship <span class="arrow">→</span> H.Essers</h2>
+      </div>
+      <span class="work-period" data-i18n="featured.periodRole">Sep 2025 – May 2026 · Software Engineering Intern</span>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-screenshot">
+        <div class="case-screenshot-grid"></div>
+        <div class="case-screenshot-text">Software engineer</div>
+        <div class="case-screenshot-badge">[ screenshot_placeholder ]</div>
+      </div>
+
+      <div class="case-meta-row">
+        <div class="case-meta-cell"><div class="key">COMPANY</div> <div class="val">H.Essers</div></div>
+        <div class="case-meta-cell"><div class="key">DURATION</div><div class="val">Sep 2025 – May 2026</div></div>
+        <div class="case-meta-cell"><div class="key">TEAM</div>    <div class="val">1 devs</div></div>
+        <div class="case-meta-cell"><div class="key">SCOPE</div>   <div class="val">Office Add-in</div></div>
+      </div>
+
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num">01 / PROBLEM</div>
+          <p data-i18n="featured.problem">Logistics coordinators at H.Essers spent significant time context-switching between Outlook and internal dispatch systems.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num">02 / APPROACH</div>
+          <p data-i18n="featured.approach">I designed and built an Outlook Add-in that parses incoming shipment emails and surfaces structured actions inline.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num">03 / SOLUTION</div>
+          <p data-i18n="featured.solution">The add-in turns a 4-minute manual task into a two-click confirmation, complete with validation, retry and audit trails.</p>
+        </div>
+      </div>
+
+      <div class="case-outcomes">
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--good);">// OUTCOMES</div>
+          <ul class="outcomes-list" id="outcomes-list">
+            <li><span class="prefix-plus">[+]</span> Outlook Add-in rolled out to the logistics team</li>
+            <li><span class="prefix-plus">[+]</span> Ingest API handling live shipment traffic</li>
+            <li><span class="prefix-plus">[+]</span> Gateway API extended with new endpoints and auth flows</li>
+            <li><span class="prefix-plus">[+]</span> End-to-end CI/CD on Azure with GitHub Actions</li>
+          </ul>
+        </div>
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--accent-d);">// LEARNED</div>
+          <ul class="outcomes-list" id="learned-list">
+            <li><span class="prefix-arrow">[→]</span> Shipping software inside an enterprise release process</li>
+            <li><span class="prefix-arrow">[→]</span> Designing APIs for other teams to actually consume</li>
+            <li><span class="prefix-arrow">[→]</span> Security, auth and observability in production systems</li>
+            <li><span class="prefix-arrow">[→]</span> How to translate vague business requests into technical specs</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="case-stack-row">
+        <span class="label" style="margin-right:4px;">STACK</span>
+        <span class="stack-tag">C#</span><span class="stack-tag">.NET</span>
+        <span class="stack-tag">Angular</span><span class="stack-tag">Office.js</span>
+        <span class="stack-tag">Azure</span><span class="stack-tag">REST</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 06 · PROJECTS -->
+  <section id="projects" class="fade-up">
+    <div class="stack-top">
+      <div>
+        <div class="label label-accent">// 06 · PROJECTS</div>
+        <h2 class="projects-heading">Projects.</h2>
+      </div>
+    </div>
+
+    <div class="project-filter">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="web-app">Web App</button>
+      <button class="filter-btn" data-filter="client">Client</button>
+      <button class="filter-btn" data-filter="e-commerce">E-commerce</button>
+      <button class="filter-btn" data-filter="personal">Personal</button>
+    </div>
+
+    <div class="projects-grid" id="projects-grid">
+      <div class="project-card" data-project="de-beerse-bende" data-category="web-app">
+        <div class="project-card-img">
+          <div class="project-card-img-bg">DE BEERSE BENDE</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-meta">
+            <span class="project-card-num label label-accent">Web App · Team of 6</span>
+            <span class="project-card-year">2024</span>
+          </div>
+          <div class="project-name">De Beerse Bende</div>
+          <p class="project-desc">Full business platform for a local client — inventory, calendar, role-based auth and reporting.</p>
+          <div class="project-tags">
+            <span class="project-tag">Laravel</span>
+            <span class="project-tag">Tailwind CSS</span>
+            <span class="project-tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="handbal-overpelt" data-category="client">
+        <div class="project-card-img">
+          <div class="project-card-img-bg">HANDBAL OVERPELT</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-meta">
+            <span class="project-card-num label label-accent">Client Website · Solo</span>
+            <span class="project-card-year">2024</span>
+          </div>
+          <div class="project-name">Handbal Overpelt</div>
+          <p class="project-desc">First independent client project — a full team website for my local handball club. Responsive, deployed and still live.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">Tailwind CSS</span>
+            <span class="project-tag">JS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="zentech" data-category="e-commerce">
+        <div class="project-card-img">
+          <div class="project-card-img-bg">ZENTECH</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-meta">
+            <span class="project-card-num label label-accent">E-commerce · Solo</span>
+            <span class="project-card-year">2024</span>
+          </div>
+          <div class="project-name">ZenTech</div>
+          <p class="project-desc">A complete webshop — product catalog, cart, checkout and admin panel. Top marks.</p>
+          <div class="project-tags">
+            <span class="project-tag">Laravel</span>
+            <span class="project-tag">Tailwind CSS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-project="first-portfolio" data-category="personal">
+        <div class="project-card-img">
+          <div class="project-card-img-bg">FIRST PORTFOLIO</div>
+        </div>
+        <div class="project-card-body">
+          <div class="project-card-meta">
+            <span class="project-card-num label label-accent">Personal · Solo</span>
+            <span class="project-card-year">2023</span>
+          </div>
+          <div class="project-name">First Portfolio</div>
+          <p class="project-desc">My first portfolio, built in my own time. Kept here to show how far the craft has come.</p>
+          <div class="project-tags">
+            <span class="project-tag">Bootstrap</span>
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 07 · CONTACT -->
+  <section id="contact" class="fade-up">
+    <div class="contact-panel">
+      <div class="contact-bg-grid"></div>
+      <div class="contact-inner">
+        <div class="contact-left">
+          <div class="label label-accent">// 07 · GET IN TOUCH</div>
+          <h2 class="ship-heading">Let's<br>ship<span class="dot">.</span></h2>
+          <p class="contact-body" data-i18n="contact.body">
+            I'm actively looking for a first role after graduation — ideally somewhere I can keep shipping real software and learning from senior engineers. If that sounds like your team, let's talk.
+          </p>
+          <div class="contact-status">
+            <span class="nav-status-dot"></span>
+            <span class="label" data-i18n="hero.availability">Available for graduate roles · Summer 2026</span>
+          </div>
+        </div>
+        <div class="contact-right">
+          <div class="label label-accent" style="margin-bottom:16px;">// REACH OUT</div>
+          <a href="mailto:Freek.boes@live.be" class="contact-link-primary">
+            <span class="contact-link-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <span>Freek.boes@live.be</span>
+            <span class="link-arrow">→</span>
+          </a>
+          <a href="https://linkedin.com/in/freekboes" target="_blank" rel="noopener noreferrer" class="contact-link-secondary">
+            <span class="contact-link-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 110-4.12 2.06 2.06 0 010 4.12zM6.9 20.45H3.77V9H6.9v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+            </span>
+            <span>linkedin.com/in/freekboes</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a href="https://github.com/FreekBoes" target="_blank" rel="noopener noreferrer" class="contact-link-secondary">
+            <span class="contact-link-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+            </span>
+            <span>github.com/FreekBoes</span>
+            <span class="link-arrow">↗</span>
+          </a>
+          <a href="src/CV-Freek-Boes.pdf" target="_blank" rel="noopener" class="contact-link-secondary">
+            <span class="contact-link-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+            </span>
+            <span>CV-Freek-Boes.pdf</span>
+            <span class="link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n="footer">Designed and built by Freek Boes · 2026</span>
+    <span>build · 2026.05</span>
+  </footer>
+
+  <!-- PROJECT MODAL -->
+  <div id="project-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <div class="label label-accent" id="modal-kicker">// PROJECT DETAIL</div>
+          <h2 class="modal-title" id="modal-title">Project</h2>
+          <div class="modal-meta" id="modal-meta"></div>
+        </div>
+        <button class="modal-close" id="modal-close" aria-label="Close">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M2 2l12 12M14 2L2 14"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <div class="modal-section-label label label-accent">// ASSIGNMENT</div>
+          <p class="modal-text" id="modal-assignment"></p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label label label-accent">// APPROACH</div>
+          <p class="modal-text" id="modal-approach"></p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label label label-accent">// FINAL RESULT</div>
+          <p class="modal-text" id="modal-result"></p>
+        </div>
+        <div class="modal-section">
+          <div class="modal-section-label label label-accent">// MY INPUT</div>
+          <p class="modal-text" id="modal-input"></p>
+        </div>
+        <div class="modal-section" id="modal-photos-section">
+          <div class="modal-section-label label label-accent">// SCREENSHOTS</div>
+          <div class="modal-photos" id="modal-photos"></div>
+        </div>
+        <div class="modal-footer-row">
+          <div class="modal-stack" id="modal-stack"></div>
+          <div style="display:flex; gap:8px; margin-left:auto;">
+            <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline modal-link-btn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+              GitHub
+            </a>
+            <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary modal-link-btn">
+              View Project ↗
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<script src="script.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
