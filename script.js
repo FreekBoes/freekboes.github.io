@@ -55,11 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!t) return;
 
     // Update all elements with data-i18n="path"
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      const val = get(t, key);
-      if (val !== undefined && typeof val === 'string') el.textContent = val;
-    });
+document.querySelectorAll('[data-i18n]').forEach(el => {
+  const key = el.getAttribute('data-i18n');
+  const val = get(t, key);
+  if (val !== undefined && typeof val === 'string') el.textContent = val;
+});
+
+// HTML content elements (voor elementen met strong tags e.d.)
+document.querySelectorAll('[data-i18n-html]').forEach(el => {
+  const key = el.getAttribute('data-i18n-html');
+  const val = get(t, key);
+  if (val !== undefined && typeof val === 'string') el.innerHTML = val;
+});
 
     // Re-render lists that come from arrays
 
@@ -82,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Projects grid
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
-projectsGrid.innerHTML = t.projects.items.map((p) => `
+      projectsGrid.innerHTML = t.projects.items.map((p) => `
   <div class="project-card" data-project="${p.key}" data-category="${p.category}">
     <div class="project-card-img">
       <div class="project-card-img-bg">${p.name.toUpperCase()}</div>
@@ -129,6 +136,22 @@ projectsGrid.innerHTML = t.projects.items.map((p) => `
           <p class="exp-desc">${e.detail}</p>
         </div>
       `).join('');
+    }
+
+    // Stage outcomes
+    const stageOutcomes = document.getElementById('stage-outcomes-list');
+    if (stageOutcomes && t.stage) {
+      stageOutcomes.innerHTML = t.stage.outcomes.map(o =>
+        `<li><span class="prefix-plus">[+]</span> ${o}</li>`
+      ).join('');
+    }
+
+    // Stage learned
+    const stageLearned = document.getElementById('stage-learned-list');
+    if (stageLearned && t.stage) {
+      stageLearned.innerHTML = t.stage.learned.map(o =>
+        `<li><span class="prefix-arrow">[→]</span> ${o}</li>`
+      ).join('');
     }
 
     // Update lang toggle button label (show the other language)
@@ -218,10 +241,10 @@ projectsGrid.innerHTML = t.projects.items.map((p) => `
   /* ──────────────────────────────────────────
      PROJECT MODAL
   ────────────────────────────────────────── */
-  const modal        = document.getElementById('project-modal');
-  const modalClose   = document.getElementById('modal-close');
+  const modal      = document.getElementById('project-modal');
+  const modalClose = document.getElementById('modal-close');
 
-function openModal(projectKey) {
+  function openModal(projectKey) {
     const t = DATA[currentLang];
     const p = t.projectDetails && t.projectDetails[projectKey];
     if (!p || !modal) return;
@@ -296,20 +319,38 @@ function openModal(projectKey) {
     if (e.key === 'Escape') closeModal();
   });
 
+  // Project filter
   document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    document.querySelectorAll('.project-card').forEach(card => {
-      if (filter === 'all' || card.dataset.category === filter) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
     });
   });
-});
 
+}); // ← einde DOMContentLoaded
 
+// Lightbox — globaal zodat onclick in HTML ze kan bereiken
+function openLightbox(btn) {
+  const img = btn.closest('.stage-photo-cell').querySelector('img');
+  if (!img || img.style.display === 'none') return;
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
 });

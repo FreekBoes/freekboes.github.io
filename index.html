@@ -147,14 +147,14 @@
     <div class="about-bottom">
       <div class="data-panel">
         <div class="data-panel-header">
-          <span class="label label-accent">// PERSONAL DATA</span>
+          <span class="label label-accent" data-i18n="about.personalDataLabel">// PERSONAL DATA</span>
           <span class="data-panel-coords">51.22°N · 5.42°E</span>
         </div>
         <div class="data-panel-body">
-          <div class="data-row"><span class="data-key" data-i18n="dataCard.name">Name</span>       <span class="data-val">Freek Boes</span></div>
+          <div class="data-row"><span class="data-key" data-i18n="dataCard.name">Name</span><span class="data-val">Freek Boes</span></div>
           <div class="data-row"><span class="data-key" data-i18n="dataCard.location">Location</span><span class="data-val">Lommel, BE</span></div>
-          <div class="data-row"><span class="data-key" data-i18n="dataCard.status">Status</span>   <span class="data-val" data-i18n="hero.availability">Available · Summer 2026</span></div>
-          <div class="data-row"><span class="data-key" data-i18n="dataCard.license">Driving License</span> <span class="data-val">B</span></div>
+          <div class="data-row"><span class="data-key" data-i18n="dataCard.status">Status</span><span class="data-val" data-i18n="hero.availability">Available · Summer 2026</span></div>
+          <div class="data-row"><span class="data-key" data-i18n="dataCard.license">Driving License</span><span class="data-val">B</span></div>
           <div class="data-row">
             <span class="data-key">Email</span>
             <span class="data-val">
@@ -187,11 +187,11 @@
             <span class="data-val">
               <a href="src/CV-Freek-Boes.pdf" target="_blank" rel="noopener" class="about-icon-link">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-                View PDF
+                <span data-i18n="about.cvView">View PDF</span>
               </a>
               <a href="src/CV-Freek-Boes.pdf" download class="about-icon-link">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PDF
+                <span data-i18n="about.cvDownload">Download PDF</span>
               </a>
             </span>
           </div>
@@ -200,19 +200,28 @@
 
       <div class="data-panel">
         <div class="data-panel-header">
-          <span class="label label-accent">// LANGUAGES</span>
+          <span class="label label-accent" data-i18n="about.languagesLabel">// LANGUAGES</span>
         </div>
         <div class="data-panel-body lang-panel-body">
           <div class="lang-entry">
-            <div class="lang-meta"><span>Dutch</span><span class="skill-pct">Native</span></div>
+            <div class="lang-meta">
+              <span data-i18n="about.langDutch">Dutch</span>
+              <span class="skill-pct" data-i18n="about.langDutchLevel">Native</span>
+            </div>
             <div class="skill-bar"><div class="skill-fill" data-w="1.0"></div></div>
           </div>
           <div class="lang-entry">
-            <div class="lang-meta"><span>English</span><span class="skill-pct">Professional</span></div>
+            <div class="lang-meta">
+              <span data-i18n="about.langEnglish">English</span>
+              <span class="skill-pct" data-i18n="about.langEnglishLevel">Professional</span>
+            </div>
             <div class="skill-bar"><div class="skill-fill" data-w="0.82"></div></div>
           </div>
           <div class="lang-entry">
-            <div class="lang-meta"><span>French</span><span class="skill-pct">Basic</span></div>
+            <div class="lang-meta">
+              <span data-i18n="about.langFrench">French</span>
+              <span class="skill-pct" data-i18n="about.langFrenchLevel">Basic</span>
+            </div>
             <div class="skill-bar"><div class="skill-fill" data-w="0.35"></div></div>
           </div>
         </div>
@@ -220,24 +229,24 @@
 
       <div class="data-panel">
         <div class="data-panel-header">
-          <span class="label label-accent">// INTERESTS</span>
+          <span class="label label-accent" data-i18n="about.interestsLabel">// INTERESTS</span>
         </div>
         <div class="data-panel-body">
           <div class="data-row">
-            <span class="data-key">🤾 Handball</span>
-            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Teamwork · Pressure · Agile mindset</span>
+            <span class="data-key" data-i18n="about.interest1Name">🤾 Handball</span>
+            <span class="data-val" data-i18n="about.interest1Val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Teamwork · Pressure · Agile mindset</span>
           </div>
           <div class="data-row">
-            <span class="data-key">🏋️ Fitness</span>
-            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Discipline · Consistency · Focus</span>
+            <span class="data-key" data-i18n="about.interest2Name">🏋️ Fitness</span>
+            <span class="data-val" data-i18n="about.interest2Val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Discipline · Consistency · Focus</span>
           </div>
           <div class="data-row">
-            <span class="data-key">📖 Tech reading</span>
-            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Continuous learning · Curiosity</span>
+            <span class="data-key" data-i18n="about.interest3Name">📖 Tech reading</span>
+            <span class="data-val" data-i18n="about.interest3Val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Continuous learning · Curiosity</span>
           </div>
           <div class="data-row">
-            <span class="data-key">🏛️ History</span>
-            <span class="data-val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Pattern recognition · Long-term thinking</span>
+            <span class="data-key" data-i18n="about.interest4Name">🏛️ History</span>
+            <span class="data-val" data-i18n="about.interest4Val" style="font-size:11px; color:var(--muted); text-align:right; max-width:55%;">Pattern recognition · Long-term thinking</span>
           </div>
         </div>
       </div>
@@ -250,35 +259,39 @@
     <div class="stack-top">
       <div>
         <div class="label label-accent">// 02 · EDUCATION</div>
-        <h2 class="stack-heading">Education.</h2>
+        <h2 class="stack-heading" data-i18n="education.heading">Education.</h2>
       </div>
     </div>
 
     <div class="exp-full-panel">
       <div class="exp-entry-rich">
         <div class="exp-logo-wrap">
-          <div class="exp-logo" style="background:#3c5d79;">TM</div>
+          <img src="src/images/Thomas-More-logo_oranje_rgb.png" alt="Thomas More" class="exp-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#3c5d79;display:none;">TM</div>
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title">Bachelor Applied Computer Science</span>
-            <span class="exp-period">Expected June 2026</span>
+            <span class="exp-title" data-i18n="education.entry1Title">Bachelor Applied Computer Science</span>
+            <span class="exp-period" data-i18n="education.entry1Period">Expected June 2026</span>
           </div>
-          <div class="exp-org">Thomas More · Geel · Sep 2023 – Jun 2026</div>
-          <p class="exp-desc">Specialisation: Application development & software engineering. Focus on mobile, web and custom made applications.</p>
+          <div class="exp-org" data-i18n="education.entry1Org">Thomas More · Geel · Sep 2023 – Jun 2026</div>
+          <p class="exp-desc" data-i18n="education.entry1Desc">Specialisation: Application development & software engineering. Focus on mobile, web and custom made applications.</p>
         </div>
       </div>
       <div class="exp-entry-rich">
         <div class="exp-logo-wrap">
-          <div class="exp-logo" style="background:#5a4a3a;">W</div>
+          <img src="src/images/wico_logo2.png" alt="WICO Campus" class="exp-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#5a4a3a;display:none;">W</div>
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title">Accountancy &amp; Informatics</span>
-            <span class="exp-period">2021 – 2023</span>
+            <span class="exp-title" data-i18n="education.entry2Title">Accountancy &amp; Informatics</span>
+            <span class="exp-period" data-i18n="education.entry2Period">2021 – 2023</span>
           </div>
-          <div class="exp-org">WICO Campus · Lommel</div>
-          <p class="exp-desc">TSO — Combination of accounting, IT fundamentals and business administration.</p>
+          <div class="exp-org" data-i18n="education.entry2Org">WICO Campus · Lommel</div>
+          <p class="exp-desc" data-i18n="education.entry2Desc">TSO — Combination of accounting, IT fundamentals and business administration.</p>
         </div>
       </div>
     </div>
@@ -290,9 +303,9 @@
     <div class="stack-top">
       <div>
         <div class="label label-accent">// 03 · STACK.YAML</div>
-        <h2 class="stack-heading">Stack.</h2>
+        <h2 class="stack-heading" data-i18n="skills.heading">Stack.</h2>
       </div>
-      <div class="stack-hint">// hover bars for proficiency %</div>
+      <div class="stack-hint" data-i18n="skills.hint">// hover bars for proficiency %</div>
     </div>
 
     <div class="stack-grid">
@@ -304,8 +317,8 @@
         <div class="stack-panel-body">
           <div><div class="skill-meta"><span>C#</span><span class="skill-pct">88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.88"></div></div></div>
           <div><div class="skill-meta"><span>Java</span><span class="skill-pct">85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.85"></div></div></div>
-          <div><div class="skill-meta"><span>Javascript / Typescript</span><span class="skill-pct">93%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.93"></div></div></div>
-          <div><div class="skill-meta"><span>PHP</span><span class="skill-pct">75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.75"></div></div></div>
+          <div><div class="skill-meta"><span>Javascript / Typescript</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
+          <div><div class="skill-meta"><span>PHP</span><span class="skill-pct">60%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.60"></div></div></div>
           <div><div class="skill-meta"><span>Python</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.65"></div></div></div>
           <div><div class="skill-meta"><span>Dart</span><span class="skill-pct">65%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.65"></div></div></div>
           <div><div class="skill-meta"><span>SQL</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
@@ -318,7 +331,7 @@
         </div>
         <div class="stack-panel-body">
           <div><div class="skill-meta"><span>Tailwind CSS</span><span class="skill-pct">90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.90"></div></div></div>
-          <div><div class="skill-meta"><span>Angular</span><span class="skill-pct">80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.80"></div></div></div>
+          <div><div class="skill-meta"><span>Angular</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
           <div><div class="skill-meta"><span>Laravel</span><span class="skill-pct">83%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.83"></div></div></div>
           <div><div class="skill-meta"><span>Spring Boot</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
           <div><div class="skill-meta"><span>.NET / ASP.NET</span><span class="skill-pct">70%</span></div><div class="skill-bar"><div class="skill-fill" data-w="0.70"></div></div></div>
@@ -349,7 +362,7 @@
     <div class="stack-top">
       <div>
         <div class="label label-accent">// 03B · SOFT SKILLS</div>
-        <h2 class="stack-heading">Soft Skills.</h2>
+        <h2 class="stack-heading" data-i18n="softskills.heading">Soft Skills.</h2>
       </div>
     </div>
 
@@ -357,22 +370,22 @@
       <div class="soft-split-card">
         <div class="soft-split-label label label-accent">01</div>
         <div class="soft-split-title">Attention<br>to detail</div>
-        <p class="soft-split-proof">Ran code reviews across a 6-person team, catching edge cases before client demos.</p>
+        <p class="soft-split-proof" data-i18n="softskills.proof1">Ran code reviews across a 6-person team, catching edge cases before client demos.</p>
       </div>
       <div class="soft-split-card">
         <div class="soft-split-label label label-accent">02</div>
         <div class="soft-split-title">Works<br>independently</div>
-        <p class="soft-split-proof">Built and deployed the Handbal Overpelt website solo — brief to live domain, no project manager.</p>
+        <p class="soft-split-proof" data-i18n="softskills.proof2">Built and deployed the Handbal Overpelt website solo — brief to live domain, no project manager.</p>
       </div>
       <div class="soft-split-card">
         <div class="soft-split-label label label-accent">03</div>
         <div class="soft-split-title">Adapt<br>ability</div>
-        <p class="soft-split-proof">Guided an international exchange camp in Malta, adapting to dynamic situations daily while supporting participants and staff in a multilingual team.</p>
+        <p class="soft-split-proof" data-i18n="softskills.proof3">Guided an international exchange camp in Malta, adapting to dynamic situations daily while supporting participants and staff in a multilingual team.</p>
       </div>
       <div class="soft-split-card">
         <div class="soft-split-label label label-accent">04</div>
         <div class="soft-split-title">User-centered<br>thinking</div>
-        <p class="soft-split-proof">Every project I build starts with the question: who uses this and what do they actually need? Applied from freelance client work to enterprise tooling at H.Essers.</p>
+        <p class="soft-split-proof" data-i18n="softskills.proof4">Every project I build starts with the question: who uses this and what do they actually need? Applied from freelance client work to enterprise tooling at H.Essers.</p>
       </div>
     </div>
   </section>
@@ -383,22 +396,24 @@
     <div class="stack-top">
       <div>
         <div class="label label-accent">// 04 · EXPERIENCE</div>
-        <h2 class="stack-heading">Experience.</h2>
+        <h2 class="stack-heading" data-i18n="experience.heading">Experience.</h2>
       </div>
     </div>
 
     <div class="exp-full-panel">
       <div class="exp-entry-rich featured-entry">
         <div class="exp-logo-wrap">
-          <div class="exp-logo" style="background:#1a3a5c;">H</div>
+          <img src="src/images/Hessers.png" alt="H.Essers" class="exp-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#1a3a5c;display:none;">H</div>
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title">Intern Software Developer</span>
+            <span class="exp-title" data-i18n="experience.entry1Title">Intern Software Developer</span>
             <span class="exp-period">Feb 2026 – May 2026</span>
           </div>
-          <div class="exp-org">H.Essers · Genk, BE</div>
-          <p class="exp-desc">Developed a <strong>full-stack</strong> email ingestion system integrating an <strong>Outlook Add-in</strong> (Office.js) with a <strong>Java 21 / Spring Boot REST API</strong> and <strong>Apache Kafka</strong> for event-driven downstream processing. Implemented a <strong>Kafka consumer service</strong> with <strong>deduplication</strong>, <strong>retry logic</strong> and <strong>Dead Letter Queue</strong> handling. Validated reliability through <strong>unit/integration tests</strong> and k6 <strong>load testing</strong>.</p>
+          <div class="exp-org" data-i18n="experience.entry1Org">H.Essers · Genk, BE</div>
+          <p class="exp-desc" data-i18n-html="experience.entry1Desc">Developed a <strong>full-stack</strong> email ingestion system integrating an <strong>Outlook Add-in</strong> (Office.js) with a <strong>Java 21 / Spring Boot REST API</strong> and <strong>Apache Kafka</strong> for event-driven downstream processing. Implemented a <strong>Kafka consumer service</strong> with <strong>deduplication</strong> and <strong>retry logic</strong>. Validated reliability through <strong>unit/integration tests</strong> and k6 <strong>load testing</strong>.</p>
           <div class="exp-tags">
             <span class="exp-tag" data-tag="java">Java 21</span>
             <span class="exp-tag" data-tag="spring">Spring Boot</span>
@@ -414,15 +429,17 @@
 
       <div class="exp-entry-rich">
         <div class="exp-logo-wrap">
-          <div class="exp-logo" style="background:#8a6a2a;">Y</div>
+          <img src="src/images/YES-camp.png" alt="YES-camp" class="exp-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#8a6a2a;display:none;">Y</div>
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title">Exchange Animator</span>
+            <span class="exp-title" data-i18n="experience.entry2Title">Exchange Animator</span>
             <span class="exp-period">Jul 2025</span>
           </div>
-          <div class="exp-org">YES camp · Malta</div>
-          <p class="exp-desc"><strong>Guiding</strong> and animating young people from Malta during an <strong>international exchange</strong> camp. <strong>Working together</strong> in an <strong>international team</strong> of supervisors and volunteers. Adapted quickly to <strong>dynamic situations</strong> while supporting both participants and staff members.</p>
+          <div class="exp-org" data-i18n="experience.entry2Org">YES camp · Malta</div>
+          <p class="exp-desc" data-i18n-html="experience.entry2Desc"><strong>Guiding</strong> and animating young people from Malta during an <strong>international exchange</strong> camp. <strong>Working together</strong> in an <strong>international team</strong> of supervisors and volunteers. Adapted quickly to <strong>dynamic situations</strong> while supporting both participants and staff members.</p>
           <div class="exp-tags">
             <span class="exp-tag" data-tag="teamwork">Teamwork</span>
             <span class="exp-tag" data-tag="communication">Communication</span>
@@ -434,15 +451,17 @@
 
       <div class="exp-entry-rich">
         <div class="exp-logo-wrap">
-          <div class="exp-logo" style="background:#7a3c6e;">M</div>
+          <img src="src/images/Melexis_logo.png" alt="Melexis" class="exp-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#7a3c6e;display:none;">M</div>
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title">Service Desk Agent</span>
+            <span class="exp-title" data-i18n="experience.entry3Title">Service Desk Agent</span>
             <span class="exp-period">Aug 2024</span>
           </div>
-          <div class="exp-org">Melexis · Tessenderlo-Ham</div>
-          <p class="exp-desc">Provided <strong>technical support</strong> to internal staff, <strong>troubleshooting</strong> hardware, software and network issues. <strong>Collaborated</strong> with the <strong>global Service Desk team</strong> to deliver effective IT solutions.</p>
+          <div class="exp-org" data-i18n="experience.entry3Org">Melexis · Tessenderlo-Ham</div>
+          <p class="exp-desc" data-i18n-html="experience.entry3Desc1">Provided <strong>technical support</strong> to internal staff, <strong>troubleshooting</strong> hardware, software and network issues. <strong>Collaborated</strong> with the <strong>global Service Desk team</strong> to deliver effective IT solutions.</p>
           <div class="exp-tags">
             <span class="exp-tag" data-tag="support">IT Support</span>
             <span class="exp-tag" data-tag="support">Troubleshooting</span>
@@ -455,15 +474,17 @@
 
       <div class="exp-entry-rich">
         <div class="exp-logo-wrap">
-          <div class="exp-logo" style="background:#7a3c6e;">M</div>
+          <img src="src/images/Melexis_logo.png" alt="Melexis" class="exp-logo-img"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#7a3c6e;display:none;">M</div>
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title">Service Desk Agent</span>
+            <span class="exp-title" data-i18n="experience.entry4Title">Service Desk Agent</span>
             <span class="exp-period">Aug 2023</span>
           </div>
-          <div class="exp-org">Melexis · Tessenderlo-Ham</div>
-          <p class="exp-desc">Gained <strong>hands-on experience</strong> with IT systems and company infrastructure. Built <strong>foundational knowledge</strong> of corporate IT infrastructure and day-to-day technical operations.</p>
+          <div class="exp-org" data-i18n="experience.entry3Org">Melexis · Tessenderlo-Ham</div>
+          <p class="exp-desc" data-i18n-html="experience.entry4Desc2">Gained <strong>hands-on experience</strong> with IT systems and company infrastructure. Built <strong>foundational knowledge</strong> of corporate IT infrastructure and day-to-day technical operations.</p>
           <div class="exp-tags">
             <span class="exp-tag" data-tag="support">IT Support</span>
             <span class="exp-tag" data-tag="support">Troubleshooting</span>
@@ -484,50 +505,52 @@
         <div class="label label-accent">// 05 · FEATURED</div>
         <h2 class="work-heading">Internship <span class="arrow">→</span> H.Essers</h2>
       </div>
-      <span class="work-period" data-i18n="featured.periodRole">Sep 2025 – May 2026 · Software Engineering Intern</span>
+      <span class="work-period" data-i18n="featured.periodRole">Feb 2026 – May 2026 · Intern Software Developer</span>
     </div>
 
     <div class="case-panel">
       <div class="case-screenshot">
+        <img src="src/images/landscape-foto.webp" alt="H.Essers hoofdkantoor"
+             onerror="this.style.display='none'">
         <div class="case-screenshot-grid"></div>
         <div class="case-screenshot-text">Software engineer</div>
-        <div class="case-screenshot-badge">[ screenshot_placeholder ]</div>
+        <div class="case-screenshot-badge">H.Essers · Genk</div>
       </div>
 
       <div class="case-meta-row">
         <div class="case-meta-cell"><div class="key">COMPANY</div> <div class="val">H.Essers</div></div>
-        <div class="case-meta-cell"><div class="key">DURATION</div><div class="val">Sep 2025 – May 2026</div></div>
-        <div class="case-meta-cell"><div class="key">TEAM</div>    <div class="val">1 devs</div></div>
-        <div class="case-meta-cell"><div class="key">SCOPE</div>   <div class="val">Office Add-in</div></div>
+        <div class="case-meta-cell"><div class="key">DURATION</div><div class="val">Feb 2026 – May 2026</div></div>
+        <div class="case-meta-cell"><div class="key">TEAM</div>    <div class="val">1 dev</div></div>
+        <div class="case-meta-cell"><div class="key">SCOPE</div>   <div class="val">Proof of concept</div></div>
       </div>
 
       <div class="case-cols">
         <div class="case-col">
-          <div class="case-col-num">01 / PROBLEM</div>
-          <p data-i18n="featured.problem">Logistics coordinators at H.Essers spent significant time context-switching between Outlook and internal dispatch systems.</p>
+          <div class="case-col-num" data-i18n="featured.problemLabel">01 / PROBLEM</div>
+          <p data-i18n="featured.problem">Logistics coordinators at H.Essers spent significant time context-switching between Outlook and internal dispatch systems. Shipment data arriving by email had to be manually re-entered</p>
         </div>
         <div class="case-col">
-          <div class="case-col-num">02 / APPROACH</div>
-          <p data-i18n="featured.approach">I designed and built an Outlook Add-in that parses incoming shipment emails and surfaces structured actions inline.</p>
+          <div class="case-col-num" data-i18n="featured.approachLabel">02 / APPROACH</div>
+          <p data-i18n="featured.approach">I designed and built an Outlook Add-in that lets users submit selected emails and their attachments to a downstream system. Behind an API gateway, I implemented an Ingest API that retrieves the full email via Microsoft Graph and publishes a structured event to a Kafka topic for async downstream processing.</p>
         </div>
         <div class="case-col">
-          <div class="case-col-num">03 / SOLUTION</div>
-          <p data-i18n="featured.solution">The add-in turns a 4-minute manual task into a two-click confirmation, complete with validation, retry and audit trails.</p>
+          <div class="case-col-num" data-i18n="featured.solutionLabel">03 / SOLUTION</div>
+          <p data-i18n="featured.solution">Coordinators can forward an email directly from Outlook without leaving the app. The backend processes it asynchronously, stores the content, and triggers the downstream workflow — fully logged and traceable end to end</p>
         </div>
       </div>
 
       <div class="case-outcomes">
         <div class="case-outcomes-col">
-          <div class="outcomes-label label" style="color:var(--good);">// OUTCOMES</div>
+          <div class="outcomes-label label" data-i18n="featured.outcomesLabel" style="color:var(--good);">// OUTCOMES</div>
           <ul class="outcomes-list" id="outcomes-list">
-            <li><span class="prefix-plus">[+]</span> Outlook Add-in rolled out to the logistics team</li>
-            <li><span class="prefix-plus">[+]</span> Ingest API handling live shipment traffic</li>
-            <li><span class="prefix-plus">[+]</span> Gateway API extended with new endpoints and auth flows</li>
-            <li><span class="prefix-plus">[+]</span> End-to-end CI/CD on Azure with GitHub Actions</li>
+            <li><span class="prefix-plus">[+]</span> Delivered a fully working proof of concept covering the end-to-end email ingestion flow</li>
+            <li><span class="prefix-plus">[+]</span> Built a custom Ingest API with deduplication and retry logic</li>
+            <li><span class="prefix-plus">[+]</span> CI/CD pipeline set up for Github — ready to deploy when the organisation decides to roll out</li>
+            <li><span class="prefix-plus">[+]</span> Full technical documentation written covering architecture, API contracts and deployment steps</li>
           </ul>
         </div>
         <div class="case-outcomes-col">
-          <div class="outcomes-label label" style="color:var(--accent-d);">// LEARNED</div>
+          <div class="outcomes-label label" data-i18n="featured.learnedLabel" style="color:var(--accent-d);">// LEARNED</div>
           <ul class="outcomes-list" id="learned-list">
             <li><span class="prefix-arrow">[→]</span> Shipping software inside an enterprise release process</li>
             <li><span class="prefix-arrow">[→]</span> Designing APIs for other teams to actually consume</li>
@@ -539,9 +562,14 @@
 
       <div class="case-stack-row">
         <span class="label" style="margin-right:4px;">STACK</span>
-        <span class="stack-tag">C#</span><span class="stack-tag">.NET</span>
-        <span class="stack-tag">Angular</span><span class="stack-tag">Office.js</span>
-        <span class="stack-tag">Azure</span><span class="stack-tag">REST</span>
+        <span class="exp-tag" data-tag="officejs">Office.js</span>
+        <span class="exp-tag" data-tag="java">Java</span>
+        <span class="exp-tag" data-tag="spring">Spring Boot</span>
+        <span class="exp-tag" data-tag="kafka">Apache Kafka</span>
+        <span class="exp-tag" data-tag="msgraph">Microsoft Graph</span>
+        <span class="exp-tag" data-tag="gravitee">Gravitee</span>
+        <span class="exp-tag" data-tag="rest">REST</span>
+        <a href="stage.html" class="btn btn-primary" data-i18n="featured.caseStudyBtn" style="margin-left:auto;">Full case study →</a>
       </div>
     </div>
   </section>
@@ -552,16 +580,16 @@
     <div class="stack-top">
       <div>
         <div class="label label-accent">// 06 · PROJECTS</div>
-        <h2 class="projects-heading">Projects.</h2>
+        <h2 class="projects-heading" data-i18n="projects.heading">Projects.</h2>
       </div>
     </div>
 
     <div class="project-filter">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="web-app">Web App</button>
-      <button class="filter-btn" data-filter="client">Client</button>
-      <button class="filter-btn" data-filter="e-commerce">E-commerce</button>
-      <button class="filter-btn" data-filter="personal">Personal</button>
+      <button class="filter-btn active" data-filter="all"        data-i18n="projects.filterAll">All</button>
+      <button class="filter-btn"        data-filter="web-app"    data-i18n="projects.filterWebApp">Web App</button>
+      <button class="filter-btn"        data-filter="client"     data-i18n="projects.filterClient">Client</button>
+      <button class="filter-btn"        data-filter="e-commerce" data-i18n="projects.filterEcommerce">E-commerce</button>
+      <button class="filter-btn"        data-filter="personal"   data-i18n="projects.filterPersonal">Personal</button>
     </div>
 
     <div class="projects-grid" id="projects-grid">
@@ -649,7 +677,7 @@
       <div class="contact-bg-grid"></div>
       <div class="contact-inner">
         <div class="contact-left">
-          <div class="label label-accent">// 07 · GET IN TOUCH</div>
+          <div class="label label-accent" data-i18n="contact.label">// 07 · GET IN TOUCH</div>
           <h2 class="ship-heading">Let's<br>ship<span class="dot">.</span></h2>
           <p class="contact-body" data-i18n="contact.body">
             I'm actively looking for a first role after graduation — ideally somewhere I can keep shipping real software and learning from senior engineers. If that sounds like your team, let's talk.
@@ -660,7 +688,7 @@
           </div>
         </div>
         <div class="contact-right">
-          <div class="label label-accent" style="margin-bottom:16px;">// REACH OUT</div>
+          <div class="label label-accent" data-i18n="contact.reachOutLabel" style="margin-bottom:16px;">// REACH OUT</div>
           <a href="mailto:Freek.boes@live.be" class="contact-link-primary">
             <span class="contact-link-icon">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -706,7 +734,7 @@
     <div class="modal-box">
       <div class="modal-header">
         <div>
-          <div class="label label-accent" id="modal-kicker">// PROJECT DETAIL</div>
+          <div class="label label-accent" id="modal-kicker" data-i18n="modal.label">// PROJECT DETAIL</div>
           <h2 class="modal-title" id="modal-title">Project</h2>
           <div class="modal-meta" id="modal-meta"></div>
         </div>
@@ -718,23 +746,23 @@
       </div>
       <div class="modal-body">
         <div class="modal-section">
-          <div class="modal-section-label label label-accent">// ASSIGNMENT</div>
+          <div class="modal-section-label label label-accent" data-i18n="modal.assignment">// ASSIGNMENT</div>
           <p class="modal-text" id="modal-assignment"></p>
         </div>
         <div class="modal-section">
-          <div class="modal-section-label label label-accent">// APPROACH</div>
+          <div class="modal-section-label label label-accent" data-i18n="modal.approach">// APPROACH</div>
           <p class="modal-text" id="modal-approach"></p>
         </div>
         <div class="modal-section">
-          <div class="modal-section-label label label-accent">// FINAL RESULT</div>
+          <div class="modal-section-label label label-accent" data-i18n="modal.finalResult">// FINAL RESULT</div>
           <p class="modal-text" id="modal-result"></p>
         </div>
         <div class="modal-section">
-          <div class="modal-section-label label label-accent">// MY INPUT</div>
+          <div class="modal-section-label label label-accent" data-i18n="modal.myInput">// MY INPUT</div>
           <p class="modal-text" id="modal-input"></p>
         </div>
         <div class="modal-section" id="modal-photos-section">
-          <div class="modal-section-label label label-accent">// SCREENSHOTS</div>
+          <div class="modal-section-label label label-accent" data-i18n="modal.screenshots">// SCREENSHOTS</div>
           <div class="modal-photos" id="modal-photos"></div>
         </div>
         <div class="modal-footer-row">
@@ -742,10 +770,10 @@
           <div style="display:flex; gap:8px; margin-left:auto;">
             <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline modal-link-btn">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49.99.11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 013-.4c1.02.004 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.57 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
-              GitHub
+              <span data-i18n="modal.githubBtn">GitHub</span>
             </a>
             <a id="modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary modal-link-btn">
-              View Project ↗
+              <span data-i18n="modal.viewBtn">View Project ↗</span>
             </a>
           </div>
         </div>
