@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freek Boes · Internship H.Essers</title>
-  <meta name="description" content="Internship case study — H.Essers Outlook Add-in & Ingest API">
+  <meta name="description" content="Internship case study , H.Essers Outlook Add-in & Ingest API">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,125 +14,121 @@
 <body>
 
   <nav id="navbar">
-  <div class="nav-brand">
-    <div class="nav-logo">F</div>
-    <div class="nav-path">
-      <span>freek.boes</span>
-      <span class="sep">/</span>
-      <span>portfolio</span>
-      <span class="sep">/</span>
-      <span class="main">stage</span>
+    <div class="nav-brand">
+      <div class="nav-logo">F</div>
+      <div class="nav-path">
+        <span>freek.boes</span>
+        <span class="sep">/</span>
+        <span>portfolio</span>
+        <span class="sep">/</span>
+        <span class="main">stage</span>
+      </div>
     </div>
-  </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"      data-i18n-html="nav.about">About</a></li>
+      <li><a href="index.html#education"  data-i18n-html="nav.education">Education</a></li>
+      <li><a href="index.html#skills"     data-i18n-html="nav.skills">Skills</a></li>
+      <li><a href="index.html#experience" data-i18n-html="nav.experience">Experience</a></li>
+      <li><a href="index.html#projects"   data-i18n-html="nav.projects">Projects</a></li>
+      <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a></li>
+      <li><a href="index.html#contact"    data-i18n-html="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-controls">
+        <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
+        <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+          <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-status">
+        <span class="nav-status-dot"></span>
+        <span data-i18n-html="status">Final-year student · Thomas More</span>
+      </div>
+    </div>
+    <button id="nav-toggle-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    </button>
+  </nav>
 
-  <ul class="nav-links">
-    <li><a href="index.html#about"      data-i18n="nav.about">About</a></li>
-    <li><a href="index.html#education"  data-i18n="nav.education">Education</a></li>
-    <li><a href="index.html#skills"     data-i18n="nav.skills">Skills</a></li>
-    <li><a href="index.html#experience" data-i18n="nav.experience">Experience</a></li>
-    <li><a href="index.html#work"       data-i18n="nav.work">Work</a></li>
-    <li><a href="index.html#projects"   data-i18n="nav.projects">Projects</a></li>
-    <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n="nav.resume">Resume</a></li>
-    <li><a href="index.html#contact"    data-i18n="nav.contact">Contact</a></li>
-  </ul>
-
-  <div class="nav-right">
-    <div class="nav-controls">
-      <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
-      <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
-        <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
-        </svg>
-        <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
-          <circle cx="12" cy="12" r="5"/>
-          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-        </svg>
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="index.html#about"      class="mobile-link" data-i18n-html="nav.about">About</a>
+    <a href="index.html#education"  class="mobile-link" data-i18n-html="nav.education">Education</a>
+    <a href="index.html#skills"     class="mobile-link" data-i18n-html="nav.skills">Skills</a>
+    <a href="index.html#experience" class="mobile-link" data-i18n-html="nav.experience">Experience</a>
+    <a href="index.html#work"       class="mobile-link" data-i18n-html="nav.work">Work</a>
+    <a href="index.html#projects"   class="mobile-link" data-i18n-html="nav.projects">Projects</a>
+    <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a>
+    <a href="index.html#contact"    class="mobile-link" data-i18n-html="nav.contact">Contact</a>
+    <div class="nav-mobile-controls">
+      <button id="lang-toggle-m"  class="nav-btn">NL</button>
+      <button id="theme-toggle-m" class="nav-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
       </button>
     </div>
-    <div class="nav-status">
-      <span class="nav-status-dot"></span>
-      <span data-i18n="status">Final-year student · Thomas More</span>
-    </div>
   </div>
 
-  <button id="nav-toggle-btn" aria-label="Open menu">
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M3 6h14M3 10h14M3 14h14"/>
-    </svg>
-  </button>
-</nav>
 
-<!-- Mobile menu -->
-<div class="nav-mobile-menu" id="mobile-menu">
-  <a href="index.html#about"      class="mobile-link" data-i18n="nav.about">About</a>
-  <a href="index.html#education"  class="mobile-link" data-i18n="nav.education">Education</a>
-  <a href="index.html#skills"     class="mobile-link" data-i18n="nav.skills">Skills</a>
-  <a href="index.html#experience" class="mobile-link" data-i18n="nav.experience">Experience</a>
-  <a href="index.html#work"       class="mobile-link" data-i18n="nav.work">Work</a>
-  <a href="index.html#projects"   class="mobile-link" data-i18n="nav.projects">Projects</a>
-  <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n="nav.resume">Resume</a>
-  <a href="index.html#contact"    class="mobile-link" data-i18n="nav.contact">Contact</a>
-  <div class="nav-mobile-controls">
-    <button id="lang-toggle-m"  class="nav-btn">NL</button>
-    <button id="theme-toggle-m" class="nav-btn">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/>
-      </svg>
-    </button>
-  </div>
-</div>
+  <!-- ══ HERO ══ -->
+  <section class="stage-hero-wrap">
+    <div class="case-panel">
 
-
-  <!-- HERO -->
-  <section style="padding:24px;">
-    <div class="case-panel" style="border:1px solid var(--rule);">
-
-      <!-- Header banner -->
       <div class="case-screenshot">
         <div class="case-screenshot-grid"></div>
-          <img src="src/images/landscape-foto.webp" alt="H.Essers hoofdkantoor"
-       onerror="this.style.display='none'">
+        <img src="src/images/landscape-foto.webp" alt="H.Essers hoofdkantoor" onerror="this.style.display='none'">
         <div class="case-screenshot-text">H.ESSERS</div>
         <div class="case-screenshot-badge">Internship · Feb 2026 – May 2026</div>
       </div>
 
-      <!-- Meta row -->
       <div class="case-meta-row">
-        <div class="case-meta-cell"><div class="key" data-i18n="stage.metaCompany">COMPANY</div><div class="val">H.Essers</div></div>
-        <div class="case-meta-cell"><div class="key" data-i18n="stage.metaRole">ROLE</div><div class="val">Intern Software Developer</div></div>
-        <div class="case-meta-cell"><div class="key" data-i18n="stage.metaDuration">DURATION</div><div class="val">Feb – May 2026</div></div>
-        <div class="case-meta-cell"><div class="key" data-i18n="stage.metaScope">SCOPE</div><div class="val">Proof of Concept</div></div>
+        <div class="case-meta-cell"><div class="key" data-i18n-html="stage.metaCompany">COMPANY</div><div class="val">H.Essers</div></div>
+        <div class="case-meta-cell"><div class="key" data-i18n-html="stage.metaRole">ROLE</div><div class="val">Intern Software Developer</div></div>
+        <div class="case-meta-cell"><div class="key" data-i18n-html="stage.metaDuration">DURATION</div><div class="val">Feb – May 2026</div></div>
+        <div class="case-meta-cell"><div class="key" data-i18n-html="stage.metaScope">SCOPE</div><div class="val">Proof of Concept</div></div>
       </div>
 
-      <!-- Title block -->
-      <div style="padding:32px 32px 0;">
-        <div class="label label-accent" data-i18n="stage.heroLabel">// INTERNSHIP CASE STUDY</div>
-        <h1 style="font-family:var(--font-display);font-size:clamp(36px,6vw,72px);letter-spacing:-2px;text-transform:uppercase;line-height:0.95;margin:10px 0 20px;">
+      <div class="stage-hero-body">
+        <div class="label label-accent" data-i18n-html="stage.heroLabel">// INTERNSHIP CASE STUDY</div>
+        <h1 class="stage-hero-title">
           Outlook Add-in<br>&amp; Ingest API<span style="color:var(--accent);">.</span>
         </h1>
-        <p data-i18n="stage.heroDesc" style="font-size:17px;line-height:1.65;color:var(--muted);max-width:700px;margin-bottom:32px;">
-          A proof of concept built during my internship at H.Essers — a logistics company based in Genk, Belgium.
+        <p class="stage-hero-desc" data-i18n-html="stage.heroDesc">
+          A proof of concept built during my internship at H.Essers , a logistics company based in Genk, Belgium.
           The project automates the manual process of forwarding shipment emails from Outlook into an internal dispatch system,
           using an Outlook Add-in paired with an event-driven backend.
         </p>
+
+        <!-- Page nav -->
+        <nav class="stage-page-nav">
+          <a href="#overview"     class="filter-btn">Overview</a>
+          <a href="#architecture" class="filter-btn">Architecture</a>
+          <a href="#timeline"     class="filter-btn">Timeline</a>
+          <a href="#contribution" class="filter-btn">My Contribution</a>
+          <a href="#challenges"   class="filter-btn">Challenges</a>
+          <a href="#media"        class="filter-btn">Media</a>
+          <a href="#reflection"   class="filter-btn">Reflection</a>
+          <a href="#documents"    class="filter-btn">Documents</a>
+        </nav>
       </div>
 
-      <!-- Document buttons -->
-      <div style="padding:0 32px 32px;display:flex;gap:10px;flex-wrap:wrap;">
-        <a href="src/documents/realisatie-document.pdf" target="_blank" rel="noopener" class="btn btn-primary">
+      <div class="stage-hero-docs">
+        <a href="src/realisatie-document.pdf" target="_blank" rel="noopener" class="btn btn-primary">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-          <span data-i18n="stage.btnRealisatie">Realisatie document ↗</span>
+          <span data-i18n-html="stage.btnRealisatie">Realisatie document ↗</span>
         </a>
-        <a href="src/documents/reflectie-document.pdf" target="_blank" rel="noopener" class="btn btn-outline">
+        <a href="src/Reflectie-document.pdf" target="_blank" rel="noopener" class="btn btn-outline">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-          <span data-i18n="stage.btnReflectie">Reflectie document ↗</span>
+          <span data-i18n-html="stage.btnReflectie">Reflectie document ↗</span>
         </a>
-        <a href="src/documents/project-plan.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
+        <a href="src/TM-Project-plan.pdf" target="_blank" rel="noopener" class="btn btn-ghost">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
-          <span data-i18n="stage.btnPlan">Project plan ↗</span>
+          <span data-i18n-html="stage.btnPlan">Project plan ↗</span>
         </a>
       </div>
 
@@ -140,141 +136,53 @@
   </section>
 
 
-  <!-- ABOUT H.ESSERS -->
-  <section style="padding:0 24px 24px;">
-    <div class="exp-full-panel">
-      <div style="padding:28px 32px;border-bottom:1px solid var(--rule);">
-        <div class="label label-accent" data-i18n="stage.aboutLabel" style="margin-bottom:12px;">// ABOUT H.ESSERS</div>
-        <p data-i18n="stage.aboutText" style="font-size:15px;line-height:1.7;color:var(--muted);max-width:800px;">
+  <!-- ══ 01 · OVERVIEW ══ -->
+  <section id="overview" class="stage-section">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="stage.overviewLabel">// 01 · OVERVIEW</div>
+      <h2 class="stage-heading" data-i18n-html="stage.overviewHeading">Overview.</h2>
+    </div>
+
+    <div class="exp-full-panel stage-about-panel">
+      <div class="stage-about-inner">
+        <div class="label label-accent" data-i18n-html="stage.aboutLabel" style="margin-bottom:12px;">// ABOUT H.ESSERS</div>
+        <p class="stage-about-text" data-i18n-html="stage.aboutText">
           H.Essers is an international logistics and transport company headquartered in Genk, Belgium.
           With operations across Europe and beyond, they handle complex supply chains for sectors including
           healthcare, chemicals and general cargo. The company employs thousands of logistics coordinators
-          who manage daily shipment operations — many of which still rely heavily on email workflows.
+          who manage daily shipment operations , many of which still rely heavily on email workflows.
         </p>
       </div>
     </div>
-  </section>
 
-
-  <!-- PROBLEM / APPROACH / SOLUTION -->
-  <section style="padding:0 24px 24px;">
-    <div class="case-panel">
+    <div class="case-panel" style="margin-top:16px;">
       <div class="case-cols">
         <div class="case-col">
-          <div class="case-col-num" data-i18n="stage.problemLabel">01 / PROBLEM</div>
-          <p data-i18n="stage.problemText">Logistics coordinators at H.Essers received shipment data by email and had to manually re-enter it into internal dispatch systems. This process was slow, error-prone and impossible to audit at scale.</p>
+          <div class="case-col-num" data-i18n-html="stage.problemLabel">01 / PROBLEM</div>
+          <p data-i18n-html="stage.problemText">Logistics coordinators at H.Essers received shipment data by email and had to manually re-enter it into internal dispatch systems. This process was slow, error-prone and impossible to audit at scale.</p>
         </div>
         <div class="case-col">
-          <div class="case-col-num" data-i18n="stage.approachLabel">02 / APPROACH</div>
-          <p data-i18n="stage.approachText">I designed and built an Outlook Add-in that lets users submit selected emails and attachments directly to a downstream system. Behind an API gateway (Gravitee), a custom Ingest API retrieves the full email via Microsoft Graph and publishes a structured event to a Kafka topic for async downstream processing.</p>
+          <div class="case-col-num" data-i18n-html="stage.approachLabel">02 / APPROACH</div>
+          <p data-i18n-html="stage.approachText">I designed and built an Outlook Add-in that lets users submit selected emails and attachments directly to a downstream system. Behind an API gateway (Gravitee), a custom Ingest API retrieves the full email via Microsoft Graph and publishes a structured event to a Kafka topic for async downstream processing.</p>
         </div>
         <div class="case-col">
-          <div class="case-col-num" data-i18n="stage.solutionLabel">03 / SOLUTION</div>
-          <p data-i18n="stage.solutionText">Coordinators can forward an email directly from Outlook without leaving the app. The backend processes it asynchronously, stores the content, and triggers the downstream workflow — fully logged and traceable end to end.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- TECHNICAL ARCHITECTURE -->
-  <section style="padding:0 24px 24px;">
-    <div style="margin-bottom:14px;">
-      <div class="label label-accent" data-i18n="stage.archLabel">// TECHNICAL ARCHITECTURE</div>
-      <h2 data-i18n="stage.archHeading" style="font-family:var(--font-display);font-size:44px;letter-spacing:-1.5px;text-transform:uppercase;margin-top:8px;line-height:1;">Architecture.</h2>
-    </div>
-
-    <div class="exp-full-panel">
-
-      <div class="exp-entry-rich">
-        <div class="exp-logo-wrap">
-          <img src="src/images/Outlook-Logo.svg" alt="Outlook" class="exp-logo-img"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        </div>
-        <div class="exp-content">
-          <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.arch1Title">Outlook Add-in (Frontend)</span>
-            <span class="exp-period" data-i18n="stage.arch1Badge" style="background:rgba(0,104,200,0.08);border-color:rgba(0,104,200,0.35);color:#0060b8;">Office.js · JavaScript</span>
-          </div>
-          <p class="exp-desc" data-i18n="stage.arch1Desc">Built with Office.js, the add-in renders a task pane inside Outlook. When a user selects an email and clicks submit, the add-in reads the email metadata and passes it to the API gateway. Authentication is handled via OAuth2 with Microsoft identity platform.</p>
+          <div class="case-col-num" data-i18n-html="stage.solutionLabel">03 / SOLUTION</div>
+          <p data-i18n-html="stage.solutionText">Coordinators can forward an email directly from Outlook without leaving the app. The backend processes it asynchronously, stores the content, and triggers the downstream workflow , fully logged and traceable end to end.</p>
         </div>
       </div>
 
-      <div class="exp-entry-rich">
-        <div class="exp-logo-wrap">
-          <img src="src/images/Gravitee.jpeg" alt="Gravitee" class="exp-logo-img"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        </div>
-        <div class="exp-content">
-          <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.arch2Title">API Gateway</span>
-            <span class="exp-period" data-i18n="stage.arch2Badge" style="background:rgba(200,90,20,0.08);border-color:rgba(200,90,20,0.35);color:#b84e10;">Gravitee · REST</span>
-          </div>
-          <p class="exp-desc" data-i18n="stage.arch2Desc">All traffic flows through Gravitee as the API gateway. It handles routing, rate limiting and security policies. The gateway forwards validated requests to the Ingest API running behind it.</p>
-        </div>
-      </div>
-
-      <div class="exp-entry-rich">
-        <div class="exp-logo-wrap">
-          <img src="src/images/api.jpg" alt="API" class="exp-logo-img"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        </div>
-        <div class="exp-content">
-          <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.arch3Title">Ingest API (Backend)</span>
-            <span class="exp-period" data-i18n="stage.arch3Badge" style="background:rgba(50,160,80,0.08);border-color:rgba(50,160,80,0.35);color:#2e7d42;">Java 21 · Spring Boot</span>
-          </div>
-          <p class="exp-desc" data-i18n="stage.arch3Desc">The core backend service. It receives the submission from the gateway, fetches the full email and attachments via the Microsoft Graph API using an OBO (On-Behalf-Of) OAuth2 flow, then publishes a structured event to a Kafka topic. Custom handling includes deduplication logic, retry mechanisms and a Dead Letter Queue for failed events.</p>
-        </div>
-      </div>
-
-      <div class="exp-entry-rich">
-        <div class="exp-logo-wrap">
-          <img src="src/images/kafka-integration.png" alt="Kafka" class="exp-logo-img"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        </div>
-        <div class="exp-content">
-          <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.arch4Title">Event Streaming</span>
-            <span class="exp-period" data-i18n="stage.arch4Badge" style="background:rgba(70,55,160,0.08);border-color:rgba(70,55,160,0.35);color:#4a3aaa;">Apache Kafka</span>
-          </div>
-          <p class="exp-desc" data-i18n="stage.arch4Desc">Events are published to a Kafka topic for async downstream processing. A Kafka consumer service processes each event, with deduplication to prevent duplicate submissions and full audit logging for traceability.</p>
-        </div>
-      </div>
-
-      <div class="exp-entry-rich">
-        <div class="exp-logo-wrap">
-          <img src="src/images/github_ci_cd.png" alt="CI/CD Pipeline" class="exp-logo-img"
-       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        </div>
-        <div class="exp-content">
-          <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.arch5Title">CI/CD Pipeline</span>
-            <span class="exp-period" data-i18n="stage.arch5Badge" style="background:rgba(0,120,212,0.08);border-color:rgba(0,120,212,0.35);color:#0070c0;">Azure · GitHub Actions</span>
-          </div>
-          <p class="exp-desc" data-i18n="stage.arch5Desc">A full CI/CD pipeline was set up for GitHub Actions — including build, test and deployment stages. The pipeline is ready to deploy the full system when the organisation decides to move from proof of concept to production.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-
-  <!-- OUTCOMES & LEARNED -->
-  <section style="padding:0 24px 24px;">
-    <div class="case-panel">
       <div class="case-outcomes">
         <div class="case-outcomes-col">
-          <div class="outcomes-label label" data-i18n="stage.outcomesLabel" style="color:var(--good);">// OUTCOMES</div>
+          <div class="outcomes-label label" data-i18n-html="stage.outcomesLabel" style="color:var(--good);">// OUTCOMES</div>
           <ul class="outcomes-list" id="stage-outcomes-list">
             <li><span class="prefix-plus">[+]</span> Delivered a fully working proof of concept covering the end-to-end email ingestion flow</li>
-            <li><span class="prefix-plus">[+]</span> Built a custom Ingest API with deduplication, retry logic and Dead Letter Queue handling</li>
-            <li><span class="prefix-plus">[+]</span> CI/CD pipeline set up on Azure — ready to deploy when the organisation decides to roll out</li>
+            <li><span class="prefix-plus">[+]</span> Built a custom Ingest API with deduplication and retry logic</li>
+            <li><span class="prefix-plus">[+]</span> CI/CD pipeline set up on Azure , ready to deploy when the organisation decides to roll out</li>
             <li><span class="prefix-plus">[+]</span> Full technical documentation written covering architecture, API contracts and deployment steps</li>
           </ul>
         </div>
         <div class="case-outcomes-col">
-          <div class="outcomes-label label" data-i18n="stage.learnedLabel" style="color:var(--accent-d);">// LEARNED</div>
+          <div class="outcomes-label label" data-i18n-html="stage.learnedLabel" style="color:var(--accent-d);">// LEARNED</div>
           <ul class="outcomes-list" id="stage-learned-list">
             <li><span class="prefix-arrow">[→]</span> Shipping software inside an enterprise release process</li>
             <li><span class="prefix-arrow">[→]</span> Designing APIs for other teams to actually consume</li>
@@ -283,109 +191,525 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="case-stack-row">
-        <span class="label" style="margin-right:4px;">STACK</span>
-        <span class="exp-tag" data-tag="officejs">Office.js</span>
-        <span class="exp-tag" data-tag="java">Java 21</span>
-        <span class="exp-tag" data-tag="spring">Spring Boot</span>
-        <span class="exp-tag" data-tag="kafka">Apache Kafka</span>
-        <span class="exp-tag" data-tag="msgraph">Microsoft Graph</span>
-        <span class="exp-tag" data-tag="gravitee">Gravitee</span>
-        <span class="exp-tag" data-tag="azure">Azure</span>
-        <span class="exp-tag" data-tag="rest">REST</span>
+
+  <!-- ══ 02 · ARCHITECTURE ══ -->
+  <section id="architecture" class="stage-section">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="stage.archLabel">// 02 · TECHNICAL ARCHITECTURE</div>
+      <h2 class="stage-heading" data-i18n-html="stage.archHeading">Architecture.</h2>
+    </div>
+
+    <!-- Detail entries -->
+    <div class="exp-full-panel" style="margin-top:16px;">
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <img src="src/images/Outlook-Logo.svg" alt="Outlook" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#0060b8;display:none;">O</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.arch1Title">Outlook Add-in (Frontend)</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(0,104,200,0.08);border-color:rgba(0,104,200,0.35);color:#0060b8;" data-i18n-html="stage.arch1Badge">Office.js · JavaScript</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.arch1Desc">Built with Office.js, the add-in renders a task pane inside Outlook. When a user selects an email and clicks submit, the add-in reads the email metadata and passes it to the API gateway. Authentication is handled via OAuth2 with Microsoft identity platform.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <img src="src/images/Gravitee.jpeg" alt="Gravitee" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#b84e10;display:none;">G</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.arch2Title">API Gateway</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(200,90,20,0.08);border-color:rgba(200,90,20,0.35);color:#b84e10;" data-i18n-html="stage.arch2Badge">Gravitee · REST</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.arch2Desc">All traffic flows through Gravitee as the API gateway. It handles routing, rate limiting and security policies. The gateway forwards validated requests to the Ingest API running behind it.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <img src="src/images/api.jpg" alt="API" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#2e7d42;display:none;">A</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.arch3Title">Ingest API (Backend)</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(50,160,80,0.08);border-color:rgba(50,160,80,0.35);color:#2e7d42;" data-i18n-html="stage.arch3Badge">Java 21 · Spring Boot</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.arch3Desc">The core backend service. It receives the submission from the gateway, fetches the full email and attachments via the Microsoft Graph API using an OBO (On-Behalf-Of) OAuth2 flow, then publishes a structured event to a Kafka topic. Custom handling includes deduplication logic and retry mechanisms.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <img src="src/images/kafka-integration.png" alt="Kafka" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#4a3aaa;display:none;">K</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.arch4Title">Event Streaming</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(70,55,160,0.08);border-color:rgba(70,55,160,0.35);color:#4a3aaa;" data-i18n-html="stage.arch4Badge">Apache Kafka</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.arch4Desc">Events are published to a Kafka topic for async downstream processing. A Kafka consumer service processes each event, with deduplication to prevent duplicate submissions and full audit logging for traceability.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <img src="src/images/github_ci_cd.png" alt="CI/CD" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#0070c0;display:none;">CI</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.arch5Title">CI/CD Pipeline</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(0,120,212,0.08);border-color:rgba(0,120,212,0.35);color:#0070c0;" data-i18n-html="stage.arch5Badge">Azure · GitHub Actions</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.arch5Desc">A full CI/CD pipeline was set up for GitHub Actions , including build, test and deployment stages. The pipeline is ready to deploy the full system when the organisation decides to move from proof of concept to production.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+  <div class="exp-logo-wrap">
+          <img src="src/images/database.png" alt="Database" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#0070c0;display:none;">DB</div>
+        </div>
+  <div class="exp-content">
+    <div class="exp-entry-top">
+      <span class="exp-title" data-i18n-html="stage.arch6Title">State DB</span>
+      <div class="exp-entry-right">
+        <span class="exp-period" style="background:rgba(60,80,120,0.08);border-color:rgba(60,80,120,0.35);color:#3c5078;" data-i18n-html="stage.arch6Badge">State storage</span>
+      </div>
+    </div>
+    <p class="exp-desc" data-i18n-html="stage.arch6Desc">Tracks every submission , who submitted what email, when, and with what processing status. The Outlook Add-in reads this database to show the user their submission history directly inside the task pane.</p>
+  </div>
+</div>
+
+<div class="exp-entry-rich">
+  <div class="exp-logo-wrap">
+          <img src="src/images/bookshelf.png" alt="Document storage" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#0070c0;display:none;">DS</div>
+        </div>
+  <div class="exp-content">
+    <div class="exp-entry-top">
+      <span class="exp-title" data-i18n-html="stage.arch7Title">Document Storage</span>
+      <div class="exp-entry-right">
+        <span class="exp-period" style="background:rgba(50,160,80,0.08);border-color:rgba(50,160,80,0.35);color:#2e7d42;" data-i18n-html="stage.arch7Badge">Saved files</span>
+      </div>
+    </div>
+    <p class="exp-desc" data-i18n-html="stage.arch7Desc">The Ingest API saves the full email body and all attachments to document storage after fetching them from Microsoft Graph. The storage returns document IDs which are then included in the Kafka event for downstream reference.</p>
+  </div>
+</div>
+
+<div class="exp-entry-rich">
+  <div class="exp-logo-wrap">
+          <img src="src/images/Microsoft-graph.png" alt="Microsoft" class="exp-logo-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="exp-logo" style="background:#0070c0;display:none;">MG</div>
+        </div>
+  <div class="exp-content">
+    <div class="exp-entry-top">
+      <span class="exp-title" data-i18n-html="stage.arch8Title">Microsoft Graph</span>
+      <div class="exp-entry-right">
+        <span class="exp-period" style="background:rgba(0,104,200,0.08);border-color:rgba(0,104,200,0.35);color:#0060b8;" data-i18n-html="stage.arch8Badge">External · Microsoft API</span>
+      </div>
+    </div>
+    <p class="exp-desc" data-i18n-html="stage.arch8Desc">External Microsoft API used by the Ingest API to retrieve the full email content and attachments. Access is granted via an <strong>OBO (On-Behalf-Of) OAuth2 flow</strong> , the user's token is exchanged so the backend can fetch emails on their behalf without storing credentials.</p>
+  </div>
+</div>
+    </div>
+  </section>
+
+
+  <!-- ══ 03 · TIMELINE ══ -->
+  <section id="timeline" class="stage-section">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="stage.timelineLabel">// 03 · TIMELINE</div>
+      <h2 class="stage-heading" data-i18n-html="stage.timelineHeading">Timeline.</h2>
+    </div>
+
+    <div class="exp-full-panel">
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="stage-timeline-num">W1–2</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.timeline1Title">Onboarding &amp; Research</span>
+            <div class="exp-entry-right"><span class="exp-period">Feb 2026</span></div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.timeline1Desc">Got access to internal systems, studied the existing Gateway API and codebase. Explored Office.js documentation and the Microsoft Graph API. Defined the project scope together with the team and wrote the initial project plan.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="stage-timeline-num">W3–5</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.timeline2Title">Outlook Add-in , First Version</span>
+            <div class="exp-entry-right"><span class="exp-period">Mar 2026</span></div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.timeline2Desc">Built the initial Outlook Add-in with Office.js. Implemented the task pane UI, email metadata reading and OAuth2 authentication flow. Got the first end-to-end request through the API gateway.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="stage-timeline-num">W6–9</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.timeline3Title">Ingest API &amp; Kafka Integration</span>
+            <div class="exp-entry-right"><span class="exp-period">Mar – Apr 2026</span></div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.timeline3Desc">Built the Spring Boot Ingest API with Microsoft Graph OBO flow. Integrated Apache Kafka for async event publishing. Implemented deduplication and retry mechanisms.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="stage-timeline-num">W10–12</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.timeline4Title">Testing &amp; CI/CD</span>
+            <div class="exp-entry-right"><span class="exp-period">Apr – May 2026</span></div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.timeline4Desc">Wrote unit and integration tests covering the core flows. Set up the GitHub Actions CI/CD pipeline on Azure. Ran k6 load tests to validate performance under realistic throughput.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="stage-timeline-num stage-timeline-num--done">W13</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="stage.timeline5Title">Handover &amp; Documentation</span>
+            <div class="exp-entry-right"><span class="exp-period">May 2026</span></div>
+          </div>
+          <p class="exp-desc" data-i18n-html="stage.timeline5Desc">Wrote full technical documentation covering architecture decisions, API contracts, deployment steps and known limitations. Presented the proof of concept to the team and handed over the codebase.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PHOTOS -->
-  <section class="stage-section">
+
+  <!-- ══ 04 · MY CONTRIBUTION ══ -->
+  <section id="contribution" class="stage-section">
     <div class="stage-section-header">
-      <div class="label label-accent" data-i18n="stage.photosLabel">// PHOTOS</div>
-      <h2 class="stage-heading" data-i18n="stage.photosHeading">Photos.</h2>
+      <div class="label label-accent" data-i18n-html="stage.contributionLabel">// 04 · MY CONTRIBUTION</div>
+      <h2 class="stage-heading" data-i18n-html="stage.contributionHeading">My Contribution.</h2>
+    </div>
+
+    <div class="stage-contrib-grid">
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">01</div>
+        <div class="stage-contrib-title" data-i18n-html="stage.contrib1Title">Add-in development</div>
+        <p class="stage-contrib-desc" data-i18n-html="stage.contrib1Desc">Designed and built the full Outlook Add-in from scratch , task pane UI, email metadata reading, attachment handling and OAuth2 authentication flow.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">02</div>
+        <div class="stage-contrib-title" data-i18n-html="stage.contrib2Title">Ingest API design</div>
+        <p class="stage-contrib-desc" data-i18n-html="stage.contrib2Desc">Designed and implemented the entire Ingest API , endpoint contracts, Microsoft Graph OBO flow, Kafka publishing and deduplication logic.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">03</div>
+        <div class="stage-contrib-title" data-i18n-html="stage.contrib3Title">Testing &amp; reliability</div>
+        <p class="stage-contrib-desc" data-i18n-html="stage.contrib3Desc">Wrote unit and integration tests end-to-end. Set up k6 load testing to validate throughput and identify bottlenecks before handover.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">04</div>
+        <div class="stage-contrib-title" data-i18n-html="stage.contrib4Title">CI/CD pipeline</div>
+        <p class="stage-contrib-desc" data-i18n-html="stage.contrib4Desc">Set up the full GitHub Actions pipeline , build, test and deployment stages on Azure. Configured environments so the system is production-ready when the organisation decides to roll out.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">05</div>
+        <div class="stage-contrib-title" data-i18n-html="stage.contrib5Title">Documentation</div>
+        <p class="stage-contrib-desc" data-i18n-html="stage.contrib5Desc">Wrote full technical documentation covering architecture decisions, API contracts, deployment steps and known limitations , so another developer can pick this up without me.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">06</div>
+        <div class="stage-contrib-title" data-i18n-html="stage.contrib6Title">Solo delivery</div>
+        <p class="stage-contrib-desc" data-i18n-html="stage.contrib6Desc">Owned the entire project independently , from requirements analysis and technical design to implementation, testing and final presentation to the team.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 05 · CHALLENGES ══ -->
+  <section id="challenges" class="stage-section">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="stage.challengesLabel">// 05 · CHALLENGES &amp; SOLUTIONS</div>
+      <h2 class="stage-heading" data-i18n-html="stage.challengesHeading">Challenges.</h2>
+    </div>
+
+    <div class="stage-challenges-list">
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="stage.challenge1Label">01 / OAUTH2 OBO FLOW</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge1Desc">Implementing the On-Behalf-Of OAuth2 flow to fetch emails via Microsoft Graph was the steepest learning curve. Token exchange between the add-in, gateway and backend required careful configuration of Azure app registrations and scopes.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="stage.solutionShort">→ Solution</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge1Solution">Worked through the Microsoft Identity Platform docs in detail and set up a dedicated test environment to isolate auth issues. Introduced a token cache to reduce latency on subsequent requests.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="stage.challenge2Label">02 / KAFKA IN ENTERPRISE</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge2Desc">Working with Kafka in a production enterprise environment was new , existing topics, consumer groups and access policies were already in place. Getting local development to mirror the real environment took significant setup.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="stage.solutionShort">→ Solution</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge2Solution">Used Docker Compose to spin up a local Kafka instance that matched the production config. Collaborated with the infrastructure team to understand the topic structure before writing any consumer code.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="stage.challenge3Label">03 / DEDUPLICATION</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge3Desc">The same email could be submitted multiple times by different coordinators or through retries. Without deduplication, the downstream system would process duplicate shipment entries , a serious data integrity issue.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="stage.solutionShort">→ Solution</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge3Solution">Implemented idempotency keys based on email message ID. The Ingest API checks against a processed-events store before publishing to Kafka, rejecting known duplicates with a 409 response.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="stage.challenge4Label">04 / ENTERPRISE PROCESS</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge4Desc">Working within an enterprise release process meant every change needed approval, code had to meet internal standards and deployments followed a fixed schedule , a very different pace from school projects.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="stage.solutionShort">→ Solution</div>
+          <p class="stage-challenge-desc" data-i18n-html="stage.challenge4Solution">Adapted by planning features further ahead and keeping a clear backlog. Used the slower pace to invest more in documentation and test coverage than I would have in a faster environment.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ PROJECT STATUS ══ -->
+<section class="stage-section">
+  <div class="stage-section-header">
+    <div class="label label-accent" data-i18n-html="stage.projectStatusLabel">// PROJECT STATUS</div>
+    <h2 class="stage-heading" data-i18n-html="stage.projectStatusHeading">Status.</h2>
+  </div>
+  <div class="case-panel">
+    <div class="case-cols" style="grid-template-columns:1fr;">
+      <div class="case-col">
+        <p style="font-size:14px;line-height:1.65;margin-bottom:16px;" data-i18n-html="stage.projectStatusDesc">The project is a proof of concept and has not yet been taken into production at the time of handover.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div>
+            <div class="outcomes-label label" style="color:var(--good);margin-bottom:10px;">// DONE</div>
+            <p style="font-size:13px;line-height:1.65;color:var(--muted);" data-i18n-html="stage.projectStatusDone"></p>
+          </div>
+          <div>
+            <div class="outcomes-label label" style="color:#d97706;margin-bottom:10px;">// STILL REQUIRED</div>
+            <p style="font-size:13px;line-height:1.65;color:var(--muted);" data-i18n-html="stage.projectStatusTodo"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NEXT STEPS ══ -->
+<section class="stage-section">
+  <div class="stage-section-header">
+    <div class="label label-accent" data-i18n-html="stage.adviceLabel">// ADVICE FOR H.ESSERS</div>
+    <h2 class="stage-heading" data-i18n-html="stage.adviceHeading">Next Steps.</h2>
+  </div>
+  <div class="exp-full-panel">
+    <div class="exp-entry-rich">
+      <div class="exp-logo-wrap">
+        <img src="src/images/Gravitee.jpeg" alt="Gravitee" class="exp-logo-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-logo" style="background:#b84e10;display:none;">G</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-entry-top"><span class="exp-title" data-i18n-html="stage.adviceLabel1">Gravitee auth flow</span></div>
+        <p class="exp-desc" data-i18n-html="stage.advice1"></p>
+      </div>
+    </div>
+    <div class="exp-entry-rich">
+      <div class="exp-logo-wrap">
+        <img src="src/images/kafka-integration.png" alt="Kafka" class="exp-logo-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-logo" style="background:#4a3aaa;display:none;">K</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-entry-top"><span class="exp-title" data-i18n-html="stage.adviceLabel2">Kafka listener downstream</span></div>
+        <p class="exp-desc" data-i18n-html="stage.advice2"></p>
+      </div>
+    </div>
+    <div class="exp-entry-rich">
+      <div class="exp-logo-wrap">
+        <img src="src/images/Hessers.png" alt="H.Essers" class="exp-logo-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="exp-logo" style="background:#1a3a5c;display:none;">H</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-entry-top"><span class="exp-title" data-i18n-html="stage.adviceLabel3">Production rollout</span></div>
+        <p class="exp-desc" data-i18n-html="stage.advice3"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ══ 06 · MEDIA ══ -->
+  <section id="media" class="stage-section">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="stage.photosLabel">// 06 · MEDIA</div>
+      <h2 class="stage-heading" data-i18n-html="stage.photosHeading">Photos.</h2>
     </div>
 
     <div class="stage-photos-grid">
-
       <div class="stage-photo-cell">
         <img src="src/images/H.essers/blurred-not-logged-in.png" alt="Stage foto 1" onerror="this.style.display='none'">
         <div class="stage-photo-placeholder">photo_1</div>
         <button class="stage-photo-expand" onclick="openLightbox(this)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
         </button>
       </div>
-
       <div class="stage-photo-cell">
         <img src="src/images/H.essers/blurred-introduction.png" alt="Stage foto 2" onerror="this.style.display='none'">
         <div class="stage-photo-placeholder">photo_2</div>
         <button class="stage-photo-expand" onclick="openLightbox(this)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
         </button>
       </div>
-
       <div class="stage-photo-cell">
         <img src="src/images/H.essers/blurred-selected-email-doc-type.png" alt="Stage foto 3" onerror="this.style.display='none'">
         <div class="stage-photo-placeholder">photo_3</div>
         <button class="stage-photo-expand" onclick="openLightbox(this)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
         </button>
       </div>
-
       <div class="stage-photo-cell">
         <img src="src/images/H.essers/select-doc-type.png" alt="Stage foto 4" onerror="this.style.display='none'">
         <div class="stage-photo-placeholder">photo_4</div>
         <button class="stage-photo-expand" onclick="openLightbox(this)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
         </button>
       </div>
-
       <div class="stage-photo-cell">
         <img src="src/images/H.essers/blurred-comment.png" alt="Stage foto 5" onerror="this.style.display='none'">
         <div class="stage-photo-placeholder">photo_5</div>
         <button class="stage-photo-expand" onclick="openLightbox(this)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
         </button>
       </div>
-
       <div class="stage-photo-cell">
         <img src="src/images/H.essers/blurred-Submission-details.png" alt="Stage foto 6" onerror="this.style.display='none'">
         <div class="stage-photo-placeholder">photo_6</div>
         <button class="stage-photo-expand" onclick="openLightbox(this)">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/>
-          </svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 3H5a2 2 0 00-2 2v3M21 8V5a2 2 0 00-2-2h-3M16 21h3a2 2 0 002-2v-3M3 16v3a2 2 0 002 2h3"/></svg>
         </button>
       </div>
-
     </div>
+
+    <!-- VIDEO -->
+<!-- VIDEO -->
+<div class="stage-video-wrap">
+  <div class="label label-accent" style="margin-bottom:12px;" data-i18n-html="stage.videoLabel">// DEMO VIDEO</div>
+  <video controls class="stage-video">
+    <source src="src/videos/Project-demo.mp4" type="video/mp4">
+  </video>
+</div>
   </section>
+
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <path d="M2 2l12 12M14 2L2 14"/>
-      </svg>
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l12 12M14 2L2 14"/></svg>
     </button>
     <img class="lightbox-img" id="lightbox-img" src="" alt="">
   </div>
 
 
-  <!-- DOCUMENTS -->
-  <section style="padding:0 24px 48px;">
-    <div style="margin-bottom:14px;">
-      <div class="label label-accent" data-i18n="stage.docsLabel">// DOCUMENTS</div>
-      <h2 data-i18n="stage.docsHeading" style="font-family:var(--font-display);font-size:44px;letter-spacing:-1.5px;text-transform:uppercase;margin-top:8px;line-height:1;">Documents.</h2>
+  <!-- ══ 07 · REFLECTION ══ -->
+  <section id="reflection" class="stage-section">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="stage.reflectionLabel">// 07 · REFLECTION</div>
+      <h2 class="stage-heading" data-i18n-html="stage.reflectionHeading">Reflection.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--good);" data-i18n-html="stage.reflection1Label">// WHAT WENT WELL</div>
+          <p data-i18n-html="stage.reflection1Desc">The technical scope was well-chosen , complex enough to be interesting, focused enough to deliver in 13 weeks. Working independently pushed me to make architectural decisions I'd normally defer to a senior developer, and most of them held up well under review.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:#d97706;" data-i18n-html="stage.reflection2Label">// WHAT I'D DO DIFFERENTLY</div>
+          <p data-i18n-html="stage.reflection2Desc">I'd involve the end users , the logistics coordinators , earlier in the process. My first UI iteration made assumptions about their workflow that turned out to be slightly off. An earlier feedback loop would have saved a week of rework mid-project.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--accent-d);" data-i18n-html="stage.reflection3Label">// WHAT I TAKE WITH ME</div>
+          <p data-i18n-html="stage.reflection3Desc">How different enterprise software development feels compared to a school project , the constraints, the process, the care required around security and observability. It made me a more deliberate developer, and confirmed that I want to keep building at this level of complexity.</p>
+        </div>
+      </div>
+
+      <!-- Zelfinzichten blok -->
+<div style="border-top:1px solid var(--rule);padding:24px 32px;">
+  <div class="label label-accent" style="margin-bottom:16px;" data-i18n-html="stage.insightsLabel">// SELF-INSIGHTS</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+    <div>
+      <div class="label" style="color:var(--good);margin-bottom:8px;">// STRENGTHS</div>
+      <p style="font-size:13px;line-height:1.65;color:var(--muted);" data-i18n-html="stage.insightsStrong"></p>
+    </div>
+    <div>
+      <div class="label" style="color:#d97706;margin-bottom:8px;">// GROWTH POINTS</div>
+      <p style="font-size:13px;line-height:1.65;color:var(--muted);" data-i18n-html="stage.insightsGrowth"></p>
+    </div>
+  </div>
+</div>
+
+      <div class="stage-competencies">
+        <div class="label label-accent" style="margin-bottom:12px;" data-i18n-html="stage.competenciesLabel">// COMPETENCIES DEVELOPED</div>
+        <div class="stage-competencies-tags">
+          <span class="exp-tag" data-tag="java">Backend development</span>
+          <span class="exp-tag" data-tag="officejs">Office Add-in</span>
+          <span class="exp-tag" data-tag="kafka">Event-driven architecture</span>
+          <span class="exp-tag" data-tag="oauth">Enterprise auth (OAuth2 / OBO)</span>
+          <span class="exp-tag" data-tag="azure">Cloud deployment</span>
+          <span class="exp-tag" data-tag="docker">Containerisation</span>
+          <span class="exp-tag" data-tag="support">Technical documentation</span>
+          <span class="exp-tag" data-tag="teamwork">Cross-team collaboration</span>
+          <span class="exp-tag" data-tag="leadership">Independent delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 08 · DOCUMENTS ══ -->
+  <section id="documents" class="stage-section" style="padding-bottom:48px;">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="stage.docsLabel">// 08 · DOCUMENTS</div>
+      <h2 class="stage-heading" data-i18n-html="stage.docsHeading">Documents.</h2>
     </div>
 
     <div class="exp-full-panel">
@@ -397,10 +721,12 @@
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.doc1Title">Realisatie Document</span>
-            <a href="src/documents/realisatie-document.pdf" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="stage.doc1Btn" style="font-size:11px;padding:6px 14px;">Open PDF ↗</a>
+            <span class="exp-title" data-i18n-html="stage.doc1Title">Realisatie Document</span>
+            <div class="exp-entry-right">
+              <a href="src/realisatie-document.pdf" target="_blank" rel="noopener" class="btn btn-primary" data-i18n-html="stage.doc1Btn" style="font-size:11px;padding:6px 14px;">Open PDF ↗</a>
+            </div>
           </div>
-          <p class="exp-desc" data-i18n="stage.doc1Desc">Technical realisation document describing the implementation, architecture decisions and deliverables of the internship project.</p>
+          <p class="exp-desc" data-i18n-html="stage.doc1Desc">Technical realisation document describing the implementation, architecture decisions and deliverables of the internship project.</p>
         </div>
       </div>
 
@@ -412,10 +738,12 @@
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.doc2Title">Reflectie Document</span>
-            <a href="src/documents/reflectie-document.pdf" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="stage.doc2Btn" style="font-size:11px;padding:6px 14px;">Open PDF ↗</a>
+            <span class="exp-title" data-i18n-html="stage.doc2Title">Reflectie Document</span>
+            <div class="exp-entry-right">
+              <a href="src/reflectie-document.pdf" target="_blank" rel="noopener" class="btn btn-primary" data-i18n-html="stage.doc2Btn" style="font-size:11px;padding:6px 14px;">Open PDF ↗</a>
+            </div>
           </div>
-          <p class="exp-desc" data-i18n="stage.doc2Desc">Personal reflection on the internship experience — what went well, what I would do differently, and how the project shaped my growth as a developer.</p>
+          <p class="exp-desc" data-i18n-html="stage.doc2Desc">Personal reflection on the internship experience , what went well, what I would do differently, and how the project shaped my growth as a developer.</p>
         </div>
       </div>
 
@@ -427,10 +755,12 @@
         </div>
         <div class="exp-content">
           <div class="exp-entry-top">
-            <span class="exp-title" data-i18n="stage.doc3Title">Project Plan</span>
-            <a href="src/documents/project-plan.pdf" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="stage.doc3Btn" style="font-size:11px;padding:6px 14px;">Open PDF ↗</a>
+            <span class="exp-title" data-i18n-html="stage.doc3Title">Project Plan</span>
+            <div class="exp-entry-right">
+              <a href="src/TM-Project-plan.pdf" target="_blank" rel="noopener" class="btn btn-primary" data-i18n-html="stage.doc3Btn" style="font-size:11px;padding:6px 14px;">Open PDF ↗</a>
+            </div>
           </div>
-          <p class="exp-desc" data-i18n="stage.doc3Desc">The initial project plan submitted at the start of the internship — scope, objectives, timeline and technical approach.</p>
+          <p class="exp-desc" data-i18n-html="stage.doc3Desc">The initial project plan submitted at the start of the internship , scope, objectives, timeline and technical approach.</p>
         </div>
       </div>
     </div>
@@ -439,8 +769,8 @@
 
   <!-- FOOTER -->
   <footer>
-    <span data-i18n="stage.footer">Freek Boes · Internship H.Essers · 2026</span>
-    <a href="index.html" data-i18n="stage.backLink" style="color:var(--accent);font-family:var(--font-mono);font-size:11px;">← Back to portfolio</a>
+    <span data-i18n-html="stage.footer">Freek Boes · Internship H.Essers · 2026</span>
+    <a href="index.html" data-i18n-html="stage.backLink" style="color:var(--accent);font-family:var(--font-mono);font-size:11px;">← Back to portfolio</a>
   </footer>
 
   <script src="data.js"></script>
