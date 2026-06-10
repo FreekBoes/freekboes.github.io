@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('portfolio-theme', theme);
-    // Swap sun/moon icons
     if (moonIcon && sunIcon) {
       moonIcon.style.display = theme === 'dark' ? 'none'  : 'block';
       sunIcon.style.display  = theme === 'dark' ? 'block' : 'none';
@@ -28,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTheme(current === 'dark' ? 'light' : 'dark');
   }
 
-  // Restore saved theme (or system preference)
   const savedTheme = localStorage.getItem('portfolio-theme');
   if (savedTheme) {
     setTheme(savedTheme);
@@ -45,7 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ────────────────────────────────────────── */
   let currentLang = localStorage.getItem('portfolio-lang') || 'en';
 
-  // Deep-get: get('about.facts.0.label') on a nested object
   function get(obj, path) {
     return path.split('.').reduce((o, k) => (o != null ? o[k] : undefined), obj);
   }
@@ -54,21 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const t = DATA[lang];
     if (!t) return;
 
-    // Update all elements with data-i18n="path"
-document.querySelectorAll('[data-i18n-html]').forEach(el => {
-  const key = el.getAttribute('data-i18n-html');
-  const val = get(t, key);
-  if (val !== undefined && typeof val === 'string') el.innerHTML = val;
-});
-
-// HTML content elements (voor elementen met strong tags e.d.)
-document.querySelectorAll('[data-i18n-html]').forEach(el => {
-  const key = el.getAttribute('data-i18n-html');
-  const val = get(t, key);
-  if (val !== undefined && typeof val === 'string') el.innerHTML = val;
-});
-
-    // Re-render lists that come from arrays
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      const val = get(t, key);
+      if (val !== undefined && typeof val === 'string') el.innerHTML = val;
+    });
 
     // Outcomes
     const outcomesList = document.getElementById('outcomes-list');
@@ -89,7 +76,7 @@ document.querySelectorAll('[data-i18n-html]').forEach(el => {
     // Projects grid
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
-projectsGrid.innerHTML = t.projects.items.map((p) => `
+      projectsGrid.innerHTML = t.projects.items.map((p) => `
   <div class="project-card" data-project="${p.key}" data-category="${p.category}"${p.pageUrl ? ` data-url="${p.pageUrl}"` : ''}>
     <div class="project-card-img">
       <div class="project-card-img-bg">${p.name.toUpperCase()}</div>
@@ -154,25 +141,24 @@ projectsGrid.innerHTML = t.projects.items.map((p) => `
       ).join('');
     }
 
-    // Update lang toggle button label (show the other language)
+    // Elision outcomes
+    const elisionOutcomes = document.getElementById('elision-outcomes-list');
+    if (elisionOutcomes && t.elision) {
+      elisionOutcomes.innerHTML = [
+        'Working <strong>tracking script</strong> embeddable in any website',
+        '<strong>Java Spring Boot API</strong> receiving and storing load time events',
+        '<strong>React dashboard</strong> with regional and device breakdowns',
+        'Delivered as a working <strong>proof of concept to a real client</strong>',
+        'Full project delivered on time using <strong>Scrum and Agile</strong>',
+      ].map(o => `<li><span class="prefix-plus">[+]</span> ${o}</li>`).join('');
+    }
+
+    // Update lang toggle button label
     const nextLang = lang === 'en' ? 'NL' : 'EN';
     document.querySelectorAll('#lang-toggle, #lang-toggle-m').forEach(btn => {
       btn.textContent = nextLang;
     });
 
-    // Elision outcomes
-const elisionOutcomes = document.getElementById('elision-outcomes-list');
-if (elisionOutcomes && t.elision) {
-  elisionOutcomes.innerHTML = [
-    'Working <strong>tracking script</strong> embeddable in any website',
-    '<strong>Java Spring Boot API</strong> receiving and storing load time events',
-    '<strong>React dashboard</strong> with regional and device breakdowns',
-    'Delivered as a working <strong>proof of concept to a real client</strong>',
-    'Full project delivered on time using <strong>Scrum and Agile</strong>',
-  ].map(o => `<li><span class="prefix-plus">[+]</span> ${o}</li>`).join('');
-}
-
-    // Update html lang attribute
     document.documentElement.lang = lang;
   }
 
@@ -189,7 +175,6 @@ if (elisionOutcomes && t.elision) {
   document.getElementById('lang-toggle')?.addEventListener('click', toggleLang);
   document.getElementById('lang-toggle-m')?.addEventListener('click', toggleLang);
 
-  // Apply saved language on load
   updateContent(currentLang);
 
 
@@ -220,7 +205,6 @@ if (elisionOutcomes && t.elision) {
 
   /* ──────────────────────────────────────────
      SCROLL FADE-UP
-     "in-view" avoids conflict with Tailwind's .visible
   ────────────────────────────────────────── */
   const fadeObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -235,7 +219,7 @@ if (elisionOutcomes && t.elision) {
 
 
   /* ──────────────────────────────────────────
-     SKILL BARS — width animatie via JS
+     SKILL BARS
   ────────────────────────────────────────── */
   const barObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -263,13 +247,11 @@ if (elisionOutcomes && t.elision) {
 
     document.getElementById('modal-title').textContent = p.title;
     document.getElementById('modal-meta').textContent  = p.type + ' · ' + p.year;
-
     document.getElementById('modal-assignment').textContent = p.assignment;
     document.getElementById('modal-approach').textContent   = p.approach;
     document.getElementById('modal-result').textContent     = p.finalResult;
     document.getElementById('modal-input').textContent      = p.myInput;
 
-    // Photos
     const photosSection = document.getElementById('modal-photos-section');
     const photosGrid    = document.getElementById('modal-photos');
     if (p.photos && p.photos.length > 0) {
@@ -304,37 +286,49 @@ if (elisionOutcomes && t.elision) {
     document.body.style.overflow = '';
   }
 
-  // Click on project card
+  // ── PROJECT CARD CLICKS ──────────────────
+  // Één gecombineerde handler: data-url → navigeer, geen url → modal.
+
+  // Statische kaarten (hardcoded in HTML)
   document.querySelectorAll('.project-card[data-project]').forEach(card => {
     card.addEventListener('click', e => {
       e.preventDefault();
-      openModal(card.dataset.project);
+      if (card.dataset.url) {
+        window.location.href = card.dataset.url;
+      } else {
+        openModal(card.dataset.project);
+      }
     });
   });
 
-  // Also handle dynamically rendered cards (language switch)
+  // Dynamisch gerenderde kaarten (na taalswitch, via event delegation)
   document.getElementById('projects-grid')?.addEventListener('click', e => {
     const card = e.target.closest('.project-card[data-project]');
-    if (card) { e.preventDefault(); openModal(card.dataset.project); }
+    if (!card) return;
+    e.preventDefault();
+    if (card.dataset.url) {
+      window.location.href = card.dataset.url;
+    } else {
+      openModal(card.dataset.project);
+    }
   });
 
-  // Close button
+  // Modal sluiten
   modalClose?.addEventListener('click', closeModal);
-
-  // Click on backdrop
   modal?.addEventListener('click', e => {
     if (e.target === modal) closeModal();
   });
-
-  // Escape key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeModal();
   });
 
-  // Project filter
+
+  /* ──────────────────────────────────────────
+     PROJECT FILTER
+  ────────────────────────────────────────── */
   document.querySelectorAll('[data-filter]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       document.querySelectorAll('.project-card').forEach(card => {
@@ -347,61 +341,31 @@ if (elisionOutcomes && t.elision) {
     });
   });
 
-  // Experience filter
-document.querySelectorAll('[data-exp-filter]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-exp-filter]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.expFilter;
-    document.querySelectorAll('.exp-entry-rich[data-exp-category]').forEach(entry => {
-      if (filter === 'all' || entry.dataset.expCategory === filter) {
-        entry.style.display = '';
-      } else {
-        entry.style.display = 'none';
-      }
+
+  /* ──────────────────────────────────────────
+     EXPERIENCE FILTER
+  ────────────────────────────────────────── */
+  document.querySelectorAll('[data-exp-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-exp-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.expFilter;
+      document.querySelectorAll('.exp-entry-rich[data-exp-category]').forEach(entry => {
+        if (filter === 'all' || entry.dataset.expCategory === filter) {
+          entry.style.display = '';
+        } else {
+          entry.style.display = 'none';
+        }
+      });
     });
   });
-});
-
-// De Beerse Bende outcomes
-const dbbOutcomes = document.getElementById('dbb-outcomes-list');
-if (dbbOutcomes && t.dbb) {
-  dbbOutcomes.innerHTML = [
-    'Fully working platform <strong>delivered to a real client</strong>',
-    '<strong>Ticket management</strong> replacing paper-based sales',
-    '<strong>Financial accounting</strong> module with reporting',
-    '<strong>Calendar integration</strong> for show scheduling',
-    '<strong>Role-based access</strong> for different user types',
-    'Delivered on time using <strong>Scrum and Agile</strong>',
-  ].map(o => `<li><span class="prefix-plus">[+]</span> ${o}</li>`).join('');
-}
-
-document.querySelectorAll('.project-card[data-project]').forEach(card => {
-  card.addEventListener('click', e => {
-    e.preventDefault();
-    if (card.dataset.url) {
-      window.location.href = card.dataset.url;
-    } else {
-      openModal(card.dataset.project);
-    }
-  });
-});
-
-// Dynamisch gerenderde kaarten (na taalswitch)
-document.getElementById('projects-grid')?.addEventListener('click', e => {
-  const card = e.target.closest('.project-card[data-project]');
-  if (!card) return;
-  e.preventDefault();
-  if (card.dataset.url) {
-    window.location.href = card.dataset.url;
-  } else {
-    openModal(card.dataset.project);
-  }
-});
 
 }); // ← einde DOMContentLoaded
 
-// Lightbox — globaal zodat onclick in HTML ze kan bereiken
+
+/* ──────────────────────────────────────────
+   LIGHTBOX — globaal (onclick in HTML)
+────────────────────────────────────────── */
 function openLightbox(btn) {
   const img = btn.closest('.stage-photo-cell').querySelector('img');
   if (!img || img.style.display === 'none') return;
@@ -419,6 +383,10 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 
+
+/* ──────────────────────────────────────────
+   CV DOWNLOAD
+────────────────────────────────────────── */
 function downloadCV(e) {
   const url = e.currentTarget.href;
   const a = document.createElement('a');

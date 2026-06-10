@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brickify · Freek Boes</title>
+  <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/output.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">F</div>
+      <div class="nav-path">
+        <span>freek.boes</span>
+        <span class="sep">/</span>
+        <span>portfolio</span>
+        <span class="sep">/</span>
+        <a href="index.html#projects" style="color:var(--muted);text-decoration:none;">projects</a>
+        <span class="sep">/</span>
+        <span class="main">brickify</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"      data-i18n-html="nav.about">About</a></li>
+      <li><a href="index.html#education"  data-i18n-html="nav.education">Education</a></li>
+      <li><a href="index.html#skills"     data-i18n-html="nav.skills">Skills</a></li>
+      <li><a href="index.html#experience" data-i18n-html="nav.experience">Experience</a></li>
+      <li><a href="index.html#projects"   data-i18n-html="nav.projects">Projects</a></li>
+      <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a></li>
+      <li><a href="index.html#contact"    data-i18n-html="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-controls">
+        <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
+        <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+          <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-status">
+        <span class="nav-status-dot"></span>
+        <span data-i18n-html="status">Final-year student · Thomas More</span>
+      </div>
+    </div>
+    <button id="nav-toggle-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="index.html#about"      class="mobile-link" data-i18n-html="nav.about">About</a>
+    <a href="index.html#education"  class="mobile-link" data-i18n-html="nav.education">Education</a>
+    <a href="index.html#skills"     class="mobile-link" data-i18n-html="nav.skills">Skills</a>
+    <a href="index.html#experience" class="mobile-link" data-i18n-html="nav.experience">Experience</a>
+    <a href="index.html#projects"   class="mobile-link" data-i18n-html="nav.projects">Projects</a>
+    <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a>
+    <a href="index.html#contact"    class="mobile-link" data-i18n-html="nav.contact">Contact</a>
+    <div class="nav-mobile-controls">
+      <button id="lang-toggle-m"  class="nav-btn">NL</button>
+      <button id="theme-toggle-m" class="nav-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="proj-hero-wrap">
+    <div class="case-panel">
+
+      <div class="proj-hero-banner">
+        <div class="case-screenshot-grid"></div>
+        <img src="src/images/brickify.png" alt="Brickify" onerror="this.style.display='none'">
+        <div class="proj-hero-banner-text">BRICKIFY</div>
+        <div class="proj-hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          <span data-i18n-html="brickify.metaTeamVal">3 developers</span>
+        </div>
+        <div class="case-screenshot-badge">2025 · Thomas More · Dotnet Lab</div>
+      </div>
+
+      <div class="case-meta-row">
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="brickify.metaType">TYPE</div>
+          <div class="val" data-i18n-html="brickify.metaTypeVal">School project · Real client</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="brickify.metaRole">ROLE</div>
+          <div class="val" data-i18n-html="brickify.metaRoleVal">Full-stack · Azure · CI/CD</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="brickify.metaTeam">TEAM</div>
+          <div class="val" data-i18n-html="brickify.metaTeamVal">3 developers</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="brickify.metaYear">YEAR</div>
+          <div class="val">2025</div>
+        </div>
+      </div>
+
+      <div class="proj-hero-body">
+        <div class="label label-accent" data-i18n-html="brickify.heroLabel">// PROJECT CASE STUDY</div>
+        <h1 class="proj-hero-title">
+          Brickify<span style="color:var(--accent);">.</span>
+        </h1>
+        <p class="proj-hero-desc" data-i18n-html="brickify.heroDesc">
+          A web application built for the hospital of Geel in collaboration with Dotnet Lab — digitising a paper-based Lego lending system for children. Built in a team of 3 using <strong>.NET, Angular and Azure</strong> as part of the Software Engineering course.
+        </p>
+
+        <nav class="stage-page-nav">
+          <a href="#overview"      class="filter-btn" data-i18n-html="brickify.overviewLabel">Overview</a>
+          <a href="#features"      class="filter-btn" data-i18n-html="brickify.featuresLabel">Features</a>
+          <a href="#architecture"  class="filter-btn" data-i18n-html="brickify.archLabel">Architecture</a>
+          <a href="#contribution"  class="filter-btn" data-i18n-html="brickify.contribLabel">My Contribution</a>
+          <a href="#challenges"    class="filter-btn" data-i18n-html="brickify.challengesLabel">Challenges</a>
+          <a href="#access"        class="filter-btn" data-i18n-html="brickify.accessLabel">Access</a>
+          <a href="#learned"       class="filter-btn" data-i18n-html="brickify.learnedLabel">What I Learned</a>
+        </nav>
+      </div>
+
+      <div class="proj-hero-stack">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">TECH</span>
+        <span class="exp-tag" data-tag="spring">.NET</span>
+        <span class="exp-tag" data-tag="officejs">Angular</span>
+        <span class="exp-tag" data-tag="azure">Azure</span>
+        <span class="exp-tag" data-tag="support">SQL</span>
+        <span class="exp-tag" data-tag="teamwork">GitHub</span>
+        <span class="exp-tag" data-tag="docker">CI/CD</span>
+      </div>
+
+      <div class="proj-hero-stack" style="border-top:none;padding-top:0;">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">SOFT</span>
+        <span class="exp-tag" data-tag="teamwork">Scrum</span>
+        <span class="exp-tag" data-tag="adaptability">Agile</span>
+        <span class="exp-tag" data-tag="communication">Client communication</span>
+        <span class="exp-tag" data-tag="teamwork">Teamwork</span>
+        <span class="exp-tag" data-tag="communication">English</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 01 · OVERVIEW ══ -->
+  <section id="overview" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="brickify.overviewLabel">// 01 · OVERVIEW</div>
+      <h2 class="stage-heading" data-i18n-html="brickify.overviewHeading">Overview.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="brickify.problemLabel">01 / PROBLEM</div>
+          <p data-i18n-html="brickify.problemText">The hospital used a physical booklet to show children which Lego sets were available to borrow. Requests were handled manually — there was <strong>no digital overview</strong>, no way to manage the catalogue online, and no self-service for patients.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="brickify.assignmentLabel">02 / ASSIGNMENT</div>
+          <p data-i18n-html="brickify.assignmentText">Build a web application for the hospital of Geel that lets children <strong>browse and request Lego sets online</strong>, and gives staff a way to <strong>manage the catalogue</strong> — replacing the paper booklet entirely.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="brickify.solutionLabel">03 / SOLUTION</div>
+          <p data-i18n-html="brickify.solutionText">A <strong>full-stack web application</strong> with a .NET REST API, SQL database and Angular frontend. Children can browse available sets and submit requests. Staff and admins can manage the catalogue and handle requests through a dedicated management interface.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 02 · FEATURES ══ -->
+  <section id="features" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="brickify.featuresLabel">// 02 · FEATURES</div>
+      <h2 class="stage-heading" data-i18n-html="brickify.featuresHeading">Features.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="kc-features-grid">
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">🧱</div>
+          <div class="kc-feature-title" data-i18n-html="brickify.feat1Title">Lego catalogue</div>
+          <p class="kc-feature-desc" data-i18n-html="brickify.feat1Desc">Browse the full catalogue of available Lego sets — replacing the physical booklet with a searchable, visual online overview.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">📬</div>
+          <div class="kc-feature-title" data-i18n-html="brickify.feat2Title">Set requests</div>
+          <p class="kc-feature-desc" data-i18n-html="brickify.feat2Desc">Children can select a set and submit a request directly from the app — no paper form, no manual process.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">⚙️</div>
+          <div class="kc-feature-title" data-i18n-html="brickify.feat3Title">Catalogue management</div>
+          <p class="kc-feature-desc" data-i18n-html="brickify.feat3Desc">Staff can add, edit and remove Lego sets from the catalogue through a dedicated management interface.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">📋</div>
+          <div class="kc-feature-title" data-i18n-html="brickify.feat4Title">Request management</div>
+          <p class="kc-feature-desc" data-i18n-html="brickify.feat4Desc">Admins have a full overview of all incoming requests and can manage their status.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">🔐</div>
+          <div class="kc-feature-title" data-i18n-html="brickify.feat5Title">Role-based access</div>
+          <p class="kc-feature-desc" data-i18n-html="brickify.feat5Desc">Separate views and permissions for children browsing sets, staff managing the catalogue and admins overseeing requests.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">☁️</div>
+          <div class="kc-feature-title" data-i18n-html="brickify.feat6Title">Azure deployment</div>
+          <p class="kc-feature-desc" data-i18n-html="brickify.feat6Desc">The full application is deployed on Azure with a CI/CD pipeline — production-ready and accessible from any device.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 03 · ARCHITECTURE ══ -->
+  <section id="architecture" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="brickify.archLabel">// 03 · ARCHITECTURE</div>
+      <h2 class="stage-heading" data-i18n-html="brickify.archHeading">Architecture.</h2>
+    </div>
+
+    <div class="exp-full-panel">
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#512bd4;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="18" rx="1"/><path d="M8 9h8M8 13h6"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="brickify.arch1Title">.NET REST API</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(81,43,212,0.08);border-color:rgba(81,43,212,0.35);color:#512bd4;">.NET · C#</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="brickify.arch1Desc">The backend is built with <strong>.NET</strong>, exposing a REST API for all catalogue and request operations. Handles business logic, authentication and data access — structured to be maintainable across a team.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#dd0031;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="brickify.arch2Title">Angular Frontend</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(221,0,49,0.08);border-color:rgba(221,0,49,0.35);color:#dd0031;">Angular · TypeScript</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="brickify.arch2Desc">The frontend is built with <strong>Angular</strong>, providing separate views for patients and staff. The component-based architecture kept the codebase organised across a team of 3.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#3c5078;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="brickify.arch3Title">SQL Database</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(60,80,120,0.08);border-color:rgba(60,80,120,0.35);color:#3c5078;">SQL · EF Core</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="brickify.arch3Desc">All catalogue data, user accounts and requests are stored in a <strong>SQL database</strong>. The schema is managed alongside the codebase and version-controlled through migrations.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#0078d4;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="brickify.arch4Title">Azure & CI/CD</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(0,120,212,0.08);border-color:rgba(0,120,212,0.35);color:#0078d4;">Azure · GitHub Actions</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="brickify.arch4Desc">The application is deployed on <strong>Azure</strong> with a full CI/CD pipeline via GitHub Actions. Every push to main triggers a build, test and deployment — keeping the production environment always up to date.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 04 · MY CONTRIBUTION ══ -->
+  <section id="contribution" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="brickify.contribLabel">// 04 · MY CONTRIBUTION</div>
+      <h2 class="stage-heading" data-i18n-html="brickify.contribHeading">My Contribution.</h2>
+    </div>
+
+    <div class="stage-contrib-grid">
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">01</div>
+        <div class="stage-contrib-title" data-i18n-html="brickify.contrib1Title">Project setup</div>
+        <p class="stage-contrib-desc" data-i18n-html="brickify.contrib1Desc">Set up the initial project structure — repository, branching strategy, team agreements and the base architecture that the team built on throughout the semester.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">02</div>
+        <div class="stage-contrib-title" data-i18n-html="brickify.contrib2Title">Feature development</div>
+        <p class="stage-contrib-desc" data-i18n-html="brickify.contrib2Desc">Contributed to features across the full stack — <strong>API endpoints, Angular components</strong> and database logic. Worked across multiple modules rather than owning a single part.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">03</div>
+        <div class="stage-contrib-title" data-i18n-html="brickify.contrib3Title">Azure configuration</div>
+        <p class="stage-contrib-desc" data-i18n-html="brickify.contrib3Desc">Set up and configured the <strong>Azure environment</strong> — app services, database hosting and the supporting infrastructure needed to get the application into production.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">04</div>
+        <div class="stage-contrib-title" data-i18n-html="brickify.contrib4Title">CI/CD pipeline</div>
+        <p class="stage-contrib-desc" data-i18n-html="brickify.contrib4Desc">Built the <strong>GitHub Actions CI/CD pipeline</strong> — automated build, test and deployment to Azure so every merge to main updated the live environment.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">05</div>
+        <div class="stage-contrib-title" data-i18n-html="brickify.contrib5Title">Team coordination</div>
+        <p class="stage-contrib-desc" data-i18n-html="brickify.contrib5Desc">Helped keep the team moving through changing team compositions — picking up extra work when needed and coordinating with the international team member on shared parts of the codebase.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">06</div>
+        <div class="stage-contrib-title" data-i18n-html="brickify.contrib6Title">Client collaboration</div>
+        <p class="stage-contrib-desc" data-i18n-html="brickify.contrib6Desc">Participated in meetings with <strong>Dotnet Lab and the hospital</strong> — presenting progress, clarifying requirements and making sure what we built matched what the client actually needed.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 05 · CHALLENGES ══ -->
+  <section id="challenges" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="brickify.challengesLabel">// 05 · CHALLENGES</div>
+      <h2 class="stage-heading" data-i18n-html="brickify.challengesHeading">Challenges.</h2>
+    </div>
+
+    <div class="stage-challenges-list">
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="brickify.challenge1Label">01 / TEAM COMPOSITION CHANGES</div>
+          <p class="stage-challenge-desc" data-i18n-html="brickify.challenge1Desc">The team started as 6, dropped to 3, merged with another team back to 6, then ended as 3 again. Each change disrupted the workflow and required redistribution of ownership.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="brickify.challenge1Solution">Kept the codebase modular and well-documented so that onboarding and offboarding team members caused as little disruption as possible. Clear branching and PR conventions helped regardless of team size.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="brickify.challenge2Label">02 / INTERNATIONAL TEAM MEMBER</div>
+          <p class="stage-challenge-desc" data-i18n-html="brickify.challenge2Desc">Working with an international student required communicating entirely in English. His technical level was lower than the rest of the team, which meant certain parts required more guidance and some work had to be redistributed.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="brickify.challenge2Solution">Assigned tasks that matched his skill level and paired on more complex parts. The language barrier was manageable — clear written communication in PRs and commit messages helped keep everyone aligned.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="brickify.challenge3Label">03 / SCOPE OF SOFTWARE ENGINEERING</div>
+          <p class="stage-challenge-desc" data-i18n-html="brickify.challenge3Desc">The Software Engineering course required not just working software but a fully considered development process — architecture decisions, documentation, testing, deployment and client communication all had to come together.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="brickify.challenge3Solution">Treated the process as seriously as the code. Set up the CI/CD pipeline and Azure environment early, wrote documentation alongside features rather than at the end, and kept the client updated with working demos.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ ACCESS ══ -->
+  <section id="access" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="brickify.accessLabel">// ACCESS</div>
+      <h2 class="stage-heading" data-i18n-html="brickify.accessHeading">Try it out.</h2>
+    </div>
+
+    <div class="case-panel">
+
+      <div style="padding:20px 28px;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="label label-accent" style="margin-bottom:6px;" data-i18n-html="brickify.accessUrlTitle">Live URL</div>
+          <p class="exp-desc" style="margin:0;" data-i18n-html="brickify.accessUrlDesc">The application is live on Azure. Pick a role below and log in to explore the platform.</p>
+        </div>
+        <a href="https://swe-monorepo-02-app-client-frontend-prd-frbmbwfuf2h9dxfq.swedencentral-01.azurewebsites.net" target="_blank" rel="noopener" class="btn btn-primary" style="flex-shrink:0;">
+          brickify.azurewebsites.net ↗
+        </a>
+      </div>
+
+      <div class="dbb-creds-table-wrap">
+        <table class="dbb-creds-table">
+          <thead>
+            <tr>
+              <th data-i18n-html="brickify.accessColEmail">Email</th>
+              <th data-i18n-html="brickify.accessColPassword">Password</th>
+              <th data-i18n-html="brickify.accessColRole">Role</th>
+              <th data-i18n-html="brickify.accessColAccess">Access</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="dbb-creds-admin">
+              <td><code>admin@hospital.be</code></td>
+              <td><code>ThisAdmin123</code></td>
+              <td><span class="dbb-role-badge dbb-role--admin" data-i18n-html="brickify.roleAdmin">Admin</span></td>
+              <td data-i18n-html="brickify.accessAdmin">Full catalogue management, request overview, user management</td>
+            </tr>
+            <tr>
+              <td><code>sarah@hospital.be</code></td>
+              <td><code>SarahEmployee123</code></td>
+              <td><span class="dbb-role-badge dbb-role--volunteer" data-i18n-html="brickify.roleUser">User</span></td>
+              <td data-i18n-html="brickify.accessUser">Browse catalogue, submit requests, manage own profile</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 06 · WHAT I LEARNED ══ -->
+  <section id="learned" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="brickify.learnedLabel">// 06 · WHAT I LEARNED</div>
+      <h2 class="stage-heading" data-i18n-html="brickify.learnedHeading">What I Learned.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--good);" data-i18n-html="brickify.learned1Label">// SOFTWARE ENGINEERING PROCESS</div>
+          <p data-i18n-html="brickify.learned1Desc">This was the most process-heavy project I had done — architecture decisions, documentation, testing, deployment and client work all had to be solid before and during development, not as an afterthought.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:#d97706;" data-i18n-html="brickify.learned2Label">// WORKING ACROSS SKILL LEVELS</div>
+          <p data-i18n-html="brickify.learned2Desc">Working with a team member who had less technical experience taught me that <strong>communication and task allocation</strong> matter as much as technical ability. Getting the best out of a mixed-skill team is a skill in itself.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--accent-d);" data-i18n-html="brickify.learned3Label">// AZURE & DEVOPS</div>
+          <p data-i18n-html="brickify.learned3Desc">Setting up the Azure environment and CI/CD pipeline gave me hands-on experience with <strong>cloud deployment and DevOps practices</strong> in a real project context — infrastructure that actually had to work for a client.</p>
+        </div>
+      </div>
+
+      <div class="stage-competencies">
+        <div class="label label-accent" style="margin-bottom:12px;">// COMPETENCIES</div>
+        <div class="stage-competencies-tags">
+          <span class="exp-tag" data-tag="spring">.NET</span>
+          <span class="exp-tag" data-tag="officejs">Angular</span>
+          <span class="exp-tag" data-tag="azure">Azure</span>
+          <span class="exp-tag" data-tag="support">SQL</span>
+          <span class="exp-tag" data-tag="teamwork">GitHub</span>
+          <span class="exp-tag" data-tag="docker">CI/CD</span>
+          <span class="exp-tag" data-tag="rest">REST API</span>
+          <span class="exp-tag" data-tag="teamwork">Scrum / Agile</span>
+          <span class="exp-tag" data-tag="communication">Client communication</span>
+          <span class="exp-tag" data-tag="adaptability">Team coordination</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n-html="brickify.footer">Freek Boes · Brickify · 2025</span>
+    <a href="index.html#projects" data-i18n-html="brickify.backLink" style="color:var(--accent);font-family:var(--font-mono);font-size:11px;">← Back to projects</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

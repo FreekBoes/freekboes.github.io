@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handbal Overpelt · Freek Boes</title>
+  <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/output.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">F</div>
+      <div class="nav-path">
+        <span>freek.boes</span>
+        <span class="sep">/</span>
+        <span>portfolio</span>
+        <span class="sep">/</span>
+        <a href="index.html#projects" style="color:var(--muted);text-decoration:none;">projects</a>
+        <span class="sep">/</span>
+        <span class="main">handbal-overpelt</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"      data-i18n-html="nav.about">About</a></li>
+      <li><a href="index.html#education"  data-i18n-html="nav.education">Education</a></li>
+      <li><a href="index.html#skills"     data-i18n-html="nav.skills">Skills</a></li>
+      <li><a href="index.html#experience" data-i18n-html="nav.experience">Experience</a></li>
+      <li><a href="index.html#projects"   data-i18n-html="nav.projects">Projects</a></li>
+      <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a></li>
+      <li><a href="index.html#contact"    data-i18n-html="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-controls">
+        <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
+        <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+          <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-status">
+        <span class="nav-status-dot"></span>
+        <span data-i18n-html="status">Final-year student · Thomas More</span>
+      </div>
+    </div>
+    <button id="nav-toggle-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="index.html#about"      class="mobile-link" data-i18n-html="nav.about">About</a>
+    <a href="index.html#education"  class="mobile-link" data-i18n-html="nav.education">Education</a>
+    <a href="index.html#skills"     class="mobile-link" data-i18n-html="nav.skills">Skills</a>
+    <a href="index.html#experience" class="mobile-link" data-i18n-html="nav.experience">Experience</a>
+    <a href="index.html#projects"   class="mobile-link" data-i18n-html="nav.projects">Projects</a>
+    <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a>
+    <a href="index.html#contact"    class="mobile-link" data-i18n-html="nav.contact">Contact</a>
+    <div class="nav-mobile-controls">
+      <button id="lang-toggle-m"  class="nav-btn">NL</button>
+      <button id="theme-toggle-m" class="nav-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="proj-hero-wrap">
+    <div class="case-panel">
+
+      <div class="proj-hero-banner">
+        <div class="case-screenshot-grid"></div>
+        <img src="src/images/handbal-overpelt.png" alt="Handbal Overpelt" onerror="this.style.display='none'">
+        <div class="proj-hero-banner-text">HANDBAL OVERPELT</div>
+        <div class="proj-hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          <span data-i18n-html="handbaloverpelt.metaTypeVal">Client website · Solo</span>
+        </div>
+        <div class="case-screenshot-badge">2024 · Live · handbalcluboverpelt.be</div>
+      </div>
+
+      <div class="case-meta-row">
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="handbaloverpelt.metaType">TYPE</div>
+          <div class="val" data-i18n-html="handbaloverpelt.metaTypeVal">Client website · Solo</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="handbaloverpelt.metaRole">ROLE</div>
+          <div class="val" data-i18n-html="handbaloverpelt.metaRoleVal">Solo — everything</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="handbaloverpelt.metaTeam">TEAM</div>
+          <div class="val" data-i18n-html="handbaloverpelt.metaTeamVal">1 developer</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="handbaloverpelt.metaYear">YEAR</div>
+          <div class="val">2024</div>
+        </div>
+      </div>
+
+      <div class="proj-hero-body">
+        <div class="label label-accent" data-i18n-html="handbaloverpelt.heroLabel">// PROJECT CASE STUDY</div>
+        <h1 class="proj-hero-title">
+          Handbal<br>Overpelt<span style="color:var(--accent);">.</span>
+        </h1>
+        <p class="proj-hero-desc" data-i18n-html="handbaloverpelt.heroDesc">
+          A full redesign and rebuild of the public website for Handbal Overpelt — my local handball club. The old site was outdated and no longer represented the club well. I took the initiative, rebuilt it from scratch and deployed it on their existing hosting.
+        </p>
+
+        <nav class="stage-page-nav">
+          <a href="#overview"      class="filter-btn" data-i18n-html="handbaloverpelt.overviewLabel">Overview</a>
+          <a href="#architecture"  class="filter-btn" data-i18n-html="handbaloverpelt.archLabel">Architecture</a>
+          <a href="#contribution"  class="filter-btn" data-i18n-html="handbaloverpelt.contribLabel">My Contribution</a>
+          <a href="#challenges"    class="filter-btn" data-i18n-html="handbaloverpelt.challengesLabel">Challenges</a>
+          <a href="#access"        class="filter-btn" data-i18n-html="handbaloverpelt.accessLabel">View site</a>
+          <a href="#learned"       class="filter-btn" data-i18n-html="handbaloverpelt.learnedLabel">What I Learned</a>
+        </nav>
+      </div>
+
+      <div class="proj-hero-stack">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">TECH</span>
+        <span class="exp-tag" data-tag="support">HTML</span>
+        <span class="exp-tag" data-tag="kafka">Tailwind CSS</span>
+        <span class="exp-tag" data-tag="officejs">JavaScript</span>
+        <span class="exp-tag" data-tag="teamwork">GitHub</span>
+        <span class="exp-tag" data-tag="support">Static hosting</span>
+      </div>
+
+      <div class="proj-hero-stack" style="border-top:none;padding-top:0;">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">SOFT</span>
+        <span class="exp-tag" data-tag="adaptability">Self-initiated</span>
+        <span class="exp-tag" data-tag="communication">Client communication</span>
+        <span class="exp-tag" data-tag="communication">Content strategy</span>
+        <span class="exp-tag" data-tag="leadership">Solo ownership</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 01 · OVERVIEW ══ -->
+  <section id="overview" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="handbaloverpelt.overviewLabel">// 01 · OVERVIEW</div>
+      <h2 class="stage-heading" data-i18n-html="handbaloverpelt.overviewHeading">Overview.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="handbaloverpelt.problemLabel">01 / PROBLEM</div>
+          <p data-i18n-html="handbaloverpelt.problemText">The club's existing website was outdated — visually dated, not mobile-friendly and missing content that members and visitors actually needed. It no longer reflected the club's energy or gave a good first impression to potential new members.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="handbaloverpelt.assignmentLabel">02 / ASSIGNMENT</div>
+          <p data-i18n-html="handbaloverpelt.assignmentText">Self-initiated: analyse what the old site was missing, decide what to keep and what to cut, and build a <strong>modern, responsive replacement</strong> that works on any device and is easy for the club to maintain going forward.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="handbaloverpelt.solutionLabel">03 / SOLUTION</div>
+          <p data-i18n-html="handbaloverpelt.solutionText">A fully <strong>responsive static website</strong> built with HTML, Tailwind CSS and JavaScript. The new site covers all teams, the club calendar, sponsor information, activities and contact — deployed directly on the club's existing hosting platform.</p>
+        </div>
+      </div>
+
+      <div class="case-outcomes">
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--good);" data-i18n-html="handbaloverpelt.outcomesLabel">// OUTCOMES</div>
+          <ul class="outcomes-list">
+            <li><span class="prefix-plus">[+]</span> <span data-i18n-html="handbaloverpelt.outcome1">Modern, <strong>fully responsive design</strong> that works on mobile, tablet and desktop</span></li>
+            <li><span class="prefix-plus">[+]</span> <span data-i18n-html="handbaloverpelt.outcome2">Dedicated pages for <strong>all teams</strong> — Heren 1, Heren 2 and all youth categories from J08 to J18</span></li>
+            <li><span class="prefix-plus">[+]</span> <span data-i18n-html="handbaloverpelt.outcome3"><strong>Google Calendar integration</strong> for match schedules and club events</span></li>
+            <li><span class="prefix-plus">[+]</span> <span data-i18n-html="handbaloverpelt.outcome4">Sponsor section maintaining <strong>visibility for club partners</strong></span></li>
+            <li><span class="prefix-plus">[+]</span> <span data-i18n-html="handbaloverpelt.outcome5"><strong>Live site</strong> delivered and maintained under an ongoing contract</span></li>
+            <li><span class="prefix-plus">[+]</span> <span data-i18n-html="handbaloverpelt.outcome6">Clean <strong>migration from old to new</strong> with no downtime on the existing domain</span></li>
+          </ul>
+        </div>
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--accent-d);" data-i18n-html="handbaloverpelt.learnedShortLabel">// KEY SKILLS</div>
+          <ul class="outcomes-list">
+            <li><span class="prefix-arrow">[→]</span> <span data-i18n-html="handbaloverpelt.skill1"><strong>Solo client workflow</strong> — from first conversation to live deployment</span></li>
+            <li><span class="prefix-arrow">[→]</span> <span data-i18n-html="handbaloverpelt.skill2">Content strategy — deciding what to keep, cut and add</span></li>
+            <li><span class="prefix-arrow">[→]</span> <span data-i18n-html="handbaloverpelt.skill3"><strong>Responsive design</strong> with Tailwind CSS utility classes</span></li>
+            <li><span class="prefix-arrow">[→]</span> <span data-i18n-html="handbaloverpelt.skill4">Hosting migration and <strong>domain management</strong></span></li>
+            <li><span class="prefix-arrow">[→]</span> <span data-i18n-html="handbaloverpelt.skill5">Ongoing maintenance and <strong>content updates</strong></span></li>
+            <li><span class="prefix-arrow">[→]</span> <span data-i18n-html="handbaloverpelt.skill6">Self-directed <strong>project management</strong> without a brief</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 02 · ARCHITECTURE ══ -->
+  <section id="architecture" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="handbaloverpelt.archLabel">// 02 · ARCHITECTURE</div>
+      <h2 class="stage-heading" data-i18n-html="handbaloverpelt.archHeading">Architecture.</h2>
+    </div>
+
+    <div class="exp-full-panel">
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#e34c26;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="handbaloverpelt.arch1Title">HTML · Tailwind CSS · JavaScript</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(227,76,38,0.08);border-color:rgba(227,76,38,0.35);color:#e34c26;">Static · No backend</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="handbaloverpelt.arch1Desc">The site is built as a <strong>static website</strong> — no framework, no backend, no database. HTML structures the content, <strong>Tailwind CSS</strong> handles all styling through utility classes, and vanilla <strong>JavaScript</strong> adds interactive elements like the mobile navigation and dynamic content.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#3c5d79;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="handbaloverpelt.arch2Title">Hosting & migration</span>
+            <div class="exp-entry-right">
+              <span class="exp-period">Existing hosting · Zero downtime</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="handbaloverpelt.arch2Desc">Deployed directly on the club's <strong>existing hosting platform</strong>, keeping costs at zero. The migration from old to new was handled without downtime — the domain stayed live throughout the transition.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#24292e;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="handbaloverpelt.arch3Title">Version control</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(36,41,46,0.08);border-color:rgba(36,41,46,0.35);color:#24292e;">GitHub</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="handbaloverpelt.arch3Desc">The project is version-controlled on <strong>GitHub</strong>, giving the club a recoverable codebase and making it straightforward to push updates when content changes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 03 · MY CONTRIBUTION ══ -->
+  <section id="contribution" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="handbaloverpelt.contribLabel">// 03 · MY CONTRIBUTION</div>
+      <h2 class="stage-heading" data-i18n-html="handbaloverpelt.contribHeading">My Contribution.</h2>
+    </div>
+
+    <div class="stage-contrib-grid">
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">01</div>
+        <div class="stage-contrib-title" data-i18n-html="handbaloverpelt.contrib1Title">Content audit</div>
+        <p class="stage-contrib-desc" data-i18n-html="handbaloverpelt.contrib1Desc">Analysed the old website page by page — identifying what was outdated, what was missing and what was worth keeping. Made deliberate decisions about <strong>what to cut</strong> rather than just copying everything across.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">02</div>
+        <div class="stage-contrib-title" data-i18n-html="handbaloverpelt.contrib2Title">Design & build</div>
+        <p class="stage-contrib-desc" data-i18n-html="handbaloverpelt.contrib2Desc">Designed the full visual direction and built every page from scratch using <strong>HTML, Tailwind CSS and JavaScript</strong> — no templates, no page builders.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">03</div>
+        <div class="stage-contrib-title" data-i18n-html="handbaloverpelt.contrib3Title">Team pages</div>
+        <p class="stage-contrib-desc" data-i18n-html="handbaloverpelt.contrib3Desc">Created individual pages for every team in the club — <strong>Heren 1, Heren 2 and all youth categories</strong> from J08 to J18, plus Fithandbal.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">04</div>
+        <div class="stage-contrib-title" data-i18n-html="handbaloverpelt.contrib4Title">Calendar integration</div>
+        <p class="stage-contrib-desc" data-i18n-html="handbaloverpelt.contrib4Desc">Integrated the club's <strong>Google Calendar</strong> so match schedules and events are always up to date without manual maintenance.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">05</div>
+        <div class="stage-contrib-title" data-i18n-html="handbaloverpelt.contrib5Title">Hosting migration</div>
+        <p class="stage-contrib-desc" data-i18n-html="handbaloverpelt.contrib5Desc">Migrated the full site from the old version to the new one on the club's existing hosting — handling <strong>domain, files and configuration</strong> without any downtime.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">06</div>
+        <div class="stage-contrib-title" data-i18n-html="handbaloverpelt.contrib6Title">Ongoing maintenance</div>
+        <p class="stage-contrib-desc" data-i18n-html="handbaloverpelt.contrib6Desc">Continue to maintain the site under an <strong>ongoing contract</strong> — pushing content updates, keeping pages current and fixing anything that needs attention.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 04 · CHALLENGES ══ -->
+  <section id="challenges" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="handbaloverpelt.challengesLabel">// 04 · CHALLENGES</div>
+      <h2 class="stage-heading" data-i18n-html="handbaloverpelt.challengesHeading">Challenges.</h2>
+    </div>
+
+    <div class="stage-challenges-list">
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="handbaloverpelt.challenge1Label">01 / NO BRIEF, NO CLIENT DIRECTION</div>
+          <p class="stage-challenge-desc" data-i18n-html="handbaloverpelt.challenge1Desc">This project was entirely self-initiated. There was no brief, no requirements document and no one telling me what the site needed. Every decision — what to include, what to cut, how to structure it — came from me.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="handbaloverpelt.challenge1Solution">Treated it as a real client project from the start. Did a content audit of the old site, mapped out the pages and structure before touching any code, and made decisions based on what a club member or new visitor would actually need.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="handbaloverpelt.challenge2Label">02 / CONTENT DECISIONS</div>
+          <p class="stage-challenge-desc" data-i18n-html="handbaloverpelt.challenge2Desc">The old site had accumulated content over years — some still useful, some outdated, some just cluttering the navigation. Deciding what to migrate and what to leave behind required judgement, not just execution.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="handbaloverpelt.challenge2Solution">Kept only what was either actively useful or important for the club's image. Cut everything that would require constant maintenance or was no longer accurate.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="handbaloverpelt.challenge3Label">03 / MIGRATION WITHOUT DOWNTIME</div>
+          <p class="stage-challenge-desc" data-i18n-html="handbaloverpelt.challenge3Desc">The club's domain was live and in use during the rebuild. Switching from the old site to the new one had to happen cleanly — no broken links, no period where the site was unavailable.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="handbaloverpelt.challenge3Solution">Built and tested the full new site locally before touching the hosting. Deployed in a single planned switch, verifying all pages and links immediately after going live.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ ACCESS ══ -->
+  <section id="access" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="handbaloverpelt.accessLabel">// ACCESS</div>
+      <h2 class="stage-heading" data-i18n-html="handbaloverpelt.accessHeading">View the site.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div style="padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="label label-accent" style="margin-bottom:6px;" data-i18n-html="handbaloverpelt.accessUrlTitle">Live URL</div>
+          <p class="exp-desc" style="margin:0 0 4px;" data-i18n-html="handbaloverpelt.accessUrlDesc">The website is live and actively maintained. Click below to visit.</p>
+          <p style="font-family:var(--font-mono);font-size:11px;color:var(--muted);margin:0;">handbalcluboverpelt.be · live since 2024</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0;">
+          <a href="https://handbalcluboverpelt.be/" target="_blank" rel="noopener" class="btn btn-primary">
+            handbalcluboverpelt.be ↗
+          </a>
+          <a href="https://github.com/FreekBoes/HandbalOverpelt" target="_blank" rel="noopener" class="btn btn-outline">
+            GitHub ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 05 · WHAT I LEARNED ══ -->
+  <section id="learned" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="handbaloverpelt.learnedLabel">// 05 · WHAT I LEARNED</div>
+      <h2 class="stage-heading" data-i18n-html="handbaloverpelt.learnedHeading">What I Learned.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--good);" data-i18n-html="handbaloverpelt.learned1Label">// SOLO CLIENT OWNERSHIP</div>
+          <p data-i18n-html="handbaloverpelt.learned1Desc">Running a project from first idea to live site without a team or manager taught me that <strong>the decisions no one else makes are yours</strong>. Scope, content, structure, timing — all of it. That's a different kind of responsibility than contributing to a shared project.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:#d97706;" data-i18n-html="handbaloverpelt.learned2Label">// CONTENT IS A DESIGN DECISION</div>
+          <p data-i18n-html="handbaloverpelt.learned2Desc">Deciding what goes on a website is as important as how it looks. Cutting content that doesn't serve the visitor and structuring information so it's easy to find are <strong>design problems, not just editorial ones</strong>.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--accent-d);" data-i18n-html="handbaloverpelt.learned3Label">// SHIPPING AND MAINTAINING</div>
+          <p data-i18n-html="handbaloverpelt.learned3Desc">Launching a site is not the end of the project. Ongoing maintenance — content updates, fixes, keeping things current — is part of the contract. That relationship with a live product <strong>teaches you things a finished school project never does</strong>.</p>
+        </div>
+      </div>
+
+      <div class="stage-competencies">
+        <div class="label label-accent" style="margin-bottom:12px;">// COMPETENCIES</div>
+        <div class="stage-competencies-tags">
+          <span class="exp-tag" data-tag="support">HTML</span>
+          <span class="exp-tag" data-tag="kafka">Tailwind CSS</span>
+          <span class="exp-tag" data-tag="officejs">JavaScript</span>
+          <span class="exp-tag" data-tag="teamwork">GitHub</span>
+          <span class="exp-tag" data-tag="adaptability">Self-initiated</span>
+          <span class="exp-tag" data-tag="communication">Content strategy</span>
+          <span class="exp-tag" data-tag="communication">Client communication</span>
+          <span class="exp-tag" data-tag="leadership">Solo ownership</span>
+          <span class="exp-tag" data-tag="support">Hosting & deployment</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n-html="handbaloverpelt.footer">Freek Boes · Handbal Overpelt · 2024</span>
+    <a href="index.html#projects" data-i18n-html="handbaloverpelt.backLink" style="color:var(--accent);font-family:var(--font-mono);font-size:11px;">← Back to projects</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
