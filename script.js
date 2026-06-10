@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!t) return;
 
     // Update all elements with data-i18n="path"
-document.querySelectorAll('[data-i18n]').forEach(el => {
-  const key = el.getAttribute('data-i18n');
+document.querySelectorAll('[data-i18n-html]').forEach(el => {
+  const key = el.getAttribute('data-i18n-html');
   const val = get(t, key);
-  if (val !== undefined && typeof val === 'string') el.textContent = val;
+  if (val !== undefined && typeof val === 'string') el.innerHTML = val;
 });
 
 // HTML content elements (voor elementen met strong tags e.d.)
@@ -89,8 +89,8 @@ document.querySelectorAll('[data-i18n-html]').forEach(el => {
     // Projects grid
     const projectsGrid = document.getElementById('projects-grid');
     if (projectsGrid) {
-      projectsGrid.innerHTML = t.projects.items.map((p) => `
-  <div class="project-card" data-project="${p.key}" data-category="${p.category}">
+projectsGrid.innerHTML = t.projects.items.map((p) => `
+  <div class="project-card" data-project="${p.key}" data-category="${p.category}"${p.pageUrl ? ` data-url="${p.pageUrl}"` : ''}>
     <div class="project-card-img">
       <div class="project-card-img-bg">${p.name.toUpperCase()}</div>
     </div>
@@ -159,6 +159,18 @@ document.querySelectorAll('[data-i18n-html]').forEach(el => {
     document.querySelectorAll('#lang-toggle, #lang-toggle-m').forEach(btn => {
       btn.textContent = nextLang;
     });
+
+    // Elision outcomes
+const elisionOutcomes = document.getElementById('elision-outcomes-list');
+if (elisionOutcomes && t.elision) {
+  elisionOutcomes.innerHTML = [
+    'Working <strong>tracking script</strong> embeddable in any website',
+    '<strong>Java Spring Boot API</strong> receiving and storing load time events',
+    '<strong>React dashboard</strong> with regional and device breakdowns',
+    'Delivered as a working <strong>proof of concept to a real client</strong>',
+    'Full project delivered on time using <strong>Scrum and Agile</strong>',
+  ].map(o => `<li><span class="prefix-plus">[+]</span> ${o}</li>`).join('');
+}
 
     // Update html lang attribute
     document.documentElement.lang = lang;
@@ -320,9 +332,9 @@ document.querySelectorAll('[data-i18n-html]').forEach(el => {
   });
 
   // Project filter
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('[data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       document.querySelectorAll('.project-card').forEach(card => {
@@ -334,6 +346,58 @@ document.querySelectorAll('[data-i18n-html]').forEach(el => {
       });
     });
   });
+
+  // Experience filter
+document.querySelectorAll('[data-exp-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-exp-filter]').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.expFilter;
+    document.querySelectorAll('.exp-entry-rich[data-exp-category]').forEach(entry => {
+      if (filter === 'all' || entry.dataset.expCategory === filter) {
+        entry.style.display = '';
+      } else {
+        entry.style.display = 'none';
+      }
+    });
+  });
+});
+
+// De Beerse Bende outcomes
+const dbbOutcomes = document.getElementById('dbb-outcomes-list');
+if (dbbOutcomes && t.dbb) {
+  dbbOutcomes.innerHTML = [
+    'Fully working platform <strong>delivered to a real client</strong>',
+    '<strong>Ticket management</strong> replacing paper-based sales',
+    '<strong>Financial accounting</strong> module with reporting',
+    '<strong>Calendar integration</strong> for show scheduling',
+    '<strong>Role-based access</strong> for different user types',
+    'Delivered on time using <strong>Scrum and Agile</strong>',
+  ].map(o => `<li><span class="prefix-plus">[+]</span> ${o}</li>`).join('');
+}
+
+document.querySelectorAll('.project-card[data-project]').forEach(card => {
+  card.addEventListener('click', e => {
+    e.preventDefault();
+    if (card.dataset.url) {
+      window.location.href = card.dataset.url;
+    } else {
+      openModal(card.dataset.project);
+    }
+  });
+});
+
+// Dynamisch gerenderde kaarten (na taalswitch)
+document.getElementById('projects-grid')?.addEventListener('click', e => {
+  const card = e.target.closest('.project-card[data-project]');
+  if (!card) return;
+  e.preventDefault();
+  if (card.dataset.url) {
+    window.location.href = card.dataset.url;
+  } else {
+    openModal(card.dataset.project);
+  }
+});
 
 }); // ← einde DOMContentLoaded
 
@@ -354,3 +418,13 @@ function closeLightbox() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
+
+function downloadCV(e) {
+  const url = e.currentTarget.href;
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'CV-Freek-Boes.pdf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}

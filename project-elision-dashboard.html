@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freek Boes · Elision Analytics Dashboard</title>
+  <meta name="description" content="Elision Analytics Dashboard — proof of concept analytics platform for real-time page load monitoring.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/output.css">
+  <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">F</div>
+      <div class="nav-path">
+        <span>freek.boes</span>
+        <span class="sep">/</span>
+        <span>portfolio</span>
+        <span class="sep">/</span>
+        <a href="index.html#projects" style="color:var(--muted);text-decoration:none;">projects</a>
+        <span class="sep">/</span>
+        <span class="main">elision-dashboard</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"      data-i18n-html="nav.about">About</a></li>
+      <li><a href="index.html#education"  data-i18n-html="nav.education">Education</a></li>
+      <li><a href="index.html#skills"     data-i18n-html="nav.skills">Skills</a></li>
+      <li><a href="index.html#experience" data-i18n-html="nav.experience">Experience</a></li>
+      <li><a href="index.html#projects"   data-i18n-html="nav.projects">Projects</a></li>
+      <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a></li>
+      <li><a href="index.html#contact"    data-i18n-html="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-controls">
+        <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
+        <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+          <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-status">
+        <span class="nav-status-dot"></span>
+        <span data-i18n-html="status">Final-year student · Thomas More</span>
+      </div>
+    </div>
+    <button id="nav-toggle-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="index.html#about"      class="mobile-link" data-i18n-html="nav.about">About</a>
+    <a href="index.html#education"  class="mobile-link" data-i18n-html="nav.education">Education</a>
+    <a href="index.html#skills"     class="mobile-link" data-i18n-html="nav.skills">Skills</a>
+    <a href="index.html#experience" class="mobile-link" data-i18n-html="nav.experience">Experience</a>
+    <a href="index.html#projects"   class="mobile-link" data-i18n-html="nav.projects">Projects</a>
+    <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a>
+    <a href="index.html#contact"    class="mobile-link" data-i18n-html="nav.contact">Contact</a>
+    <div class="nav-mobile-controls">
+      <button id="lang-toggle-m"  class="nav-btn">NL</button>
+      <button id="theme-toggle-m" class="nav-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="proj-hero-wrap">
+    <div class="case-panel">
+
+      <<div class="proj-hero-banner elision-banner">
+  <div class="case-screenshot-grid"></div>
+  <img src="src/images/Elision.png" alt="Elision" class="elision-banner-logo">
+  <div class="proj-hero-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    <span data-i18n-html="elision.badge">Team of 6 · Real client · Proof of concept</span>
+  </div>
+  <div class="case-screenshot-badge">2026 · Thomas More</div>
+</div>
+
+      <div class="case-meta-row">
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="elision.metaType">TYPE</div>
+          <div class="val" data-i18n-html="elision.metaTypeVal">Client project · PoC</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="elision.metaRole">ROLE</div>
+          <div class="val" data-i18n-html="elision.metaRoleVal">Frontend · Figma · Team lead</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="elision.metaTeam">TEAM</div>
+          <div class="val" data-i18n-html="elision.metaTeamVal">6 developers</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="elision.metaYear">YEAR</div>
+          <div class="val">2026</div>
+        </div>
+      </div>
+
+      <div class="proj-hero-body">
+        <div class="label label-accent" data-i18n-html="elision.heroLabel">// PROJECT CASE STUDY</div>
+        <h1 class="proj-hero-title">
+          Elision Analytics<br>Dashboard<span style="color:var(--accent);">.</span>
+        </h1>
+        <p class="proj-hero-desc" data-i18n-html="elision.heroDesc">
+          A proof of concept analytics dashboard built for a real client — Elision needed a way to track
+          real page load times across different regions and devices. Google Analytics wasn't giving them
+          accurate data, so we built a <strong>custom tracking solution</strong> with a React dashboard
+          and a lightweight SQL backend, in a team of 6 using Agile and Scrum.
+        </p>
+
+        <nav class="stage-page-nav">
+          <a href="#overview"      class="filter-btn" data-i18n-html="elision.navOverview">Overview</a>
+          <a href="#architecture"  class="filter-btn" data-i18n-html="elision.navArch">Architecture</a>
+          <a href="#contribution"  class="filter-btn" data-i18n-html="elision.navContrib">My Contribution</a>
+          <a href="#challenges"    class="filter-btn" data-i18n-html="elision.navChallenges">Challenges</a>
+          <a href="#media"         class="filter-btn" data-i18n-html="elision.navMedia">Media</a>
+          <a href="#learned"       class="filter-btn" data-i18n-html="elision.navLearned">What I Learned</a>
+        </nav>
+      </div>
+
+      <div class="proj-hero-stack">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">TECH</span>
+        <span class="exp-tag" data-tag="officejs">React</span>
+        <span class="exp-tag" data-tag="kafka">Tailwind CSS</span>
+        <span class="exp-tag" data-tag="spring">Spring Boot</span>
+        <span class="exp-tag" data-tag="java">Java</span>
+        <span class="exp-tag" data-tag="support">SQLite</span>
+        <span class="exp-tag" data-tag="support">Figma</span>
+        <span class="exp-tag" data-tag="teamwork">GitHub</span>
+      </div>
+
+      <div class="proj-hero-stack" style="border-top:none;padding-top:0;">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">SOFT</span>
+        <span class="exp-tag" data-tag="teamwork">Scrum</span>
+        <span class="exp-tag" data-tag="adaptability">Agile</span>
+        <span class="exp-tag" data-tag="communication">Client communication</span>
+        <span class="exp-tag" data-tag="teamwork">Teamwork</span>
+        <span class="exp-tag" data-tag="leadership">Team lead</span>
+        <span class="exp-tag" data-tag="communication">Communication</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 01 · OVERVIEW ══ -->
+  <section id="overview" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="elision.overviewLabel">// 01 · OVERVIEW</div>
+      <h2 class="stage-heading" data-i18n-html="elision.overviewHeading">Overview.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="elision.problemLabel">01 / PROBLEM</div>
+          <p data-i18n-html="elision.problemText">Elision had no reliable way to measure how long their pages actually took to load for real users. Google Analytics wasn't providing <strong>accurate load time data</strong> across different regions and devices, making it impossible to identify performance bottlenecks or prioritise improvements.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="elision.assignmentLabel">02 / ASSIGNMENT</div>
+          <p data-i18n-html="elision.assignmentText">Build a <strong>custom analytics solution</strong> for a real client as a proof of concept. The system needed a <strong>tracking script</strong> that could be embedded in any page to capture real load times, combined with a <strong>dashboard</strong> to visualise the data by region, device and page.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="elision.solutionLabel">03 / SOLUTION</div>
+          <p data-i18n-html="elision.solutionText">A lightweight <strong>JavaScript tracking script</strong> captures page load times and sends them to a Java Spring Boot API. The data is stored in a lightweight SQL database and visualised in a <strong>React dashboard</strong> — showing load times per region, device type and page, with filtering and comparison tools.</p>
+        </div>
+      </div>
+
+      <div class="case-outcomes">
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--good);" data-i18n-html="elision.outcomesLabel">// OUTCOMES</div>
+          <ul class="outcomes-list" id="elision-outcomes-list">
+            <li><span class="prefix-plus">[+]</span> Working <strong>tracking script</strong> embeddable in any website</li>
+            <li><span class="prefix-plus">[+]</span> <strong>Java Spring Boot API</strong> receiving and storing load time events</li>
+            <li><span class="prefix-plus">[+]</span> <strong>React dashboard</strong> with regional and device breakdowns</li>
+            <li><span class="prefix-plus">[+]</span> Delivered as a working <strong>proof of concept to a real client</strong></li>
+            <li><span class="prefix-plus">[+]</span> Full project delivered on time using <strong>Scrum and Agile</strong></li>
+          </ul>
+        </div>
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--accent-d);" data-i18n-html="elision.learnedShortLabel">// KEY SKILLS</div>
+          <ul class="outcomes-list">
+            <li><span class="prefix-arrow">[→]</span> <strong>Frontend development</strong> with React and Tailwind CSS</li>
+            <li><span class="prefix-arrow">[→]</span> Translating <strong>client needs into UI decisions</strong></li>
+            <li><span class="prefix-arrow">[→]</span> <strong>Designing</strong> in Figma before building</li>
+            <li><span class="prefix-arrow">[→]</span> <strong>Leading a team</strong> under deadline pressure</li>
+            <li><span class="prefix-arrow">[→]</span> Working with a <strong>real client</strong> through review cycles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 02 · ARCHITECTURE ══ -->
+  <section id="architecture" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="elision.archLabel">// 02 · TECHNICAL ARCHITECTURE</div>
+      <h2 class="stage-heading" data-i18n-html="elision.archHeading">Architecture.</h2>
+    </div>
+
+    <div class="exp-full-panel">
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#0ea5e9;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="elision.arch1Title">Tracking Script</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(14,165,233,0.08);border-color:rgba(14,165,233,0.35);color:#0ea5e9;" data-i18n-html="elision.arch1Badge">JavaScript · Embeddable</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="elision.arch1Desc">A lightweight <strong>JavaScript snippet</strong> that can be embedded in any website. It captures the browser's performance timing data — specifically the actual page load time as experienced by the user — and sends it to the API along with the user's approximate region and device type.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#2e7d42;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="18" rx="1"/><path d="M8 9h8M8 13h6"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="elision.arch2Title">Java Spring Boot API</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(50,160,80,0.08);border-color:rgba(50,160,80,0.35);color:#2e7d42;" data-i18n-html="elision.arch2Badge">Java · Spring Boot · REST</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="elision.arch2Desc">The <strong>REST API</strong> receives load time events from the tracking script, validates and enriches the data, and writes it to the database. Built with <strong>Java and Spring Boot</strong>, it exposes endpoints for both ingesting new events and querying aggregated analytics data for the dashboard.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#3c5078;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="elision.arch3Title">Lightweight SQL Database</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(60,80,120,0.08);border-color:rgba(60,80,120,0.35);color:#3c5078;" data-i18n-html="elision.arch3Badge">SQLite</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="elision.arch3Desc">Load time events are stored in a <strong>lightweight SQL database</strong>. The schema is optimised for the analytics queries the dashboard needs — aggregations by page, region and device — keeping query performance fast even as the event volume grows.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#0ea5e9;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="elision.arch4Title">React Dashboard</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(14,165,233,0.08);border-color:rgba(14,165,233,0.35);color:#0ea5e9;" data-i18n-html="elision.arch4Badge">React · Tailwind CSS</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="elision.arch4Desc">The <strong>React frontend</strong> fetches aggregated data from the API and visualises it in an interactive dashboard. Users can filter by page, region and time period, and compare load times across different segments. Built with <strong>Tailwind CSS</strong>, designed in Figma first.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 03 · MY CONTRIBUTION ══ -->
+  <section id="contribution" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="elision.contribLabel">// 03 · MY CONTRIBUTION</div>
+      <h2 class="stage-heading" data-i18n-html="elision.contribHeading">My Contribution.</h2>
+    </div>
+
+    <div class="stage-contrib-grid">
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">01</div>
+        <div class="stage-contrib-title" data-i18n-html="elision.contrib1Title">UI design in Figma</div>
+        <p class="stage-contrib-desc" data-i18n-html="elision.contrib1Desc">Designed the full dashboard UI in Figma before writing a single line of code. Defined the layout, component structure, colour scheme and data visualisation approach — giving the team a clear target to build towards.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">02</div>
+        <div class="stage-contrib-title" data-i18n-html="elision.contrib2Title">Frontend development</div>
+        <p class="stage-contrib-desc" data-i18n-html="elision.contrib2Desc">Built the React frontend based on the Figma designs. Implemented the dashboard views, filtering logic, chart components and API integration — making sure the UI was responsive and matched the design intent.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">03</div>
+        <div class="stage-contrib-title" data-i18n-html="elision.contrib3Title">Team lead</div>
+        <p class="stage-contrib-desc" data-i18n-html="elision.contrib3Desc">Took on the team lead role in the final weeks of the project. Coordinated tasks, tracked progress, supported team members who were blocked and made sure the project was on track for the client deadline.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">04</div>
+        <div class="stage-contrib-title" data-i18n-html="elision.contrib4Title">Client communication</div>
+        <p class="stage-contrib-desc" data-i18n-html="elision.contrib4Desc">As team lead, took a more active role in client meetings — preparing demos, presenting progress and translating client feedback into concrete tasks for the team.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">05</div>
+        <div class="stage-contrib-title" data-i18n-html="elision.contrib5Title">Scrum & sprint work</div>
+        <p class="stage-contrib-desc" data-i18n-html="elision.contrib5Desc">Actively participated in sprint planning, standups and retrospectives. In the team lead role, helped prioritise the backlog and kept the team focused on delivering the highest-value features first.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">06</div>
+        <div class="stage-contrib-title" data-i18n-html="elision.contrib6Title">Final delivery</div>
+        <p class="stage-contrib-desc" data-i18n-html="elision.contrib6Desc">Led the preparation and presentation of the final proof of concept to the client. Made sure all deliverables were complete, the demo was solid and the team was ready for questions.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 04 · CHALLENGES ══ -->
+  <section id="challenges" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="elision.challengesLabel">// 04 · CHALLENGES</div>
+      <h2 class="stage-heading" data-i18n-html="elision.challengesHeading">Challenges.</h2>
+    </div>
+
+    <div class="stage-challenges-list">
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="elision.challenge1Label">01 / SLOW CLIENT REVIEWS</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge1Desc">The client ran their own code reviews, which were thorough but slow to come back. Waiting for feedback blocked certain parts of the project from moving forward, creating bottlenecks in the sprint.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="elision.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge1Solution">Learned to plan around review cycles rather than against them. When a review was pending, the team switched to other tasks instead of waiting. This kept sprint velocity consistent and reduced the pressure when reviews finally came back.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="elision.challenge2Label">02 / DIFFICULT EARLY MEETINGS</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge2Desc">The first few client meetings were difficult — expectations weren't clearly aligned, the client's feedback was sometimes hard to translate into actionable tasks and the team struggled to get clear answers on scope.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="elision.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge2Solution">We changed our approach — instead of open-ended discussions, we came to meetings with working prototypes and specific questions. Showing something concrete made it much easier for the client to give useful feedback and for us to lock down scope.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="elision.challenge3Label">03 / TEAM COORDINATION UNDER PRESSURE</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge3Desc">As the deadline approached and review bottlenecks accumulated, keeping the team focused and motivated became a challenge in itself. Different parts of the codebase were at different stages of completion.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="elision.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge3Solution">Taking on the team lead role gave me a clear mandate to coordinate. I made a simple task board showing what was blocked, in progress and done — giving everyone visibility and making it obvious where help was needed.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="elision.challenge4Label">04 / DESIGN TO CODE</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge4Desc">Translating a Figma design into a working React implementation — especially for data visualisation components — required careful attention to responsive behaviour and state management that wasn't always obvious from the static design.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="elision.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="elision.challenge4Solution">Built components incrementally — starting with static versions that matched the design, then layering in real data and interactive behaviour. This made it easier to spot layout issues early before adding complexity.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 05 · MEDIA ══ -->
+  <section id="media" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="elision.mediaLabel">// 05 · MEDIA</div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="stage-video-wrap">
+        <video controls class="stage-video">
+          <source src="src/videos/Elision-demo.mp4" type="video/mp4">
+        </video>
+    </div>
+  </section>
+
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 2l12 12M14 2L2 14"/></svg>
+    </button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  </div>
+
+
+  <!-- ══ 06 · WHAT I LEARNED ══ -->
+  <section id="learned" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="elision.learnedLabel">// 06 · WHAT I LEARNED</div>
+      <h2 class="stage-heading" data-i18n-html="elision.learnedHeading">What I Learned.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--good);" data-i18n-html="elision.learned1Label">// TECHNICAL GROWTH</div>
+          <p data-i18n-html="elision.learned1Desc">I got significantly more confident with <strong>React and Tailwind CSS</strong> — building a real dashboard with live data, filtering and charts is a different challenge than tutorial projects. I also got a much clearer picture of how <strong>frontend and API design decisions affect each other</strong>.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:#d97706;" data-i18n-html="elision.learned2Label">// LEADING A TEAM</div>
+          <p data-i18n-html="elision.learned2Desc">Taking on the team lead role in the final weeks taught me more about <strong>team dynamics than any earlier project</strong>. Keeping people unblocked, making quick decisions and keeping morale up under deadline pressure are skills you can only learn by doing.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--accent-d);" data-i18n-html="elision.learned3Label">// CLIENT WORK</div>
+          <p data-i18n-html="elision.learned3Desc">Slow review cycles and difficult early meetings taught me that <strong>the process matters as much as the product</strong>. Showing working prototypes, asking specific questions and planning around blockers instead of fighting them made the second half of the project significantly smoother.</p>
+        </div>
+      </div>
+
+      <div class="stage-competencies">
+        <div class="label label-accent" style="margin-bottom:12px;" data-i18n-html="elision.competenciesLabel">// COMPETENCIES</div>
+        <div class="stage-competencies-tags">
+          <span class="exp-tag" data-tag="officejs">React</span>
+          <span class="exp-tag" data-tag="kafka">Tailwind CSS</span>
+          <span class="exp-tag" data-tag="support">Figma</span>
+          <span class="exp-tag" data-tag="spring">Spring Boot</span>
+          <span class="exp-tag" data-tag="java">Java</span>
+          <span class="exp-tag" data-tag="support">SQLite</span>
+          <span class="exp-tag" data-tag="teamwork">Scrum / Agile</span>
+          <span class="exp-tag" data-tag="leadership">Team lead</span>
+          <span class="exp-tag" data-tag="communication">Client communication</span>
+          <span class="exp-tag" data-tag="teamwork">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n-html="elision.footer">Freek Boes · Elision Analytics Dashboard · 2026</span>
+    <a href="index.html#projects" data-i18n-html="elision.backLink" style="color:var(--accent);font-family:var(--font-mono);font-size:11px;">← Back to projects</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

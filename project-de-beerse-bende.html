@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freek Boes · De Beerse Bende</title>
+  <meta name="description" content="De Beerse Bende — custom web application for digitising show accounting and ticketing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/output.css">
+  <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">F</div>
+      <div class="nav-path">
+        <span>freek.boes</span>
+        <span class="sep">/</span>
+        <span>portfolio</span>
+        <span class="sep">/</span>
+        <a href="index.html#projects" style="color:var(--muted);text-decoration:none;">projects</a>
+        <span class="sep">/</span>
+        <span class="main">de-beerse-bende</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"      data-i18n-html="nav.about">About</a></li>
+      <li><a href="index.html#education"  data-i18n-html="nav.education">Education</a></li>
+      <li><a href="index.html#skills"     data-i18n-html="nav.skills">Skills</a></li>
+      <li><a href="index.html#experience" data-i18n-html="nav.experience">Experience</a></li>
+      <li><a href="index.html#projects"   data-i18n-html="nav.projects">Projects</a></li>
+      <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a></li>
+      <li><a href="index.html#contact"    data-i18n-html="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-controls">
+        <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
+        <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+          <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-status">
+        <span class="nav-status-dot"></span>
+        <span data-i18n-html="status">Final-year student · Thomas More</span>
+      </div>
+    </div>
+    <button id="nav-toggle-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="index.html#about"      class="mobile-link" data-i18n-html="nav.about">About</a>
+    <a href="index.html#education"  class="mobile-link" data-i18n-html="nav.education">Education</a>
+    <a href="index.html#skills"     class="mobile-link" data-i18n-html="nav.skills">Skills</a>
+    <a href="index.html#experience" class="mobile-link" data-i18n-html="nav.experience">Experience</a>
+    <a href="index.html#projects"   class="mobile-link" data-i18n-html="nav.projects">Projects</a>
+    <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a>
+    <a href="index.html#contact"    class="mobile-link" data-i18n-html="nav.contact">Contact</a>
+    <div class="nav-mobile-controls">
+      <button id="lang-toggle-m"  class="nav-btn">NL</button>
+      <button id="theme-toggle-m" class="nav-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="proj-hero-wrap">
+    <div class="case-panel">
+     
+<div class="proj-hero-banner">
+  <div class="case-screenshot-grid"></div>
+  <img src="src/images/de-beerse-bende.png" alt="De Beerse Bende"
+       onerror="this.style.display='none'">
+  <div class="proj-hero-banner-text">DE BEERSE BENDE</div>
+  <div class="proj-hero-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    <span data-i18n-html="dbb.badge">Team of 6 · Skills Integration 2</span>
+  </div>
+  <div class="case-screenshot-badge">2025 · Thomas More</div>
+</div>
+
+      <div class="case-meta-row">
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="dbb.metaType">TYPE</div>
+          <div class="val" data-i18n-html="dbb.metaTypeVal">School project</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="dbb.metaRole">ROLE</div>
+          <div class="val" data-i18n-html="dbb.metaRoleVal">Backend · Calendar · Code review</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="dbb.metaTeam">TEAM</div>
+          <div class="val" data-i18n-html="dbb.metaTeamVal">6 developers</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="dbb.metaYear">YEAR</div>
+          <div class="val">2025</div>
+        </div>
+      </div>
+
+      <div class="proj-hero-body">
+        <div class="label label-accent" data-i18n-html="dbb.heroLabel">// PROJECT CASE STUDY</div>
+        <h1 class="proj-hero-title">
+          De Beerse<br>Bende<span style="color:var(--accent);">.</span>
+        </h1>
+        <p class="proj-hero-desc" data-i18n-html="dbb.heroDesc">
+          A custom web application built for a real client — a local entertainment group that needed to
+          digitise their entire show operation. Ticket sales, accounting and scheduling were all done on paper.
+          We replaced that with a <strong>full-stack web platform</strong>, built in a team of 6 using
+          Agile and Scrum over one semester.
+        </p>
+
+        <nav class="stage-page-nav">
+          <a href="#overview"     class="filter-btn" data-i18n-html="dbb.navOverview">Overview</a>
+          <a href="#architecture" class="filter-btn" data-i18n-html="dbb.navArch">Architecture</a>
+          <a href="#contribution" class="filter-btn" data-i18n-html="dbb.navContrib">My Contribution</a>
+          <a href="#challenges"   class="filter-btn" data-i18n-html="dbb.navChallenges">Challenges</a>
+          <a href="#learned"      class="filter-btn" data-i18n-html="dbb.navLearned">What I Learned</a>
+        </nav>
+      </div>
+
+      <div class="proj-hero-stack">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">TECH</span>
+        <span class="exp-tag" data-tag="spring">Laravel</span>
+        <span class="exp-tag" data-tag="java">PHP</span>
+        <span class="exp-tag" data-tag="officejs">Livewire</span>
+        <span class="exp-tag" data-tag="kafka">Tailwind CSS</span>
+        <span class="exp-tag" data-tag="support">API development</span>
+        <span class="exp-tag" data-tag="teamwork">GitHub</span>
+        <span class="exp-tag" data-tag="support">MySQL</span>
+      </div>
+
+      <div class="proj-hero-stack" style="border-top:none;padding-top:0;">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">SOFT</span>
+        <span class="exp-tag" data-tag="teamwork">Scrum</span>
+        <span class="exp-tag" data-tag="adaptability">Agile</span>
+        <span class="exp-tag" data-tag="communication">Client communication</span>
+        <span class="exp-tag" data-tag="teamwork">Teamwork</span>
+        <span class="exp-tag" data-tag="communication">Communication</span>
+        <span class="exp-tag" data-tag="leadership">Code reviews</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 01 · OVERVIEW ══ -->
+  <section id="overview" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="dbb.overviewLabel">// 01 · OVERVIEW</div>
+      <h2 class="stage-heading" data-i18n-html="dbb.overviewHeading">Overview.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="dbb.problemLabel">01 / PROBLEM</div>
+          <p data-i18n-html="dbb.problemText">The client managed everything manually — tickets were issued on paper, show accounting was entered by hand and there was no central overview of revenue, attendance or scheduling. This made the operation <strong>slow, error-prone and hard to scale</strong>.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="dbb.assignmentLabel">02 / ASSIGNMENT</div>
+          <p data-i18n-html="dbb.assignmentText">Digitise the client's entire show operation within one semester. Build a <strong>custom web platform</strong> that handles ticket sales, financial accounting and show scheduling — delivered as a working product to a real client, not a mock exercise.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="dbb.solutionLabel">03 / SOLUTION</div>
+          <p data-i18n-html="dbb.solutionText">A <strong>full-stack web application</strong> built with Laravel, Livewire and Tailwind CSS. The platform covers the complete show operation — ticket management, financial reporting, a calendar for scheduling and role-based access for different user types.</p>
+        </div>
+      </div>
+
+      <div class="case-outcomes">
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--good);" data-i18n-html="dbb.outcomesLabel">// OUTCOMES</div>
+          <ul class="outcomes-list" id="dbb-outcomes-list">
+            <li><span class="prefix-plus">[+]</span> Fully working platform <strong>delivered to a real client</strong></li>
+            <li><span class="prefix-plus">[+]</span> <strong>Ticket management</strong> replacing paper-based sales</li>
+            <li><span class="prefix-plus">[+]</span> <strong>Financial accounting</strong> module with reporting</li>
+            <li><span class="prefix-plus">[+]</span> <strong>Calendar integration</strong> for show scheduling</li>
+            <li><span class="prefix-plus">[+]</span> <strong>Role-based access</strong> for different user types</li>
+            <li><span class="prefix-plus">[+]</span> Delivered on time using <strong>Scrum and Agile</strong></li>
+          </ul>
+        </div>
+        <div class="case-outcomes-col">
+          <div class="outcomes-label label" style="color:var(--accent-d);" data-i18n-html="dbb.learnedShortLabel">// KEY SKILLS</div>
+          <ul class="outcomes-list">
+            <li><span class="prefix-arrow">[→]</span> <strong>Backend development</strong> with PHP and Laravel</li>
+            <li><span class="prefix-arrow">[→]</span> Translating <strong>client needs into working features</strong></li>
+            <li><span class="prefix-arrow">[→]</span> Working in a <strong>team with clear task division</strong></li>
+            <li><span class="prefix-arrow">[→]</span> <strong>Data model</strong> covering key entities and relationships</li>
+            <li><span class="prefix-arrow">[→]</span> <strong>Code quality</strong> through structured reviews</li>
+            <li><span class="prefix-arrow">[→]</span> <strong>Agile delivery</strong> with real sprint cycles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 02 · ARCHITECTURE ══ -->
+  <section id="architecture" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="dbb.archLabel">// 02 · TECHNICAL ARCHITECTURE</div>
+      <h2 class="stage-heading" data-i18n-html="dbb.archHeading">Architecture.</h2>
+    </div>
+
+    <div class="exp-full-panel">
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#f05340;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="dbb.arch1Title">Frontend — Livewire & Tailwind CSS</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(240,83,64,0.08);border-color:rgba(240,83,64,0.35);color:#f05340;" data-i18n-html="dbb.arch1Badge">Laravel Livewire · Tailwind CSS</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="dbb.arch1Desc">The user interface is built with <strong>Laravel Livewire</strong>, which allows reactive, dynamic UI components without writing separate JavaScript. <strong>Tailwind CSS</strong> handles all styling. The result is a responsive, modern interface that updates in real time when data changes.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#777bb4;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="18" rx="1"/><path d="M8 9h8M8 13h6"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="dbb.arch2Title">Backend — Laravel & PHP</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(119,123,180,0.08);border-color:rgba(119,123,180,0.35);color:#777bb4;" data-i18n-html="dbb.arch2Badge">PHP · Laravel</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="dbb.arch2Desc">The backend is built with <strong>Laravel</strong> following MVC conventions. It handles all business logic — ticket processing, financial calculations, access control and calendar management. <strong>PHP</strong> powers the server-side logic, with Laravel's routing and service layer keeping the codebase maintainable across a team of 6.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#b84e10;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="dbb.arch3Title">API Layer</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(200,90,20,0.08);border-color:rgba(200,90,20,0.35);color:#b84e10;" data-i18n-html="dbb.arch3Badge">REST · Laravel</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="dbb.arch3Desc">A REST API layer exposes the platform's data in a structured way. This keeps the frontend and backend <strong>cleanly separated</strong> and makes it possible to extend the platform with additional interfaces — for example a mobile app — without rewriting the backend logic.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#3c5078;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="dbb.arch4Title">Database — Migrations & Seeders</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(60,80,120,0.08);border-color:rgba(60,80,120,0.35);color:#3c5078;" data-i18n-html="dbb.arch4Badge">MySQL · Laravel migrations</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="dbb.arch4Desc">The database is managed through <strong>Laravel migrations and seeders</strong>, keeping the schema version-controlled alongside the codebase. The data model covers shows, tickets, users, roles, financial records and calendar events — designed to be <strong>consistent and maintainable</strong> across the whole team.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 03 · MY CONTRIBUTION ══ -->
+  <section id="contribution" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="dbb.contribLabel">// 03 · MY CONTRIBUTION</div>
+      <h2 class="stage-heading" data-i18n-html="dbb.contribHeading">My Contribution.</h2>
+    </div>
+
+    <div class="stage-contrib-grid">
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">01</div>
+        <div class="stage-contrib-title" data-i18n-html="dbb.contrib1Title">Calendar integration</div>
+        <p class="stage-contrib-desc" data-i18n-html="dbb.contrib1Desc">Designed and implemented the full calendar module — the core feature for scheduling shows. Built the data model, backend logic and Livewire frontend so the client could manage their entire show calendar from one place.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">02</div>
+        <div class="stage-contrib-title" data-i18n-html="dbb.contrib2Title">Backend development</div>
+        <p class="stage-contrib-desc" data-i18n-html="dbb.contrib2Desc">Contributed to the Laravel backend across multiple modules. Wrote business logic, set up routes and controllers, and made sure data flowed correctly between the database and the frontend.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">03</div>
+        <div class="stage-contrib-title" data-i18n-html="dbb.contrib3Title">Code reviews</div>
+        <p class="stage-contrib-desc" data-i18n-html="dbb.contrib3Desc">Ran structured code reviews across the team — checking for consistency, catching edge cases and making sure merges met our agreed standards before going into the main branch.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">04</div>
+        <div class="stage-contrib-title" data-i18n-html="dbb.contrib4Title">Data model</div>
+        <p class="stage-contrib-desc" data-i18n-html="dbb.contrib4Desc">Contributed to the overall data model design — defining entities, relationships and constraints so the database structure was solid and consistent from the start of the project.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">05</div>
+        <div class="stage-contrib-title" data-i18n-html="dbb.contrib5Title">Scrum & sprint work</div>
+        <p class="stage-contrib-desc" data-i18n-html="dbb.contrib5Desc">Actively participated in sprint planning, daily standups and retrospectives. Took ownership of my tasks end-to-end and flagged blockers early so the team could keep moving.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">06</div>
+        <div class="stage-contrib-title" data-i18n-html="dbb.contrib6Title">Client delivery</div>
+        <p class="stage-contrib-desc" data-i18n-html="dbb.contrib6Desc">Contributed to the final demo and delivery to the client. Made sure the features I built were solid, documented and ready for handover.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 04 · CHALLENGES ══ -->
+  <section id="challenges" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="dbb.challengesLabel">// 04 · CHALLENGES</div>
+      <h2 class="stage-heading" data-i18n-html="dbb.challengesHeading">Challenges.</h2>
+    </div>
+
+    <div class="stage-challenges-list">
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="dbb.challenge1Label">01 / WORKING IN A TEAM OF 6</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge1Desc">Coordinating six developers on a single codebase means merge conflicts, overlapping work and different coding styles. Without clear agreements and structure, quality drops fast.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="dbb.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge1Solution">We set up a clear branching strategy on GitHub and used pull requests with mandatory code reviews before any merge. This kept the main branch clean and gave everyone visibility on what others were building.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="dbb.challenge2Label">02 / TRANSLATING CLIENT NEEDS</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge2Desc">The client knew what they wanted in practical terms but not in technical terms. Bridging that gap — understanding their workflow and translating it into data models and features — was harder than the implementation itself.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="dbb.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge2Solution">We ran regular client meetings where we showed working prototypes and asked specific questions about their real workflow. Seeing the application in action gave the client a concrete way to give feedback instead of abstract requirements.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="dbb.challenge3Label">03 / ALIGNING ON DECISIONS</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge3Desc">Six people means six opinions. Architectural choices, naming conventions and feature scope were all points where disagreements could slow the team down if not resolved quickly.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="dbb.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge3Solution">We used our sprint retrospectives to surface disagreements and resolve them as a team. When decisions had to be made quickly, we defaulted to what the majority agreed on and documented it so everyone was on the same page.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="dbb.challenge4Label">04 / CALENDAR COMPLEXITY</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge4Desc">Building the calendar module meant handling recurring events, show slots, conflicts and a data model that had to stay consistent with ticket and financial data. It was the most technically complex single feature in the project.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;" data-i18n-html="dbb.solutionShort">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="dbb.challenge4Solution">Designed the calendar data model first before writing any backend logic — mapping out all the edge cases on paper before touching the code. This saved significant rework later and gave a clear contract for the Livewire frontend to work against.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 05 · WHAT I LEARNED ══ -->
+  <section id="learned" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="dbb.learnedLabel">// 05 · WHAT I LEARNED</div>
+      <h2 class="stage-heading" data-i18n-html="dbb.learnedHeading">What I Learned.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--good);" data-i18n-html="dbb.learned1Label">// TECHNICAL GROWTH</div>
+          <p data-i18n-html="dbb.learned1Desc">I got significantly more confident with <strong>PHP, Laravel, Livewire and Tailwind CSS</strong>. Building a feature end-to-end — data model, backend, Livewire component, all the way to the UI — gave me a clear picture of how the whole stack fits together in a real project.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:#d97706;" data-i18n-html="dbb.learned2Label">// AGILE & SCRUM</div>
+          <p data-i18n-html="dbb.learned2Desc">This was my first project with a real <strong>Scrum structure</strong> — sprint planning, daily standups, retrospectives and a product owner who was actually a client. I learned how Agile working keeps a team focused and surfaces problems early instead of at the end.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--accent-d);" data-i18n-html="dbb.learned3Label">// WORKING WITH A CLIENT</div>
+          <p data-i18n-html="dbb.learned3Desc">Working with a real client is different from a school brief. Requirements evolve, expectations need managing and communication has to be <strong>clear and frequent</strong>. I learned that showing something working — even a rough version — is always more valuable than asking abstract questions.</p>
+        </div>
+      </div>
+
+      <div class="stage-competencies">
+        <div class="label label-accent" style="margin-bottom:12px;" data-i18n-html="dbb.competenciesLabel">// COMPETENCIES</div>
+        <div class="stage-competencies-tags">
+          <span class="exp-tag" data-tag="spring">Laravel</span>
+          <span class="exp-tag" data-tag="java">PHP</span>
+          <span class="exp-tag" data-tag="officejs">Livewire</span>
+          <span class="exp-tag" data-tag="kafka">Tailwind CSS</span>
+          <span class="exp-tag" data-tag="support">API development</span>
+          <span class="exp-tag" data-tag="support">Data modelling</span>
+          <span class="exp-tag" data-tag="teamwork">GitHub</span>
+          <span class="exp-tag" data-tag="teamwork">Scrum / Agile</span>
+          <span class="exp-tag" data-tag="communication">Client communication</span>
+          <span class="exp-tag" data-tag="leadership">Code reviews</span>
+          <span class="exp-tag" data-tag="teamwork">Team collaboration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ══ ACCESS ══ -->
+<section class="stage-section fade-up">
+  <div class="stage-section-header">
+    <div class="label label-accent" data-i18n-html="dbb.accessLabel">// ACCESS</div>
+    <h2 class="stage-heading" data-i18n-html="dbb.accessHeading">Try it out.</h2>
+  </div>
+
+  <div class="case-panel">
+
+    <div style="padding:20px 28px;border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div class="label label-accent" style="margin-bottom:6px;" data-i18n-html="dbb.accessUrlTitle">Live URL</div>
+        <p class="exp-desc" style="margin:0;" data-i18n-html="dbb.accessUrlDesc">The application is live. Pick a role below and log in to explore the platform.</p>
+      </div>
+      <a href="https://app.debeersebende.be/" target="_blank" rel="noopener" class="btn btn-primary" style="flex-shrink:0;">
+        app.debeersebende.be ↗
+      </a>
+    </div>
+
+    <div class="dbb-creds-table-wrap">
+      <table class="dbb-creds-table">
+        <thead>
+          <tr>
+            <th data-i18n-html="dbb.accessColEmail">Email</th>
+            <th data-i18n-html="dbb.accessColPassword">Password</th>
+            <th data-i18n-html="dbb.accessColRole">Role</th>
+            <th data-i18n-html="dbb.accessColAccess">Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>alice.johnson@example.com</code></td>
+            <td><code>mypassword789</code></td>
+            <td><span class="dbb-role-badge dbb-role--visitor" data-i18n-html="dbb.roleVisitor">Visitor</span></td>
+            <td data-i18n-html="dbb.accessVisitor">Edit own profile</td>
+          </tr>
+          <tr>
+            <td><code>jane.smith@example.com</code></td>
+            <td><code>securepass456</code></td>
+            <td><span class="dbb-role-badge dbb-role--volunteer" data-i18n-html="dbb.roleVolunteer">Volunteer</span></td>
+            <td data-i18n-html="dbb.accessVolunteer">Sign up for shifts, scan tickets, sell tickets on-site</td>
+          </tr>
+          <tr>
+            <td><code>charlie.brown@example.com</code></td>
+            <td><code>letmein999</code></td>
+            <td><span class="dbb-role-badge dbb-role--crew" data-i18n-html="dbb.roleCrew">Set builder</span></td>
+            <td data-i18n-html="dbb.accessCrew">Log expenses, view rehearsals</td>
+          </tr>
+          <tr>
+            <td><code>bob.williams@example.com</code></td>
+            <td><code>testpass321</code></td>
+            <td><span class="dbb-role-badge dbb-role--actor" data-i18n-html="dbb.roleActor">Actor</span></td>
+            <td data-i18n-html="dbb.accessActor">Log expenses, view rehearsals</td>
+          </tr>
+          <tr>
+            <td><code>david.miller@example.com</code></td>
+            <td><code>pass123456</code></td>
+            <td><span class="dbb-role-badge dbb-role--director" data-i18n-html="dbb.roleDirector">Director</span></td>
+            <td data-i18n-html="dbb.accessDirector">Log expenses, manage rehearsals and cast</td>
+          </tr>
+          <tr class="dbb-creds-admin">
+            <td><code>natalie.smets@example.com</code></td>
+            <td><code>password123</code></td>
+            <td><span class="dbb-role-badge dbb-role--admin" data-i18n-html="dbb.roleAdmin">Admin</span></td>
+            <td data-i18n-html="dbb.accessAdmin">Rehearsals, cast, shows, users, finances, schedules, shifts, sponsors, emails</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n-html="dbb.footer">Freek Boes · De Beerse Bende · 2025</span>
+    <a href="index.html#projects" data-i18n-html="dbb.backLink" style="color:var(--accent);font-family:var(--font-mono);font-size:11px;">← Back to projects</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
