@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse · Freek Boes</title>
+  <link rel="shortcut icon" href="src/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/output.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-brand">
+      <div class="nav-logo">F</div>
+      <div class="nav-path">
+        <span>freek.boes</span>
+        <span class="sep">/</span>
+        <span>portfolio</span>
+        <span class="sep">/</span>
+        <a href="index.html#projects" style="color:var(--muted);text-decoration:none;">projects</a>
+        <span class="sep">/</span>
+        <span class="main">pulse</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html#about"      data-i18n-html="nav.about">About</a></li>
+      <li><a href="index.html#education"  data-i18n-html="nav.education">Education</a></li>
+      <li><a href="index.html#skills"     data-i18n-html="nav.skills">Skills</a></li>
+      <li><a href="index.html#experience" data-i18n-html="nav.experience">Experience</a></li>
+      <li><a href="index.html#projects"   data-i18n-html="nav.projects">Projects</a></li>
+      <li><a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a></li>
+      <li><a href="index.html#contact"    data-i18n-html="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-controls">
+        <button id="lang-toggle" class="nav-btn" title="Switch language" aria-label="Switch language">NL</button>
+        <button id="theme-toggle" class="nav-btn" title="Toggle dark mode" aria-label="Toggle dark mode">
+          <svg id="icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+          <svg id="icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+      <div class="nav-status">
+        <span class="nav-status-dot"></span>
+        <span data-i18n-html="status">Final-year student · Thomas More</span>
+      </div>
+    </div>
+    <button id="nav-toggle-btn" aria-label="Open menu">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 6h14M3 10h14M3 14h14"/></svg>
+    </button>
+  </nav>
+
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <a href="index.html#about"      class="mobile-link" data-i18n-html="nav.about">About</a>
+    <a href="index.html#education"  class="mobile-link" data-i18n-html="nav.education">Education</a>
+    <a href="index.html#skills"     class="mobile-link" data-i18n-html="nav.skills">Skills</a>
+    <a href="index.html#experience" class="mobile-link" data-i18n-html="nav.experience">Experience</a>
+    <a href="index.html#projects"   class="mobile-link" data-i18n-html="nav.projects">Projects</a>
+    <a href="src/CV-Freek-Boes.pdf" target="_blank" data-i18n-html="nav.resume">Resume</a>
+    <a href="index.html#contact"    class="mobile-link" data-i18n-html="nav.contact">Contact</a>
+    <div class="nav-mobile-controls">
+      <button id="lang-toggle-m"  class="nav-btn">NL</button>
+      <button id="theme-toggle-m" class="nav-btn">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ══ HERO ══ -->
+  <section class="proj-hero-wrap">
+    <div class="case-panel">
+
+      <div class="proj-hero-banner">
+        <div class="case-screenshot-grid"></div>
+        <img src="src/images/pulse.png" alt="Pulse" onerror="this.style.display='none'">
+        <div class="proj-hero-banner-text">PULSE</div>
+        <div class="proj-hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="flex-shrink:0;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span data-i18n-html="pulse.metaTypeVal">Personal project</span>
+        </div>
+        <div class="case-screenshot-badge">2026 · Personal</div>
+      </div>
+
+      <div class="case-meta-row">
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="pulse.metaType">TYPE</div>
+          <div class="val" data-i18n-html="pulse.metaTypeVal">Personal project</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="pulse.metaRole">ROLE</div>
+          <div class="val" data-i18n-html="pulse.metaRoleVal">Solo — everything</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="pulse.metaTeam">TEAM</div>
+          <div class="val">1</div>
+        </div>
+        <div class="case-meta-cell">
+          <div class="key" data-i18n-html="pulse.metaYear">YEAR</div>
+          <div class="val">2026</div>
+        </div>
+      </div>
+
+      <div class="proj-hero-body">
+        <div class="label label-accent" data-i18n-html="pulse.heroLabel">// PROJECT CASE STUDY</div>
+        <h1 class="proj-hero-title">
+          Pulse<span style="color:var(--accent);">.</span>
+        </h1>
+        <p class="proj-hero-desc" data-i18n-html="pulse.heroDesc">
+          A personal Flutter app for tracking gym workouts — built because the features I wanted were locked behind a paywall. Plan sessions, track progress and analyse your training, all stored locally on device.
+        </p>
+
+        <nav class="stage-page-nav">
+          <a href="#overview"     class="filter-btn" data-i18n-html="pulse.overviewLabel">Overview</a>
+          <a href="#features"     class="filter-btn" data-i18n-html="pulse.featuresLabel">Features</a>
+          <a href="#architecture" class="filter-btn" data-i18n-html="pulse.archLabel">Architecture</a>
+          <a href="#contribution" class="filter-btn" data-i18n-html="pulse.contribLabel">My Contribution</a>
+          <a href="#challenges"   class="filter-btn" data-i18n-html="pulse.challengesLabel">Challenges</a>
+          <a href="#learned"      class="filter-btn" data-i18n-html="pulse.learnedLabel">What I Learned</a>
+        </nav>
+      </div>
+
+      <div class="proj-hero-stack">
+        <span class="label" style="margin-right:6px;flex-shrink:0;">TECH</span>
+        <span class="exp-tag" data-tag="flutter">Flutter</span>
+        <span class="exp-tag" data-tag="dart">Dart</span>
+        <span class="exp-tag" data-tag="teamwork">GitHub</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 01 · OVERVIEW ══ -->
+  <section id="overview" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="pulse.overviewLabel">// 01 · OVERVIEW</div>
+      <h2 class="stage-heading" data-i18n-html="pulse.overviewHeading">Overview.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="pulse.problemLabel">01 / PROBLEM</div>
+          <p data-i18n-html="pulse.problemText">Existing workout tracking apps put the features I actually wanted — 1RM calculation, workout history, custom schemas — behind subscriptions. I wanted a single app that covered everything I needed, free and offline.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="pulse.assignmentLabel">02 / ASSIGNMENT</div>
+          <p data-i18n-html="pulse.assignmentText">Self-directed: build a mobile gym tracking app. Set up the project plan, draw up a roadmap, and ship a working product on my own timeline — built after hours during my internship.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" data-i18n-html="pulse.solutionLabel">03 / SOLUTION</div>
+          <p data-i18n-html="pulse.solutionText">A Flutter app covering the full training workflow: 1RM estimation, session tracking, reusable workout schemas, a full training history, and more — all stored locally on device with no subscription required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 02 · FEATURES ══ -->
+  <section id="features" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="pulse.featuresLabel">// 02 · FEATURES</div>
+      <h2 class="stage-heading" data-i18n-html="pulse.featuresHeading">Features.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="kc-features-grid">
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">🏋️</div>
+          <div class="kc-feature-title" data-i18n-html="pulse.feat1Title">1RM calculator</div>
+          <p class="kc-feature-desc" data-i18n-html="pulse.feat1Desc">Estimate your one-rep max for any exercise based on your working sets — no guessing required.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">📋</div>
+          <div class="kc-feature-title" data-i18n-html="pulse.feat2Title">Workout tracking</div>
+          <p class="kc-feature-desc" data-i18n-html="pulse.feat2Desc">Log every set, rep and weight for every session. Track progress over time across all exercises.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">🗂️</div>
+          <div class="kc-feature-title" data-i18n-html="pulse.feat3Title">Workout schemas</div>
+          <p class="kc-feature-desc" data-i18n-html="pulse.feat3Desc">Create reusable workout plans and load them when you start a session — no re-entering the same exercises every time.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">📈</div>
+          <div class="kc-feature-title" data-i18n-html="pulse.feat4Title">Training history</div>
+          <p class="kc-feature-desc" data-i18n-html="pulse.feat4Desc">A full log of every session: when you trained, what you did and how your lifts have progressed.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">📅</div>
+          <div class="kc-feature-title" data-i18n-html="pulse.feat5Title">Session frequency</div>
+          <p class="kc-feature-desc" data-i18n-html="pulse.feat5Desc">See how often you have been to the gym and spot patterns in your training consistency.</p>
+        </div>
+        <div class="kc-feature-card">
+          <div class="kc-feature-icon">⚡</div>
+          <div class="kc-feature-title" data-i18n-html="pulse.feat6Title">More</div>
+          <p class="kc-feature-desc" data-i18n-html="pulse.feat6Desc">Additional features built around the core workflow — everything you need, nothing you don't.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 03 · ARCHITECTURE ══ -->
+  <section id="architecture" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="pulse.archLabel">// 03 · ARCHITECTURE</div>
+      <h2 class="stage-heading" data-i18n-html="pulse.archHeading">Architecture.</h2>
+    </div>
+
+    <div class="exp-full-panel">
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#02569B;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><polygon points="12 2 2 19 22 19"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="pulse.arch1Title">Flutter Frontend</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(2,86,155,0.08);border-color:rgba(2,86,155,0.35);color:#02569B;">Flutter · Dart</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="pulse.arch1Desc">The entire app is built with <strong>Flutter</strong>, delivering a native-feeling UI on Android and iOS from a single Dart codebase. All business logic, state management and UI rendering run in Dart.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#3c5d79;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="1"/><path d="M8 2v4M16 2v4M2 10h20"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="pulse.arch2Title">Local storage</span>
+            <div class="exp-entry-right">
+              <span class="exp-period">On-device · No backend</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="pulse.arch2Desc">All training data is stored <strong>locally on the device</strong>. No external database or server — the app works fully offline and your data stays private by default.</p>
+        </div>
+      </div>
+
+      <div class="exp-entry-rich">
+        <div class="exp-logo-wrap">
+          <div class="exp-logo" style="background:#24292e;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          </div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-entry-top">
+            <span class="exp-title" data-i18n-html="pulse.arch3Title">Version control</span>
+            <div class="exp-entry-right">
+              <span class="exp-period" style="background:rgba(36,41,46,0.08);border-color:rgba(36,41,46,0.35);color:#24292e;">GitHub</span>
+            </div>
+          </div>
+          <p class="exp-desc" data-i18n-html="pulse.arch3Desc">The project is version-controlled on <strong>GitHub</strong>, with commits following a structured workflow based on the roadmap defined at the start of the project.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 04 · MY CONTRIBUTION ══ -->
+  <section id="contribution" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="pulse.contribLabel">// 04 · MY CONTRIBUTION</div>
+      <h2 class="stage-heading" data-i18n-html="pulse.contribHeading">My Contribution.</h2>
+    </div>
+
+    <div class="stage-contrib-grid">
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">01</div>
+        <div class="stage-contrib-title" data-i18n-html="pulse.contrib1Title">Project planning</div>
+        <p class="stage-contrib-desc" data-i18n-html="pulse.contrib1Desc">Defined the full feature set and drew up a <strong>roadmap</strong> before writing a single line of code — mapping out every screen, feature and dependency upfront.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">02</div>
+        <div class="stage-contrib-title" data-i18n-html="pulse.contrib2Title">Full development</div>
+        <p class="stage-contrib-desc" data-i18n-html="pulse.contrib2Desc">Built every screen and feature from scratch in <strong>Flutter and Dart</strong> — UI design, business logic, local storage and navigation.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">03</div>
+        <div class="stage-contrib-title" data-i18n-html="pulse.contrib3Title">Architecture decisions</div>
+        <p class="stage-contrib-desc" data-i18n-html="pulse.contrib3Desc">Made all technical decisions independently — local vs remote storage, state management approach, data model design and schema structure.</p>
+      </div>
+      <div class="stage-contrib-card">
+        <div class="stage-contrib-num label label-accent">04</div>
+        <div class="stage-contrib-title" data-i18n-html="pulse.contrib4Title">Code quality</div>
+        <p class="stage-contrib-desc" data-i18n-html="pulse.contrib4Desc">Maintained a clean, consistent codebase throughout, applying <strong>code quality standards</strong> even when working solo and after long days at internship.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══ 05 · CHALLENGES ══ -->
+  <section id="challenges" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="pulse.challengesLabel">// 05 · CHALLENGES</div>
+      <h2 class="stage-heading" data-i18n-html="pulse.challengesHeading">Challenges.</h2>
+    </div>
+
+    <div class="stage-challenges-list">
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="pulse.challenge1Label">01 / TIME MANAGEMENT</div>
+          <p class="stage-challenge-desc" data-i18n-html="pulse.challenge1Desc">This project was built after hours during my internship. Available time was limited and had to be managed carefully alongside full working days.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="pulse.challenge1Solution">The upfront roadmap kept scope in check. Working in priority order meant the core features shipped first — the app was always in a usable state even when time was short.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="pulse.challenge2Label">02 / SCOPING THE FEATURE SET</div>
+          <p class="stage-challenge-desc" data-i18n-html="pulse.challenge2Desc">With no external brief or team to push back, it was easy to keep adding features. A gym tracking app has an almost unlimited potential scope — discipline was required.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="pulse.challenge2Solution">Anything not on the roadmap did not get built until the core was done. The roadmap acted as the contract with myself.</p>
+        </div>
+      </div>
+
+      <div class="stage-challenge-row">
+        <div class="stage-challenge-left">
+          <div class="label label-accent" data-i18n-html="pulse.challenge3Label">03 / CODE QUALITY SOLO</div>
+          <p class="stage-challenge-desc" data-i18n-html="pulse.challenge3Desc">Without a team or code reviews, maintaining quality standards purely through self-review required conscious effort — especially when tired after a full day of internship work.</p>
+        </div>
+        <div class="stage-challenge-right">
+          <div class="label" style="color:var(--good);margin-bottom:6px;">→ Approach</div>
+          <p class="stage-challenge-desc" data-i18n-html="pulse.challenge3Solution">Applied the same review habits I used in team projects: reviewing my own PRs before merging, keeping commits small and descriptive, and refactoring before adding new features.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══ 06 · DEMO VIDEO ══ -->
+  <section id="demo" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="pulse.videoLabel">// 06 · DEMO VIDEO</div>
+      <h2 class="stage-heading" data-i18n-html="pulse.videoHeading">Demo.</h2>
+    </div>
+
+    <div class="stage-video-wrap">
+            <video controls class="stage-video">
+          <source src="src/videos/PULSE - Test video.mp4" type="video/mp4">
+        </video>
+    </div>
+  </section>
+
+
+  <!-- ══ 07 · WHAT I LEARNED ══ -->
+  <section id="learned" class="stage-section fade-up">
+    <div class="stage-section-header">
+      <div class="label label-accent" data-i18n-html="pulse.learnedLabel">// 07 · WHAT I LEARNED</div>
+      <h2 class="stage-heading" data-i18n-html="pulse.learnedHeading">What I Learned.</h2>
+    </div>
+
+    <div class="case-panel">
+      <div class="case-cols">
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--good);" data-i18n-html="pulse.learned1Label">// PROJECT MANAGEMENT</div>
+          <p data-i18n-html="pulse.learned1Desc">Managing a solo project with no external accountability requires more discipline than a team project. A written roadmap and clear scope definition are what keep you honest about what you're building and why.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--accent-d);" data-i18n-html="pulse.learned2Label">// FLUTTER & DART</div>
+          <p data-i18n-html="pulse.learned2Desc">Built further confidence in Flutter's widget model, state management patterns and local persistence. Designing a domain-specific data model deepened my understanding of how local storage decisions affect the whole app.</p>
+        </div>
+        <div class="case-col">
+          <div class="case-col-num" style="color:var(--muted);" data-i18n-html="pulse.learned3Label">// SHIPPING UNDER CONSTRAINTS</div>
+          <p data-i18n-html="pulse.learned3Desc">Building a personal project after full working days at internship taught me how to stay productive in limited time windows. Prioritisation and a clear roadmap are the tools that make it possible.</p>
+        </div>
+      </div>
+
+      <div class="stage-competencies">
+        <div class="label label-accent" style="margin-bottom:12px;">// COMPETENCIES</div>
+        <div class="stage-competencies-tags">
+          <span class="exp-tag" data-tag="flutter">Flutter</span>
+          <span class="exp-tag" data-tag="dart">Dart</span>
+          <span class="exp-tag" data-tag="teamwork">GitHub</span>
+          <span class="exp-tag" data-tag="adaptability">Solo ownership</span>
+          <span class="exp-tag" data-tag="communication">Project planning</span>
+          <span class="exp-tag" data-tag="leadership">Architecture decisions</span>
+          <span class="exp-tag" data-tag="leadership">Code quality</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <span data-i18n-html="pulse.footer">Freek Boes · Pulse · 2026</span>
+    <a href="index.html#projects" data-i18n-html="pulse.backLink" style="color:var(--accent);font-family:var(--font-mono);font-size:11px;">← Back to projects</a>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
