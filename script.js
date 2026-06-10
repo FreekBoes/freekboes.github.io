@@ -141,16 +141,18 @@ document.addEventListener('DOMContentLoaded', () => {
       ).join('');
     }
 
-    // Elision outcomes
+// Elision outcomes
     const elisionOutcomes = document.getElementById('elision-outcomes-list');
-    if (elisionOutcomes && t.elision) {
-      elisionOutcomes.innerHTML = [
-        'Working <strong>tracking script</strong> embeddable in any website',
-        '<strong>Java Spring Boot API</strong> receiving and storing load time events',
-        '<strong>React dashboard</strong> with regional and device breakdowns',
-        'Delivered as a working <strong>proof of concept to a real client</strong>',
-        'Full project delivered on time using <strong>Scrum and Agile</strong>',
-      ].map(o => `<li><span class="prefix-plus">[+]</span> ${o}</li>`).join('');
+    if (elisionOutcomes && t.elision?.outcomes) {
+      elisionOutcomes.innerHTML = t.elision.outcomes
+        .map(o => `<li><span class="prefix-plus">[+]</span> ${o}</li>`).join('');
+    }
+
+    // Elision learned
+    const elisionLearned = document.getElementById('elision-learned-list');
+    if (elisionLearned && t.elision?.learnedShort) {
+      elisionLearned.innerHTML = t.elision.learnedShort
+        .map(o => `<li><span class="prefix-arrow">[→]</span> ${o}</li>`).join('');
     }
 
     // Update lang toggle button label
@@ -359,7 +361,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
 }); // ← einde DOMContentLoaded
 
 
@@ -396,3 +397,4 @@ function downloadCV(e) {
   a.click();
   document.body.removeChild(a);
 }
+
