@@ -78,8 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (projectsGrid) {
       projectsGrid.innerHTML = t.projects.items.map((p) => `
   <div class="project-card" data-project="${p.key}" data-category="${p.category}"${p.pageUrl ? ` data-url="${p.pageUrl}"` : ''}>
-    <div class="project-card-img">
+<div class="project-card-img">
       <div class="project-card-img-bg">${p.name.toUpperCase()}</div>
+      ${p.image ? `<img src="${p.image}" alt="${p.name} preview" class="project-card-img-photo">` : ''}
     </div>
     <div class="project-card-body">
       <div class="project-card-meta">
